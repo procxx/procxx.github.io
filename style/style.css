@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+
+header {
+  background-image: url("cpp.png");
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
+}
+
+body{
+  background-image: url("bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Ubuntu;
+}
+
+#main{
+  width: 85%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  border: 2px solid white;
+  padding: 20px;
+  top: 0px;
+  position: absolute;
+}
+
+span.procxx{
+  color: blue;
+}
