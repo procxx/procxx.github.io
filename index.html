@@ -1,65 +1,144 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>procxx.github.io&nbsp;&mdash; Main Page</title>
-  </head>
- <body>
-   <div id="main">
-     <header>
-       <h3>Welcome to the <span class="hashtag">ProCxx</span> main page!</h3>
-     </header>
-     
-     <ul>
-       <li>
-         Join us in <a href="https://telegram.org/dl">Telegram</a>: 
-         <a href="https://telegram.me/ProCxx">@ProCxx</a>;
-       </li>
-       <li>
-         You can see chat's live activity 
-         <a href="http://embedbot.com/iframe/-1001031904034">here</a>;
-       </li>
-       <li>
-         We have the newbies' chat, <span class="hashtag">#supapro</span>. Join via this invite link:
-         <a href="https://telegram.me/joinchat/AAAAAD3eN3KytHPyhyh96w">https://telegram.me/joinchat/AAAAAD3eN3KytHPyhyh96w</a>;
-       </li>
-       <li>
-         Also we recommend the <span class="hashtag">CodingTeam</span> community: <a href="https://codingteam.org.ru/">https://codingteam.org.ru/</a>.
-       </li>
-     </ul>
-     <h2>Projects [wip]</h2>
-     <ol>
-       <li><a href="https://github.com/procxx/kepka">Telegram Fork</a></li>
-       <li><a href="/podcasts/index.html">pro.cxx Podcast</a>.</li>
-       <li>ISO/C++ Proposals:
-         <ul>
-           <li><a href="https://github.com/procxx/cpp-stacktrace-proposal">Stacktrace proposal</a> (draft version is in <a href="https://github.com/leha-bot/cpp-stacktrace-proposal">leha-bot's repo</a>)</li>
-         </ul>
-       </li>
-     </ol>
-     <h2>Channels in Telegram</h2>
-     <ul>
-       <li><a href="https://t.me/ProCxxNews">pro.cxx Channel</a> - News, Announces and Events about C++;</li>
-       <li><a href="https://t.me/ProCxxChannel">pro.cxx Editors Channel</a> - Useful links, articles, repos;</li>
-       <li><a href="https://t.me/ProCxxJobs">pro.cxx Jobs</a> - vacancies from our subscribers;</li>
-       <li><a href="https://t.me/xthon">@xthon - little quotebook;</a></li>
-       <li><a href="https://t.me/mrSmith_bread">Mr Smith's bread</a> - the author's project "The Mister Smith's bread".</li>
-     </ul>
-     <h2>Mini-articles (on Telegra.ph) [wip]</h2>
-     <ol>
-       <li><a href="http://telegra.ph/Git-nishtyaks-03-02">Git guides</a></li>
-       <li><a href="http://telegra.ph/Matanota-kursota-iz-promath-03-08">Some Math courses for computing</a></li>
-       <li><a href="http://telegra.ph/Some-C-Tips-03-10">Chat tips (work in progress)</a></li>
-       <li><a href="http://telegra.ph/Useful-links-03-21">Useful links</a></li>
-     </ol>
-     <h2>Misc. articles on github.io and another</h2>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ProCxx</title>
+  <!--I know, it has a lot of redundancy, sorry-->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://procxx.github.io"><h1 class="title is-4">ProCxx</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          <a class="level-item" aria-label="email" href='mailto:test@test.tld' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class>
+                  <svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="github" href='https://github.com/procxx' target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class>
+                <svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>  
+                </svg>
+              </i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="github" href='https://telegram.me/ProCxx' target='_blank' rel='noopener'>
+            <span class="icon">
+              <svg>
+                <path d="m 22.05,1.577 c -0.393,-0.016 -0.784,0.08 -1.117,0.235 -0.484,0.186 -4.92,1.902 -9.41,3.64 C 9.263,6.325 7.005,7.198 5.267,7.867 3.53,8.537 2.222,9.035 2.153,9.059 c -0.46,0.16 -1.082,0.362 -1.61,0.984 -0.79581202,1.058365 0.21077405,1.964825 1.004,2.499 1.76,0.564 3.58,1.102 5.087,1.608 0.556,1.96 1.09,3.927 1.618,5.89 0.174,0.394 0.553,0.54 0.944,0.544 l -0.002,0.02 c 0,0 0.307,0.03 0.606,-0.042 0.3,-0.07 0.677,-0.244 1.02,-0.565 0.377,-0.354 1.4,-1.36 1.98,-1.928 l 4.37,3.226 0.035,0.02 c 0,0 0.484,0.34 1.192,0.388 0.354,0.024 0.82,-0.044 1.22,-0.337 0.403,-0.294 0.67,-0.767 0.795,-1.307 0.374,-1.63 2.853,-13.427 3.276,-15.38 L 23.676,4.725 C 23.972,3.625 23.863,2.617 23.18,2.02 22.838,1.723 22.444,1.593 22.05,1.576 Z"/>
+              </svg>
+            </span>
+          </a>
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h3 class="title">Welcome to the <span class="hashtag">ProCxx</span> main page!</h1>
+    <div class="content">
+      <p>ProCxx is a community of developers in Telegram, mainly related to C++.</p>
       <ul>
+        <li>Join us in <a href="https://telegram.org/dl">Telegram</a>: <a href="https://telegram.me/ProCxx">@ProCxx</a>;</li>
+        <!--it's dead Jim-->
+        <!--<li>You can see chat's live activity <a href="http://embedbot.com/iframe/-1001031904034">here</a>;</li>-->
+        <li>We have the newbies' chat, <a href="https://telegram.me/joinchat/AAAAAD3eN3KytHPyhyh96w">supapro</a>;</li>
+        <li>Also we recommend the CodingTeam community: <a href="https://codingteam.org.ru/">codingteam.org.ru</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="title">Projects</h2>
+    <div class="content">
+      <ol>
+        <li><a href="https://github.com/procxx/kepka">Telegram Desktop fork</a>;</li>
+        <li><a href="https://procxx.github.io/podcasts/index.html">pro.cxx Podcast</a></li>
+        <li>ISO/C++ Proposals:
+          <ul>
+            <li><a href="https://github.com/procxx/cpp-stacktrace-proposal">Stacktrace proposal</a> (draft version is in <a href="https://github.com/leha-bot/cpp-stacktrace-proposal">leha-bot's repo</a>)</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="title">Projects</h2>
+    <div class="content">
+      <ol>
+        <li><a href="https://github.com/procxx/kepka">Telegram Desktop fork</a>;</li>
+        <li><a href="https://procxx.github.io/podcasts/index.html">pro.cxx Podcast</a></li>
+        <li>ISO/C++ Proposals:
+          <ul>
+            <li><a href="https://github.com/procxx/cpp-stacktrace-proposal">Stacktrace proposal</a> (draft version is in <a href="https://github.com/leha-bot/cpp-stacktrace-proposal">leha-bot's repo</a>)</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="title">Channels in Telegram</h2>
+    <div class="content">
+      <ul>
+        <li><a href="https://t.me/ProCxxNews">pro.cxx Channel</a> - News, Announces and Events about C++;</li>
+        <li><a href="https://t.me/ProCxxChannel">pro.cxx Editors Channel</a> - Useful links, articles, repos;</li>
+        <li><a href="https://t.me/ProCxxJobs">pro.cxx Jobs</a> - vacancies from our subscribers;</li>
+        <li><a href="https://t.me/xthon">@xthon - little quotebook;</a></li>
+        <li><a href="https://t.me/mrSmith_bread">Mr Smith's bread</a> - the author's project "The Mister Smith's bread".</li>  
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="title">Mini-articles (on Telegra.ph)</h2>
+    <div class="content">
+      <ol>
+        <li><a href="http://telegra.ph/Git-nishtyaks-03-02">Git guides</a></li>
+        <li><a href="http://telegra.ph/Matanota-kursota-iz-promath-03-08">Some Math courses for computing</a></li>
+        <li><a href="http://telegra.ph/Some-C-Tips-03-10">Chat tips (work in progress)</a></li>
+        <li><a href="http://telegra.ph/Useful-links-03-21">Useful links</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2>Misc. articles</h2>
+    <div class="content">
+    <ul>
         <li><a href="http://fsprojects.github.io/">F# Projects (a cool sample of using gh-pages)</a></li>
         <li><a href="https://github.com/fffaraz/awesome-cpp">awesome-cpp - liat of c/c++ libraries/frameworks.</a>
         <li><a href="https://ps-group.github.io/compilers/cxx17">[ru] Migration to Everyday C++17</a></li>
         <li><a href="http://kripken.github.io/emscripten-site/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#calling-javascript-from-c-c">Connecting Cpp and Javascript</a></li>
         <li><a href="http://nullprogram.com/blog/2017/03/30/">How to Write Portable C Without Complicating Your Build</a></li> 
-     </ul>
-   </div>
- </body>
+      </ul>
+     </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; ProCxx 2018</p>
+  </div>
+</section>
+</body>
 </html>
