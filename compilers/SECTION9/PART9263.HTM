@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Асинхронные автоматы</TITLE>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><A HREF="Part9262.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9264.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+<P>
+<HR></P>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<P><B><I><U><FONT COLOR="#0000FF">9.2.6.3. ТРИГГЕР J-K С ЗАДЕРЖКОЙ И СИНХРОНИЗАЦИЕЙ</FONT></U></I></B></P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<P>  Применение асинхронных триггеров с задержкой позволяет устранить состязания
+в схемах, но не исключает влияния задержек сигналов, подаваемых на разные
+входы триггера, и риска в комбинационной части схемы автомата. Чтобы устранить
+влияние этих факторов, используем триггер с задержкой и синхронизацией.
+При этом длительность синхронизирующего сигнала выбирается, как правило,
+меньшей, чем длительность сигналов, подаваемых на управляющие входы. Временная
+даграмма, приведенная на рис. 20, поясняет работу триггера с задержкой
+и синхронизацией. На диаграмме изображены коды, определяющие состояние
+входных сигналов в различные моменты времени. Анализируя эти коды, нетрудно
+заметить, что принятое соотношение длительности сигналов х и С равносильно
+ограничению допустимых последовательностей входных сигналов. Например,
+в рассмааемом случае за сигналом 11 должен обязательно следовать сигнал
+10, но никак не сигнал 00. Эти ограничения, так же как и ограничения, возникающие
+вследствие задержки выходного сигнала, обычно учитывают при построении
+диаграмм переходов триггеров с задержкой и синхронизацией.</P>
+
+<P><IMG SRC="draw/29.gif" HEIGHT=386 WIDTH=555></P>
+
+<P><IMG SRC="draw/34.gif" HEIGHT=685 WIDTH=546></P>
+
+<P>
+<HR></P>
+
+<P><A HREF="Part9262.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9264.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+</BODY>
+</HTML>

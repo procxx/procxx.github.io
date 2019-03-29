@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part432</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part415.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part417.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+
+<P>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.1.6. Входная&nbsp; и&nbsp;
+выходная грамматики&nbsp; заданной транслирующей</FONT></FONT></I></B>
+<BR><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+граммагики.</FONT></FONT></I></B>
+
+<P>Из каждой Т - грамматики можно получить две обычных грамматики, одна
+из которых позволяет строить входные цепочки, а другая - выходные. Правила
+построения таких грамматик можно сформулировать следующим образом.</UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><B><I>Определение.</I></B> Если из правил транслирующей грамматики&nbsp;
+Г<SUB>Т</SUB> удалить выходные&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+символы, то получим&nbsp; входную грамматику Г<SUB>Твх</SUB> для заданной&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+грамматики.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Если из правил заданной транслирующей&nbsp;&nbsp; грамматики удалить&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+входные символы, то&nbsp; получим выходную грамматику Г<SUB>Твых</SUB>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+заданной транслирующей грамматики Г<SUB>Т</SUB>.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Язык порождаемый грамматикой Г<SUB>Твх&nbsp;</SUB> называется входным языком&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+заданной&nbsp; транслирующей грамматики, а язык&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+порождаемый Г<SUB>Твых</SUB>&nbsp; называется выходным&nbsp;&nbsp; языком
+заданной&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+транслирующей грамматики&nbsp; Г<SUB>Т</SUB>.&nbsp;
+<BR>&nbsp;</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Цепочки символов, получаемые путем вывода в Т - грамматике, содержат
+как символы входного алфавита, так и символы выходного алфавита - символы
+действия. Каждую такую цепочку можно представить как пару, состоящую из
+входной и выходной цепочки.
+<BR>&nbsp;</UL>
+
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><I><B>Определение</B>.</I> Если из цепочки символов <FONT FACE="Symbol">a</FONT>
+, полученной&nbsp; путем вывода в заданной Т&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-грамматике , исключим все выходные символы, то получим&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+цепочку <FONT FACE="Symbol">a</FONT> <SUB>1</SUB>, которую назовем входной
+цепочкой.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Если же из цепочки <FONT FACE="Symbol">a</FONT> исключим все символы&nbsp;&nbsp;
+входного алфавита, то в
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+результате получим&nbsp; цепочку <FONT FACE="Symbol">a</FONT> <SUB>2</SUB>,
+которую назовем выходной&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+цепочкой, порождаемой Т- грамматикой .&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Цепочки <FONT FACE="Symbol">a</FONT> <SUB>1</SUB> и <FONT FACE="Symbol">a</FONT>
+<SUB>2</SUB> образуют пару, выводимую&nbsp; в&nbsp; заданной Т -&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+грамматике.&nbsp;</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>
+<HR WIDTH="100%"></UL>
+<A HREF="Part416.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part417.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;&nbsp;
+</BODY>
+</HTML>

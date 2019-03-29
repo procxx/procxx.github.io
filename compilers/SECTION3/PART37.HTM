@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part37</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part36.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part381.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%"><A NAME="3.6 Построение магазинного автомата."></A><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>3.7
+Построение магазинного автомата.</FONT></FONT></I></B>
+<UL>Для грамматик, удовлетворяющих условиям LL(1) грамматик,&nbsp; справедливо
+следующее утверждение.</UL>
+
+<UL>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="85%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I>Утверждение</I>.</B> Для каждой LL(1) грамматики Г можно построить
+детерминированный&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+магазинный автомат М , допускающий&nbsp;&nbsp; язык,&nbsp; порождаемый&nbsp;
+заданной&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+грамматикой:&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp; L ( Г ) = L ( М
+)</FONT></B>.</TD>
+</TR>
+</TABLE>
+Задача построения магазинного автомата для заданной LL(1)&nbsp; грамматики
+формулируется следующим образом.
+<BR>Задана грамматика <FONT COLOR="#0000A0">Г = {V<SUB>т</SUB>,V<SUB>a</SUB>,
+I, R},</FONT> и требуется определить
+<BR>об'екты, определяющие автомат <FONT COLOR="#0000A0">М = { P , S , s<SUB>0</SUB>
+, F , H , h<SUB>0</SUB> , f }</FONT>.
+<BR>Учитывая, что автомат должен допускать цепочки языка, порождаемого
+заданной грамматикой, примем&nbsp;&nbsp;&nbsp; <FONT COLOR="#0000A0">P
+= V<SUB>т</SUB>.</FONT> Чтобы упростить описание автомата, допустим, что
+он имеет одно состояние <FONT COLOR="#0000A0">s<SUB>0</SUB></FONT>,&nbsp;&nbsp;&nbsp;&nbsp;
+которое является и начальным и заключительным, то есть - <FONT COLOR="#0000A0">S
+= {s<SUB>0</SUB>}</FONT><FONT COLOR="#333333">и</FONT>&nbsp; <FONT COLOR="#0000A0">F
+= {s<SUB>0</SUB>}</FONT>.
+<BR>В качестве магазинного алфавита примем следующее объединение:&nbsp;
+<FONT COLOR="#0000A0">H = {V<SUB>т</SUB> </FONT><B><FONT FACE="Symbol"><FONT COLOR="#000099"><FONT SIZE=+1>И</FONT></FONT></FONT></B><FONT COLOR="#0000A0">
+V<SUB>a</SUB> </FONT><B><FONT FACE="Symbol"><FONT COLOR="#000099"><FONT SIZE=+1>И</FONT></FONT></FONT></B><FONT COLOR="#0000A0">
+{h<SUB>0</SUB>}}</FONT>.
+<BR>Построение функции переходов выполним с использованием&nbsp; множеств
+ВЫБОР правил заданной грамматики следующим образом:
+<BR>1 ) Для каждого правила грамматики, начинающегося терминальным символом
+вида
+<BR><FONT COLOR="#0000A0">&nbsp;&nbsp;&nbsp;&nbsp; &lt;A> </FONT><B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B><FONT COLOR="#0000A0">
+b </FONT><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT>,&nbsp;&nbsp;&nbsp;
+построим команду автомата
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , b , &lt;A> ) = ( s<SUB>0</SUB>
+, </FONT><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT><FONT COLOR="#0000A0">
+' ) ,</FONT></B></UL>
+</UL>
+</UL>
+&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; где <B><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT>
+'</FONT></B> является зеркальным отображением цепочки<B><FONT COLOR="#000099">
+<FONT FACE="Symbol">a</FONT></FONT></B> .
+<BR>2) Для каждого правила грамматики, начинающегося нетерминальным символом
+вида
+<BR><B><FONT COLOR="#0000A0">&nbsp;&nbsp;&nbsp;&nbsp; &lt;A>&nbsp;</FONT><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT><FONT COLOR="#0000A0"> &lt;B></FONT><FONT COLOR="#000099">
+<FONT FACE="Symbol">a,</FONT></FONT><FONT COLOR="#0000A0"> </FONT></B>построим
+команду автомата
+<UL>&nbsp;
+<UL><B><FONT COLOR="#0000A0">f* ( s<SUB>0</SUB> , x , &lt;A> ) = ( s<SUB>0</SUB>
+, &lt;B> </FONT><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT><FONT COLOR="#0000A0">
+' )</FONT></B></UL>
+</UL>
+<FONT COLOR="#0000A0">&nbsp;&nbsp;</FONT>
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp; где<B> f*</B> - команда </FONT>автомата
+без сдвига входной головки,&nbsp;&nbsp; а <B><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT>
+'</FONT></B> является зеркальным
+<BR>&nbsp;&nbsp;&nbsp; отображением цепочки <B><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT></B>
+.
+<BR>Количество команд, которые необходимо построить для заданного&nbsp;&nbsp;
+правила, определяется числом элементов множества ВЫБОР.
+<BR>Команды магазинного автомата, работающие без сдвига входной головки,
+выполняют замену нетерминаала, соответствующего&nbsp;&nbsp; левой части
+правила, цепочкой,&nbsp; соответствующей правой части&nbsp;&nbsp; этого
+правила. В этом случае сопоставление терминального символа, получаемого
+при выводе, и очередного символа входной цепочки не производится, поэтому
+для таких команд сдвиг входной&nbsp; головки не нужен.
+<BR>3)&nbsp; Для каждого аннулирующего правила грамматики вида
+<BR><B><FONT COLOR="#0000A0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;A></FONT><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT><FONT COLOR="#0000A0"> $</FONT></B>
+построим команды автомата
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#0000A0">f* ( s<SUB>0</SUB> , x , &lt;A> ) = ( s<SUB>0</SUB>
+, $ )</FONT></B></UL>
+</UL>
+&nbsp;</UL>
+&nbsp;для каждого элемента <FONT COLOR="#0000A0">x</FONT> из множества
+<B><FONT COLOR="#0000A0">ВЫБОР(&lt;A>&nbsp;</FONT><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT><FONT COLOR="#0000A0"> $)</FONT></B>.
+Количество таких команд&nbsp; определяется числом элементов множества&nbsp;&nbsp;&nbsp;
+ВЫБОР.
+<BR>4)&nbsp; Для каждого терминального символа <B><FONT COLOR="#000099">b</FONT></B>,
+расположенного в&nbsp;&nbsp; середине или на конце правых
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; частей правил грамматики, построим команду
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><B><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , b , b ) = ( s<SUB>0</SUB>
+, $ )</FONT>.</B></UL>
+</UL>
+&nbsp;</UL>
+5) Для перехода в заключительное состояние построим команду
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#0000A0">f* ( s<SUB>0</SUB> , <FONT FACE="Symbol">e</FONT>
+, h<SUB>0</SUB> ) = ( s<SUB>0</SUB> , $ , $ ).</FONT></B></UL>
+</UL>
+&nbsp;</UL>
+В качестве начальной конфигурации автомата условимся использовать следующее
+выражение с заданной входной цепочкой <B><FONT COLOR="#000099">µ </FONT></B>:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#0000A0">(s<SUB>0</SUB>,µ,h<SUB>0</SUB>&lt;I>).</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+Пользуясь приведенными правилами, построим магазинный автомат для грамматики
+Г<SUB>12</SUB>, схема которой в символических&nbsp; обозначениях может
+быть записана так</UL>
+
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#0000A0">Г<SUB>3. 5</SUB></FONT></B><FONT COLOR="#0000A0">
+:</FONT>&nbsp;&nbsp;&nbsp; <FONT COLOR="#0000A0">R = {&lt;A>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> x | (&lt;B>),</FONT>
+<UL>
+<UL><FONT COLOR="#0000A0">&lt;B>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> &lt;A> &lt;C>,</FONT>
+<BR><FONT COLOR="#0000A0">&lt;C>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> +&lt;A> &lt;C>
+| $}.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+<UL>Вначале построим множества ВЫБОР для каждого из правил и проверим,
+является ли эта грамматика LL(1) грамматикой.
+<UL>(1) ВЫБОР(&lt;A>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>x)
+= ПЕРВ(x) = {x}
+
+<P>(2) ВЫБОР(&lt;A>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+((&lt;B>))) = ПЕРВ((&lt;B>)) = {(}
+
+<P>(3) ВЫБОР(&lt;B>&nbsp;<B><FONT COLOR="#000000"> <FONT FACE="symbol">®</FONT></FONT></B>
+&lt;C>) = ПЕРВ(&lt;A>&lt;C>) = {x,(}
+
+<P>(4) ВЫБОР(&lt;C>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
++&lt;A>&lt;C>) = ПЕРВ(+&lt;A>&lt;C>) = {+}
+
+<P>(5) ВЫБОР(&lt;C>&nbsp;<FONT COLOR="#000000"><B> <FONT FACE="symbol">®</FONT></B>
+</FONT>$) = СЛЕД(&lt;C>)&nbsp; = СЛЕД(&lt;B>) = { ) }.</UL>
+Множества выбора для правил с символом &lt;A> в левой части и для правил
+с символом &lt;C> в левой части не имеют общих элементов, следовательно
+рассматриваемая грамматика относится к классу LL(1) грамматик.
+<BR>Используя функции ВЫБОР, построим соответствующие им команды искомого
+автомата.
+<UL>
+<UL>( 1 ) f ( s<SUB>0 </SUB>, x , &lt;A>) = ( s<SUB>0</SUB> , $ ) ,</UL>
+
+<UL>( 2 ) f( s<SUB>0</SUB> , ( , &lt;A> ) = ( s<SUB>0</SUB> , )&lt;B> )
+,</UL>
+
+<UL>( 3 ) f* ( s<SUB>0 </SUB>, ( , &lt;B> ) = ( s<SUB>0 </SUB>, &lt;C>&lt;A>
+) ,
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f* ( s<SUB>0</SUB> , x ,
+&lt;B> ) = ( s<SUB>0</SUB> , &lt;C>&lt;A> ) ,</UL>
+
+<UL>( 4 ) f ( s<SUB>0</SUB> , + , &lt;C> ) = ( s<SUB>0</SUB> , &lt;C>&lt;A>
+) ,</UL>
+
+<UL>( 5 ) f* ( s<SUB>0</SUB> , ) , &lt;C> ) = ( s<SUB>0</SUB> , $ ).</UL>
+</UL>
+Учитывая, что закрывающиеся скобки расположены на последнем месте правила
+(2), построим команду
+<UL>
+<UL>
+<UL>f ( s<SUB>0</SUB> ,&nbsp; ),&nbsp; ) ) = ( s<SUB>0</SUB> , $ ) .</UL>
+</UL>
+</UL>
+Кроме того, построим команду для перехода в заключительное состояние:
+<UL>
+<UL>
+<UL>f ( s<SUB>0 </SUB>, $ , h<SUB>0</SUB> ) = ( s<SUB>1</SUB> , $ ) .</UL>
+</UL>
+</UL>
+Работу построенного автомата проверим на примере входной цепочки ( x +
+x ). При этом получаем следующую последовательность конфигураций<FONT SIZE=+1>:</FONT>
+<UL>( s<SUB>0</SUB> , (x+x) , h<SUB>0</SUB>&lt;A> ) |--- ( s<SUB>0</SUB>
+, x+x ) , h<SUB>0</SUB>)&lt;B> ) |--- ( s<SUB>0</SUB> , x+x) , h<SUB>0</SUB>)&lt;C>&lt;A>
+) |---
+<BR>( s<SUB>0</SUB> , +x ) , h<SUB>0</SUB>)&lt;C>) |--- ( s<SUB>0 </SUB>,
+x) , h<SUB>0</SUB>)&lt;C>&lt;A> )&nbsp; |--- ( s<SUB>0</SUB> , ) , h<SUB>0</SUB>)&lt;C>)|---
+<BR>( s<SUB>0</SUB> , $ , h0 ) |--- ( s<SUB>0</SUB> , $ , $ ) ,</UL>
+которая показывает, что входная цепочка допускается построенным автоматом.
+<BR>&nbsp;</UL>
+&nbsp;
+<HR WIDTH="100%">
+<UL>
+<LI>
+<A HREF="Part36.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part381.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

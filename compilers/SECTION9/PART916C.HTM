@@ -1,0 +1,43 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>АРИФМЕТИЧЕСКИЕ И ЛОГИЧЕСКИЕ ОСНОВЫ ВЫЧИСЛИТЕЛЬНОЙ ТЕХНИКИ</title>
+</head>
+<body>
+<a href="part916b.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part916d.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+<br>
+<hr WIDTH="100%">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ниже приводятся два примера, поясняющие
+описанный способ кодирования состояний.
+<br>&nbsp;
+<ul><img SRC="DRAW/table56.gif" ></ul>
+Пример 3. Выполнить кодирование состояний автомата, переходы которого заданы
+табл. 5. Прежде всего построим табл. 6, которая является инверсной таблицей
+переходов. По этой таблице находим, что состояния: <font color="#000099">(s<sub>2</sub>,
+s<sub>4</sub>), (s<sub>1</sub>, s<sub>3</sub>), (s<sub>0</sub>, s<sub>1</sub>)
+, (s<sub>0</sub>, s<sub>3</sub>)</font> - являются соседями первого рода.
+Поиск соседей второго рода не приводит к появлению новых пар. В большинстве
+случаев закодировать всех соседей соседними кодами, как правило, не удается.
+Обычно стараются закодировать соседними кодами наибольшее число соседей.
+При этом кодируемые состояния удобно располагать в клетках диаграммы Вейча.
+Диаграмма с выбранным вариантом кодирования для нашего примера приведена
+на рис. 20, а. Этот вариант не учитывает соседства состояний s<sub>0</sub>
+и s<sub>1</sub>. Коды состояний, соответствующих такому кодированию, приведены
+в табл. 7
+<ul><img SRC="DRAW/table78.gif" ></ul>
+При этом функции возбуждения имеют вид:
+<ul>
+<ul><img SRC="DRAW/f_p20.gif" ></ul>
+</ul>
+
+<hr><a href="part916b.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part916d.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+</body>
+</html>

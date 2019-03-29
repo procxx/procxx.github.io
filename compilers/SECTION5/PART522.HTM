@@ -1,0 +1,219 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s77</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.2.2."></A><A HREF="part521.html#5.2.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part531.html#5.3.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">5.2.2.
+Пример использования АТ-грамматики.</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Рассмотрим еще один
+пример использования <B><FONT COLOR="#993300">АТ-грамматик</FONT></B>.
+Допустим, что необходимо описать процесс трансляции инфиксных выражений
+без скобок, построенных из идентификаторов и бинарных операций сложения
+и вычитания, синтаксис которых задается схемой следующей грамматики.</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#000099">Г <SUB>5.
+2</SUB></FONT> :</FONT></B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">i&lt;R></FONT>,</FONT>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;R></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">+i&lt;R></FONT>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;R></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">-i&lt;R></FONT>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;R></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">
+.</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В приведенных правилах
+символ i представляет идентификатор переменной, значением которого является
+указатель на элемент таблицы переменных (<B>ТП</B>). Результатом трансляции
+выражений, порождаемых этой грамматикой, должна быть последовательность
+операторных символов - атомов, определяющих как последовательность действий,
+так и операнды каждого действия. Учитывая это обстоятельство, зададим требуемый
+<B><FONT COLOR="#993300">перевод</FONT></B> в виде следующей грамматики.</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#000099">Г <SUB>5.
+3</SUB></FONT> : </FONT></B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">i&lt;R></FONT>,</FONT>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&lt;R></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">+i{СЛОЖ}&lt;R></FONT>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&lt;R></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">-i{ВЫЧИТ}&lt;R></FONT>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&lt;R>
+</FONT></FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">.</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Символы действия в
+правилах этой грамматики расположены так, чтобы результат можно было передать
+на выход, как только будут построены оба операнда рассматриваемой операции.
+Чтобы обеспечить передачу на выход не только символов операций, но и указателей
+на переменные, с которыми выполняются операции, припишем символам грамматики
+атрибуты и построим <B><FONT COLOR="#993300">АТ-грамматику</FONT></B>.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Каждому символу,
+обозначающему идентификатор, припишем атрибут, представляющий указатель
+на <B>ТЗ</B>. Каждому символу действия придадим три наследуемые атрибута,
+которые должны определять операнды и результат выполнения операции. При
+последовательном вычислении выражений образуются промежуточные результаты,
+которые необходимо сохранять на время подготовки следующего операнда. Условимся
+о том, что промежуточные результаты должны сохраняться в таблице значений
+(<B>ТЗ</B>). Для записи промежуточного результата нужно иметь указатель
+на очередной свободный элемент <B>ТЗ</B> и изменять его значение после
+того, как запись произведена. Для изменения этого указателя воспользуемся
+введенной в предыдущем примере функцией <FONT COLOR="#3333FF">СЛЕДУК</FONT>.
+Если рассматриваемая грамматика описывает трансляцию подвыражений, являющихся
+частью других конструкций языка, то после построения арифметического выражения
+в <B>ТЗ</B> могут записываться другие величины. Следовательно, после трансляции
+выражения кроме последовательности атомов необходимо в качестве результата
+получить указатель на первый свободный элемент <B>ТЗ</B> после выделения
+места в ней для записи промежуточных результатов. Чтобы получить такой
+указатель, припишем начальному символу грамматики <FONT COLOR="#3333FF">&lt;E></FONT>
+один синтезируемый атрибут <FONT COLOR="#3333FF">%a</FONT> и один наследуемый
+атрибут <FONT COLOR="#3333FF">/b</FONT>. Начальное значение наследуемого
+атрибута должно быть указателем на первый свободный элемент <B>ТЗ</B> до
+записи промежуточных результатов. Значение синтезируемого атрибута должно
+быть сформировано при завершении трансляции и быть равным указателю на
+первый свободный элемент <B>ТЗ</B> после записи промежуточных результатов.
+Нетерминальный символ грамматики <FONT COLOR="#3333FF">&lt;R></FONT> используется
+для передачи первого операнда каждой выполняемой операции. Чтобы осуществить
+передачу указателя на этот операнд, припишем <FONT COLOR="#3333FF">&lt;R></FONT>
+наследуемый атрибут <FONT COLOR="#3333FF">/с</FONT>. Учитывая, что первый
+операнд может быть промежуточным результатом, который был записан в <B>ТЗ</B>,
+припишем <FONT COLOR="#3333FF">&lt;R></FONT> еще один наследуемый атрибут
+<FONT COLOR="#3333FF">/d</FONT> для передачи на следующий шаг вывода указателя
+на очередной свободный элемент <B>ТЗ</B>, а для того, чтобы передать на
+выход значение указателя на первый свободный элемент <B>ТЗ</B> после завершения
+трансляции, припишем ему еще один синтезируемый атрибут <FONT COLOR="#3333FF">%e</FONT>.
+Полагая, что формирование элементов таблицы <B>ТЗ</B> выполняется символами
+действия, схему искомой<FONT COLOR="#993300"> <B>АТ-грамматики</B></FONT>
+можно представить в виде:</FONT>
+<BR>&nbsp;
+<UL>
+<UL><B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#000099">Г<SUB> 5.
+4</SUB></FONT> :</FONT></B>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E>%a/b</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">
+i/x&lt;R>%e/c/d</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! c </FONT>:=<FONT COLOR="#3333FF"> x</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">b</FONT>; <FONT COLOR="#3333FF">a</FONT> :=<FONT COLOR="#3333FF">e</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;R>%e1/c1/d1</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">+i/x1{СЛОЖ/f1/g1/h1}&lt;R>%e2/c2/d2</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! f1</FONT> := <FONT COLOR="#3333FF">c1</FONT>;&nbsp; <FONT COLOR="#3333FF">g1</FONT>
+:= <FONT COLOR="#3333FF">x1</FONT>;&nbsp;<FONT COLOR="#3333FF"> h1</FONT>
+:=<FONT COLOR="#3333FF"> d1</FONT>; <FONT COLOR="#3333FF">c2 </FONT>:=
+<FONT COLOR="#3333FF">d1</FONT>; <FONT COLOR="#3333FF">d2</FONT> := <FONT COLOR="#3333FF">СЛЕДУК</FONT>;
+<FONT COLOR="#3333FF">e1</FONT> := <FONT COLOR="#3333FF">e2</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;R> %e3/c3/d3</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">-i/x2{ВЫЧИТ/f2/g2/h2}&lt;R>%e4/c4/d4</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! f2</FONT> := <FONT COLOR="#3333FF">c3</FONT>; <FONT COLOR="#3333FF">g2</FONT>
+:= <FONT COLOR="#3333FF">x2</FONT>; <FONT COLOR="#3333FF">h2</FONT> :=
+<FONT COLOR="#3333FF">d3</FONT>; <FONT COLOR="#3333FF">c4</FONT> := <FONT COLOR="#3333FF">d3</FONT>;
+<FONT COLOR="#3333FF">d4</FONT> := <FONT COLOR="#3333FF">СЛЕДУК</FONT>;
+<FONT COLOR="#3333FF">e3</FONT> := <FONT COLOR="#3333FF">e4</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;R>%e5/c5/d5
+</FONT></FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">
+.</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! e5 </FONT>:= <FONT COLOR="#3333FF">d5</FONT>;</FONT></UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Чтобы получить результат
+трансляции входной цепочки <B><FONT COLOR="#3333FF">i-i+i</FONT></B> для
+идентификаторов с указателями 22, 24, 26 и указателем первого свободного
+элемента<B> ТЗ</B>, равным 28, построим вывод в грамматике Г.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; <B>Вывод&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>
+Отложенные вычисления</B></FONT>
+
+<P><FONT FACE="Times New Roman Cyr">1.&nbsp;&nbsp;&nbsp;&nbsp; <FONT COLOR="#3333FF">&lt;E>%a/28</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">2.&nbsp;&nbsp;&nbsp;&nbsp; <FONT COLOR="#3333FF">i/22&lt;R>%e/c/d</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">
+!! c</FONT> := <FONT COLOR="#3333FF">22</FONT>; <FONT COLOR="#3333FF">d</FONT>
+:= <FONT COLOR="#3333FF">28</FONT>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a</FONT> := <FONT COLOR="#3333FF">e</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr">3.&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">
+i/22-i/24{ВЫЧИТ/f2/g2/h2}&lt;R>%e4/c4/d4</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! f2</FONT> := <FONT COLOR="#3333FF">22</FONT>;<FONT COLOR="#3333FF">
+g2</FONT> :=<FONT COLOR="#3333FF"> 24</FONT>; <FONT COLOR="#3333FF">h2
+</FONT>:= <FONT COLOR="#3333FF">28</FONT>; <FONT COLOR="#3333FF">c4</FONT>
+:= <FONT COLOR="#3333FF">28</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! d4</FONT> :=30;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+a</FONT> := <FONT COLOR="#3333FF">e</FONT>; <FONT COLOR="#3333FF">e </FONT>:=
+<FONT COLOR="#3333FF">e4</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr">4.&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">
+i/22-i/24{ВЫЧИТ/22/24/28}+i/26</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{СЛОЖ/f1/g1/h1}&lt;R>%e2/c2/d2</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! f1</FONT> := <FONT COLOR="#3333FF">28</FONT>; <FONT COLOR="#3333FF">g1</FONT>
+:= <FONT COLOR="#3333FF">26</FONT>; <FONT COLOR="#3333FF">h1</FONT> :=
+3<FONT COLOR="#3333FF">0</FONT>; <FONT COLOR="#3333FF">c2</FONT> := <FONT COLOR="#3333FF">30</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#000099">!!</FONT>&nbsp; <FONT COLOR="#3333FF">d2</FONT> :=
+32;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+a </FONT>:= <FONT COLOR="#3333FF">e</FONT>; <FONT COLOR="#3333FF">e </FONT>:=
+<FONT COLOR="#3333FF">e4</FONT>; <FONT COLOR="#3333FF">e4 </FONT>:= <FONT COLOR="#000099">е</FONT><FONT COLOR="#3333FF">2</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr">5.&nbsp;&nbsp;&nbsp;&nbsp; <FONT COLOR="#3333FF">i/22-i/24{ВЫЧИТ/22/24/28}+i/26</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">{СЛОЖ/26/28/30}.</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!!e2 </FONT>:= <FONT COLOR="#3333FF">32</FONT>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;
+a</FONT> = <FONT COLOR="#3333FF">32</FONT>;</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Приведенный вывод
+показывает, что значение синтезируемого атрибута нетерминала <FONT COLOR="#3333FF">&lt;R></FONT>
+определяется только на пятом шаге вывода с помощью присваивания<FONT COLOR="#3333FF">
+с2</FONT> := <FONT COLOR="#3333FF">32</FONT>, которое приводит к выполнению
+цепочки незавершенных вычислений. Результатом этих вычислений является
+определение атрибута начального символа <FONT COLOR="#3333FF">a </FONT>:=
+<FONT COLOR="#3333FF">32</FONT>, который является одним из результатов
+трансляции.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="part521.html#5.2.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part531.html#5.3.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="index5.html#idx5">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

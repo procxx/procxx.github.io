@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<DL>
+<LI>
+<A HREF="Part21.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part23.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>
+<HR WIDTH="100%">
+
+<P><A NAME="2.2  Определение непроизводящих символов."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.2&nbsp;
+Определение непроизводящих символов.</FONT></FONT></I></B>
+<BR>&nbsp;
+<BR>&nbsp;
+<TABLE COLS=1 WIDTH="80%" HEIGHT="10%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><I>Определение.</I> Символ &lt;<B>X</B>><FONT COLOR="#000000"> <B><FONT FACE="symbol">О</FONT>V<SUB>A</SUB></B></FONT>
+называется&nbsp;<A NAME="непроизводящим"></A><B><FONT COLOR="#993300">непроизводящим</FONT></B>,
+если из него не может быть выведена конечная терминальная цепочка.&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;&nbsp;&nbsp;&nbsp; Рассматривая правила грамматики,&nbsp; можно сделать&nbsp;
+вывод,&nbsp; что если все символы правой части являются производящими,
+то производящим является и символ, стоящий в левой части. Последнее утверждение
+позволяет написать процедуру обнаружения непроизводящих символов в следующем
+виде:
+<BR>&nbsp;&nbsp;&nbsp; 1. Составить список нетерминалов,&nbsp; для которых
+найдется хотя&nbsp; бы одно правило, правая часть которого не содержит
+нетерминалов.
+<BR>&nbsp;&nbsp;&nbsp; 2. Если найдено такое правило,&nbsp; что все нетерминалы,
+стоящие&nbsp; в его правой части уже занесены в список,&nbsp; то добавить&nbsp;
+в&nbsp; список&nbsp; нетерминал, стоящий в его левой части.
+<BR>&nbsp;&nbsp;&nbsp; 3. Если на шаге 2 список больше не пополняется,&nbsp;
+то&nbsp; получен&nbsp; список всех производящих нетерминалов грамматики,&nbsp;
+а все нетерминалы не попавшие в него являются непроизводящими.
+<BR>Анализируя в соответствии с приведенными правилами следующую грамматику
+:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp;
+Г<SUB>2. 0</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R = {&lt;I><FONT FACE="symbol">®</FONT>a&lt;I>a,</FONT></B>
+<DL>
+<DL>
+<DL>
+<DL>
+<DL>
+<DL><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol">®</FONT>b&lt;A>d,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol">®</FONT>c,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol">®</FONT>c&lt;B>d,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol">®</FONT>a&lt;A>d,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol">®</FONT>d&lt;A>f&nbsp;
+},</FONT></B></DL>
+</DL>
+</DL>
+</DL>
+</DL>
+</DL>
+находим, что здесь непроизводящими являются символы &lt;А> и &lt;В>. После
+удаления правил, содержащих непроизводящии символы, получаем:
+<DL>&nbsp;
+<DL>
+<DL>
+<DL>
+<DL><B><FONT COLOR="#000099">R' = {&lt;I> <FONT FACE="symbol">®</FONT>a&lt;I>a,
+&lt;I><FONT FACE="symbol">®</FONT> c}.</FONT></B>
+<BR>&nbsp;</DL>
+</DL>
+</DL>
+</DL>
+</DL>
+
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part22.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part23.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;</DL>
+&nbsp;
+</BODY>
+</HTML>

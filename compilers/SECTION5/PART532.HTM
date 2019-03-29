@@ -1,0 +1,309 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s79</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.3.2"></A><A HREF="part531.html#5.3.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part533.html#5.3.3"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>
+<FONT COLOR="#006600">След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+5.3.2. Форма простого присваивания АТ-грамматик</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Вторым видом ограничений,
+накладываемых на <B><FONT COLOR="#993300">АТ-грамматики</FONT></B>, предназначенные
+для построения преобразователей, является запрещение использования в правилах
+вычисления атрибутов нетерминальных символов и некоторых атрибутов символов
+действия функциональных зависимостей. При выполнении этого запрета правила
+вычисления атрибутов должны иметь форму операторов присваивания с переменными
+в правой части. Грамматика с такими правилами называется <FONT COLOR="#993300"><B>АТ-грамматикой</B>
+<B>простого присваивания</B></FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Чтобы сократить
+число правил вычисления атрибутов, в таких грамматиках разрешается использовать
+правила не только в виде простых операторов присваивания</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">a</FONT> :=
+<FONT COLOR="#3333FF">b</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">но и в виде операторов множественного
+присваивания</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">(a1, a2, a3)</FONT>
+:= <FONT COLOR="#3333FF">b</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">когда нескольким переменным присваивается
+одно и то же значение. Правила в виде простых и множественных операторов
+присваивания называются <B><FONT COLOR="#990000">копирующими правилами</FONT></B>.
+Правую часть таких правил называют источником, а каждый атрибут левой части
+- приемником.</FONT>
+<BR>&nbsp;
+<TABLE BORDER COLS=1 WIDTH="100%" BGCOLOR="#FFFF99" >
+<TR>
+<TD><I><FONT FACE="Times New Roman Cyr"><B>Определение.</B>&nbsp;</FONT></I>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp; Множество копирующих правил
+называется <B><FONT COLOR="#990000">независимым </FONT></B>тогда и только
+тогда, когда источник каждого правила из этого множества не входит ни в
+одно из других правил этого множества.</FONT>&nbsp;
+<BR>&nbsp;</TD>
+</TR>
+</TABLE>
+<FONT FACE="Times New Roman Cyr">Если копирующие правила являются зависимыми,
+то в некоторых случаях их можно объединить в одно правило. Например, правила</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">a</FONT> :=
+<FONT COLOR="#3333FF">x</FONT> и <FONT COLOR="#3333FF">(b, c)</FONT> :=
+<FONT COLOR="#3333FF">x</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">можно записать как одно правило</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">(a, b, c)</FONT>
+:= <FONT COLOR="#3333FF">x</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">или правила</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">(a, x)</FONT>
+:=<FONT COLOR="#3333FF"> z</FONT> и <FONT COLOR="#3333FF">(b,c)</FONT>
+:= <FONT COLOR="#3333FF">x</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">также можно записать в виде</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">(a, b, c, x)</FONT>
+:= <FONT COLOR="#3333FF">z</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">поскольку источнику второго правила <FONT COLOR="#3333FF">x</FONT>,
+согласно первому правилу, присваивается значение z. Если копирующие правила
+являются независимыми, то их объединять нельзя. Используя понятие независимости
+копирующих правил, сформулируем следующее определение.</FONT>
+<BR><A NAME="ffp"></A>
+<TABLE BORDER COLS=1 WIDTH="100%" BGCOLOR="#FFFF99" >
+<TR>
+<TD><B><I><FONT FACE="Times New Roman Cyr">Определение.</FONT></I></B>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr"><B>&nbsp; <FONT COLOR="#993300">АТ-грамматика</FONT></B>
+имеет <B><FONT COLOR="#993300">форму простого присваивания</FONT></B>,
+если выполняются следующие условия:</FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr">а) все правила вычисления атрибутов,
+за исключением правила вычисления синтезируемых символов действия, являются
+копирующими,</FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr">б) для каждого правила <B><FONT COLOR="#993300">грамматики</FONT></B>
+множество копирующих правил является независимым.</FONT>&nbsp;
+<BR>&nbsp;</TD>
+</TR>
+</TABLE>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Свойства<FONT COLOR="#993300">
+<B>L - атрибутивности</B> </FONT>и <FONT COLOR="#993300"><B>простого присваивания</B>
+<B>АТ-грамматик</B></FONT><B> </B>являются необходимыми для построения
+преобразователя, реализующего <B><FONT COLOR="#993300">атрибутный перевод.</FONT></B></FONT>
+<BR><FONT FACE="Times New Roman Cyr"></FONT>&nbsp;
+<TABLE BORDER COLS=1 WIDTH="100%" HEIGHT="5%" BGCOLOR="#FFFF99" >
+<TR>
+<TD><FONT FACE="Times New Roman Cyr"></FONT>
+
+<P><B><I><FONT FACE="Times New Roman Cyr">Утверждение:</FONT></I></B>
+<BR><FONT FACE="Times New Roman Cyr">Если заданная<B> <FONT COLOR="#993300">АТ–грамматика</FONT>
+</B>не имеет формы простого присваивания, то для нее можно построить эквивалентную
+<B><FONT COLOR="#993300">АТ-грамматику в форме простого присваивания.</FONT>&nbsp;</B></FONT>
+<BR><B><FONT FACE="Times New Roman Cyr"></FONT></B>&nbsp;</TD>
+</TR>
+</TABLE>
+<FONT FACE="Times New Roman Cyr"></FONT>
+
+<P><FONT FACE="Times New Roman Cyr">Такое построение связано с исключением
+некопирующих правил вычисления атрибутов и добавлением вместо них операционных
+символов в правила грамматики.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Прежде чем описать
+последовательность преобразования некопирующих правил, рассмотрим пример,
+иллюстрирующий как такое преобразование выполняется. Допустим, что задано
+некопирующее <B><FONT COLOR="#993300">атрибутное правило</FONT></B> в виде:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;A></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">
+a/x&lt;B>%y&lt;C>/z</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+z </FONT>:= <FONT COLOR="#3333FF">f(x, y)</FONT>.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Вначале введем новый
+символ действия, представляющий вычисление функции <FONT COLOR="#3333FF">f</FONT>.
+Обозначим символ действия <FONT COLOR="#3333FF">{f}</FONT> и снабдим его
+тремя атрибутами. Два наследуемых атрибута <FONT COLOR="#3333FF">b1, b2</FONT>
+необходимы для задания аргументов функции, и один синтезируемый атрибут<FONT COLOR="#3333FF">
+с</FONT> – для получения значения функции. В результате получаем следующее
+определение символа действия:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">{f}/b1/b2%c</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">где значение с определяется как функция<FONT COLOR="#3333FF">
+f(b1, b2)</FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Затем включим новый
+символ действия в правило грамматики и заменим некопирующее правило вычисления
+атрибута с функцией <FONT COLOR="#3333FF">f</FONT> в правой части несколькими
+копирующими правилами, устанавливающими связь между атрибутами нового символа
+действия и аргументами</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">функции<FONT COLOR="#3333FF"> f</FONT>.
+После выполнения перечисленных действий может быть получено следующее <FONT COLOR="#000000">атрибутное
+правило:</FONT></FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;A></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">a/x&lt;B>%y{f}/b1/b2%c&lt;C>/z</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+b1</FONT> := <FONT COLOR="#3333FF">x</FONT>; <FONT COLOR="#3333FF">b2 </FONT>:=
+<FONT COLOR="#3333FF">y</FONT>; <FONT COLOR="#3333FF">z</FONT> := <FONT COLOR="#3333FF">c</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">которое содержит только копирующие правила,
+два из которых копируют аргументы, и одно - результат. Это правило дает
+тот же эффект, что и первоначальное правило, в том смысле, что оба правила
+порождают одинаковые выходные цепочки с атрибутами и дают одно и то же
+значение атрибута <FONT COLOR="#3333FF">z</FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Необходимо подчеркнуть,
+что место включения нового нетерминального символа в правило грамматики
+должно выбираться с таким расчетом, чтобы не нарушить свойств <B><FONT COLOR="#993300">L
+- атрибутности</FONT></B> заданной<B> </B>грамматики. Если в рассматриваемом
+примере поместить новый символ действия перед нетерминалом <FONT COLOR="#3333FF">&lt;B></FONT>,
+то получим правило</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3366FF">&lt;A></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">a/x{f}/b1/b2%c&lt;B>%y&lt;C>/z</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+b1 </FONT>:= <FONT COLOR="#3333FF">x</FONT>;<FONT COLOR="#3333FF"> b2</FONT>
+:=<FONT COLOR="#3333FF"> y</FONT>; <FONT COLOR="#3333FF">z</FONT> := <FONT COLOR="#3333FF">e</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">в котором значение наследуемого атрибута
+<FONT COLOR="#3333FF">b2</FONT> определяется синтезируемым атрибутом <FONT COLOR="#3333FF">y</FONT>,
+расположенным правее него, это нарушает свойство <B><FONT COLOR="#993300">L
+- атрибутности</FONT></B>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Если же поместить
+новый символ действия после символа <FONT COLOR="#3333FF">&lt;C></FONT>,
+то получим правило</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;A></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">a/x&lt;B>%y&lt;C>/z{f}/b1/b2/c</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+b1 </FONT>:= <FONT COLOR="#3333FF">x</FONT>; <FONT COLOR="#3333FF">b2</FONT>
+:=<FONT COLOR="#3333FF"> y</FONT>; <FONT COLOR="#3333FF">z</FONT> := <FONT COLOR="#3333FF">c</FONT>,</FONT>
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">в котором атрибут z определяется по атрибуту
+с, расположенному правее него, что также нарушает свойство <B><FONT COLOR="#993300">L
+- атрибутности</FONT></B>. Таким образом, в рассматриваемом примере оказалось,
+что расположить новый символ действия без нарушения свойств <B><FONT COLOR="#993300">L
+- атрибутности</FONT></B> возможно только в одной позиции правила - между
+нетерминалами <FONT COLOR="#3333FF">&lt;B></FONT> и <FONT COLOR="#3333FF">&lt;C></FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В общем случае в
+правиле может оказаться несколько позиций, пригодных для размещения нового
+символа действия. Если это так, то предпочтение следует отдать самой левой
+из возможных позиций, поскольку в некоторых случаях самые левые символы
+действия не нужно заносить в магазин преобразователя, производящего обработку.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Если же оказывается,
+что все позиции, в которых может быть расположен новый символ действия,
+являются непригодными и приводят к нарушению свойств <B><FONT COLOR="#993300">L
+- атрибутности</FONT></B>, то преобразовать такую грамматику невозможно.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="part531.html#5.3.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part533.html#5.3.3"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

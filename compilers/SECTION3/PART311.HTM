@@ -1,0 +1,230 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>PART39 Восходящие распознаватели.</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="Part310.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part3111.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+<HR NOSHADE WIDTH="100%">
+<UL>
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>3.11. Восходящие распознаватели.</FONT></FONT></I></B></UL>
+</UL>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>В основе работы&nbsp;<A NAME="bottom-top-recognizer"></A><B><FONT COLOR="#660000">восходящего
+распознавателя</FONT></B> лежит&nbsp;<A NAME="reduction"></A><B><FONT COLOR="#660000">операция
+сворачивания или свертки</FONT></B>, которая применяется к цепочке, полученной
+с помощью правого вывода. Эта операция является противоположной выводу.
+Она заключается в том, что правая часть правила заменяется левой частью.
+При работе входящий распознаватель переносит символы входной цепочки в
+магазин и, когда в магазине оказывается правая часть какого-либо правила,
+осуществляет операцию свертки. Эту операцию можно определить следующим
+образом.
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="82%" HEIGHT="20%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><B><I>Определение. </I></B>Пусть задана грамматика Г, в схеме которой
+имеется&nbsp;&nbsp;&nbsp; правило&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+r =A<FONT FACE="Symbol">®y&nbsp; </FONT>и задана цепочка&nbsp; <FONT FACE="Symbol">g
+= r<SUB>1</SUB>A r<SUB>2</SUB>.&nbsp; </FONT>Если правая часть цепочки&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+правила r является частью цепочки , то можно получить цепочку&nbsp;
+<BR><FONT FACE="Symbol">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+t = r<SUB>1</SUB>y r<SUB>2</SUB></FONT> , заменяя правую часть правила
+грамматики левой частью.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+В этом случае говорят, что цепочка&nbsp; t<FONT FACE="Symbol">t</FONT>&nbsp;&nbsp;
+получается путем&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+непосредственного сворачивания цепочки <FONT FACE="Symbol">g</FONT>&nbsp;
+и&nbsp;&nbsp; используют&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+обозначение&nbsp;
+<BR><B><FONT COLOR="#000099"><FONT FACE="Symbol">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+t</FONT> &lt;= <FONT FACE="Symbol">g </FONT></FONT></B><FONT FACE="Symbol">.</FONT>&nbsp;
+<BR><B><I>Определение. </I></B>Если существует множество цепочек&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">W</FONT>&nbsp; = ( <FONT FACE="Symbol">w<SUB>1</SUB>,
+w<SUB>2</SUB>, ...w</FONT><SUB>n</SUB><FONT FACE="Symbol">&nbsp; ),&nbsp;</FONT>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+таких, что&nbsp;<FONT FACE="Symbol">&nbsp;&nbsp;&nbsp; w<SUB>1 </SUB>Ь<SUB>&nbsp;&nbsp;
+</SUB>w<SUB>2 </SUB></FONT>,<FONT FACE="Symbol"><SUB>&nbsp;&nbsp;&nbsp;
+</SUB>w<SUB>2 </SUB>Ь<SUB>&nbsp;&nbsp;&nbsp; </SUB>w<SUB>3 </SUB>,&nbsp;
+...&nbsp; ,<SUB>&nbsp; </SUB>w</FONT><SUB>n-1</SUB><FONT FACE="Symbol">Ь<SUB>&nbsp;&nbsp;
+</SUB>w</FONT><SUB>n </SUB>,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+то говорят, что цепочка&nbsp;<FONT FACE="Symbol"><SUB> </SUB>w</FONT><SUB>n&nbsp;</SUB>&nbsp;&nbsp;
+сворачивается в цепочку&nbsp;<FONT FACE="Symbol"> w<SUB>1</SUB></FONT>&nbsp;&nbsp;
+и&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+используют обозначение&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">w<SUB>1 </SUB>*Ь<SUB>&nbsp;&nbsp; </SUB>w</FONT><SUB>n
+</SUB>.</FONT></B>&nbsp;
+<BR><FONT FACE="Symbol">&nbsp;</FONT></TD>
+</TR>
+</TABLE>
+&nbsp;Задача распознавания принадлежности данной цепочки языку, порождаемому
+грамматикой Г, может быть сформулирована следующим образом. Если из заданной
+цепочки&nbsp; с помощью операции сворачивания&nbsp; можно получить начальный
+символ грамматики, то такая цепочка может быть построена с помощью правил
+заданной грамматики, и, следовательно, она принадлежит языку, порождаемому
+этой грамматикой.
+<BR>Например, сворачивание цепочки, полученной с помощью правого вывода
+и правил следующей грамматики</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<OL>
+<OL>
+<OL>&nbsp;<A NAME="grammar-7.1"></A><B><FONT COLOR="#000099">Г<SUB>3. 11</SUB></FONT></B>
+:
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) &lt;I> </TT><FONT FACE="Symbol">®</FONT><TT>
+a,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) &lt;I> </TT><FONT FACE="Symbol">®</FONT><TT>
+(&lt;I>&lt;R></TT> ,
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) &lt;R> </TT><FONT FACE="Symbol">®</FONT><TT>
+,&lt;I>&lt;R></TT> ,
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (4) &lt;R> </TT><FONT FACE="Symbol">®</FONT><TT>
+).</TT>
+<BR>&nbsp;</OL>
+</OL>
+
+<OL>можно представить так:
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (a,a) <FONT FACE="Symbol">Ь<SUB> </SUB></FONT><SUB>1</SUB> (&lt;I>,a) <FONT FACE="Symbol">Ь<SUB> </SUB></FONT><SUB>1</SUB> (&lt;I>,&lt;I>) <FONT FACE="Symbol">Ь<SUB> </SUB></FONT><SUB>4</SUB></PRE>
+
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (&lt;I>,&lt;I>&lt;R> <FONT FACE="Symbol">Ь<SUB> </SUB></FONT><SUB>3</SUB>(&lt;I>&lt;R> <FONT FACE="Symbol">Ь<SUB> </SUB></FONT><SUB>2</SUB> &lt;I>.</PRE>
+Каждый шаг рассмотренной процедуры связан с выделением в цепочке правой
+части какого-либо правила и заменой его левой частью правила. В последовательности
+сворачиваний правые части правил&nbsp; называются <B><FONT COLOR="#660000">основой</FONT></B>
+рассматриваемой цепочки. В общем случае основу можно определить так:
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="80%" HEIGHT="20%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><B><I>Определение. </I></B>Основой цепочки называют вхождение правой
+части последнего&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+правила, примененного при правом выводе рассматриваемой&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+цепочки.&nbsp;</TD>
+</TR>
+</TABLE>
+Работу магазинного автомата, выполняющего распознавание приведенной цепочки,
+можно представить в виде:</OL>
+</OL>
+&nbsp;
+<CENTER><TABLE BORDER >
+<TR>
+<TH>Магазин</TH>
+
+<TH>Вход</TH>
+
+<TH>Действие</TH>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;1. h<SUB>0</SUB></TT></TD>
+
+<TD><TT>(a,a)</TT><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Перенос</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;2. h<SUB>0</SUB>(</TT></TD>
+
+<TD><TT>a,a)</TT><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Перенос</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;3. h<SUB>0</SUB>(a</TT></TD>
+
+<TD><TT>,a)</TT><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Свертка(1)</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;4. h<SUB>0</SUB>(&lt;I></TT></TD>
+
+<TD><TT>,a)</TT><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Перенос</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;5. h<SUB>0</SUB>(&lt;I>,</TT></TD>
+
+<TD><TT>a)</TT><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Перенос</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;6. h<SUB>0</SUB>(&lt;I>,a</TT></TD>
+
+<TD><TT>)</TT><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Свертка(1)</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;7. h<SUB>0</SUB>(&lt;I>,&lt;I></TT></TD>
+
+<TD><TT>)</TT><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Перенос</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;8. h<SUB>0</SUB>(&lt;I>,&lt;I>)</TT></TD>
+
+<TD><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Свертка(4)</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>&nbsp;9. h<SUB>0</SUB>(&lt;I>,&lt;I>&lt;R></TT></TD>
+
+<TD><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Свертка(3)</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>10. h<SUB>0</SUB>(&lt;I>&lt;R></TT></TD>
+
+<TD><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Свертка(2)</TT></TD>
+</TR>
+
+<TR>
+<TD><TT>11. h<SUB>0</SUB>&lt;I></TT></TD>
+
+<TD><FONT FACE="Symbol">^</FONT></TD>
+
+<TD><TT>Допустить</TT></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BLOCKQUOTE>В этом примере на каждом шаге применяется либо операция переноса,
+либо сворачивания, параметром которой&nbsp; является номер правила, а работа
+автомата заканчивается, когда в магазине получается начальный символ грамматики.
+При этом автомат вырабатывает сигнал, показывающий, что цепочка допускается
+автоматом.</BLOCKQUOTE>
+
+<HR NOSHADE WIDTH="100%"><A HREF="Part311.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part3111.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>3.9.2. LR(k)-грамматики</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="Part3112.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part3121.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+<HR NOSHADE WIDTH="100%">
+
+<P><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>3.12. LR(k)-грамматики</FONT></FONT></I></B>
+<BLOCKQUOTE>
+<BLOCKQUOTE>Детерминированные восходящие распознаватели, так же как и нисходящие,
+могут быть построены не для всякой КС-грамматики, а только для определенных
+подклассов таких грамматик. Наиболее широким подклассом КС-грамматик являются&nbsp;<A NAME="LRk-grammars"></A><B><FONT COLOR="#663300">LR(<I>k</I>)-грамматики</FONT></B>.
+Эти грамматики обеспечивают распознавание цепочки при просмотре слева направо,
+об этом говорит буква L (Left) в названии грамматики, и позволяют выполнить
+правостороннее сворачивание, это показывает буква R (Right) в названии.
+Параметр <I>k</I> говорит о том, что для определения того правила грамматики,
+которое нужно применить для сворачивания цепочки, потребуется просмотреть
+не более <I>k</I> еще не прочитанных символов входной цепочки.
+<BR>В общем случае алгоритмы построения распознавателей дл LR(<I>k</I>)-грамматик
+оказываются достаточно сложными и трудоемкими, поэтому на практике чаще
+всего используют подклассы LR(<I>k</I>)-грамматик: LR(0), или&nbsp;<A NAME="SLR1"></A><B><FONT COLOR="#663300">SLR(1)</FONT></B>—простые
+(Simple) LR(1)-грамматики, позволяющие относительно просто выполнять построение
+восходящих распознавателей. При этом для каждого подкласса LR(<I>k</I>)-грамматик
+используется свой алгоритм построения. Если задана КС-грамматика, то определить
+ее принадлежность к одному из подклассов грамматик LR(<I>k</I>) можно только
+путем анализа возможности построения для нее с помощью определенного алгоритма
+детерминированного распознавателя. Учитывая последнее обстоятельство, условимся
+называть распознаватели по подклассу соответствующих грамматик: LR(0)-распознаватель
+или SLR(1)-распознаватель.
+<BR>Прежде чем перейти к рассмотрению правил построения восходящих распознавателей,
+введем несколько вспомогательных понятий.
+<BR>Условимся называть символы полного словаря грамматики <B><FONT COLOR="#663300">грамматическими
+символами</FONT></B>. Каждый грамматический символ может входить в разные
+правила грамматики и, более того, появляться в одном и том же правиле несколько
+раз. При этом положение символа в правиле грамматики может показывать,
+какое действие нужно выполнить: перенос или свертку, а также какие грамматические
+символы могут за ним следовать. Это обстоятельство позволяет связать позицию
+грамматического символа в правиле грамматики с понятием состояния распознавателя.
+Для удобства дальнейших рассуждений введем понятие <B><FONT COLOR="#663300">грамматического
+вхождения.</FONT></B>
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="84%" HEIGHT="10%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><B><I>Определение.</I></B>Грамматическое вхождение символа грамматики&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+задается номером&nbsp; правила и номером позиции,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+которая указывает место символа в&nbsp; правой части&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+правила, полагая, что самый левый символ правой&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+части правила является первым.&nbsp;</TD>
+</TR>
+</TABLE>
+Условимся обозначать грамматические вхождения символов, входящих в правую
+часть правила только один раз, с помощью одного индекса, равного номеру
+правила. Примем также, что каждая грамматика содержит грамматическое вхождение,
+называемое <FONT COLOR="#663300"><B>начальным вхождением</B>.</FONT> Это
+вхождение задается начальным символом грамматики.</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<HR NOSHADE WIDTH="100%"><A HREF="Part312.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part3121.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>
+</BODY>
+</HTML>

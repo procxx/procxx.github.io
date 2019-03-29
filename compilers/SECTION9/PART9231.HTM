@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Асинхронные автоматы</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="part9231.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9232.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P>Согласно изложенному способу, припишем узлам графа связей коды с одной
+единицей. В результате получаем граф, в котором каждом переходе изменяются
+внутренние переменные, что создает необходимые условия для состязаний.
+Чтобы построить граф связей, гарантирующий отсутствие состязаний, введем
+дополнительные состояния в каждое ребро и припишем коды с двумя единицами,
+как показано на рис. 4,в. Дополнительные состояния обозначены на этом рисунке
+темными кружочками. Таблица переходов, соответствующая построенному графу
+связей, может быть представлена в виде табл. 3.
+<BR>Заканчивая описание универсального способа кодирования, следует отметить,
+что он позволяет значительно упростить процедуру построения функций возбуждения.
+Нетрудно показать, что в силу большого числа используемых кодовых комбинаций,
+каждое состояние при построении функций возбуждения определяется не элементарной
+конъюнкцией, а одной внутренней переменной. При этом, в случае использования
+в качестве элeмента памяти триггера
+<BR><IMG SRC="6.gif" HEIGHT=351 WIDTH=555>
+
+<P>типа D (элемента задержки), для каждого перехода из сосояния, опреджеляемого
+переменной y<SUB>i</SUB>, под действием входного сигнала x<SUB>k </SUB>в
+состояние, определяемое переменной y<SUB>j</SUB>, соответствующий дизъюнктивный
+член функции возбуждения y<SUB>j</SUB>’ имеет вид:
+
+<P>y<SUB>i</SUB>x<SUB>k</SUB> <FONT SIZE=+1>V </FONT>y<SUB>i</SUB>y<SUB>j</SUB>x<SUB>k</SUB>
+<FONT SIZE=+1>V</FONT> x<SUB>j</SUB>x<SUB>k</SUB> = y<SUB>i</SUB>x<SUB>k</SUB>
+<FONT SIZE=+1>V</FONT> y<SUB>i</SUB>x<SUB>k</SUB>.
+
+<P>Следовательно, если в автомате определены переходы в состояние y<SUB>j
+</SUB>из состояний y<SUB>i1</SUB>, y<SUB>i2</SUB>, ...,y<SUB>il</SUB>,соответственно
+под действием входных сигналов х<SUB>1</SUB>, x<SUB>2</SUB>, ..., x<SUB>l</SUB>,
+то функция возбуждения y<SUB>j</SUB>’ может быть записана так:
+
+<P>y<SUB>j</SUB>’ = <FONT SIZE=+2>V</FONT><FONT SIZE=+1> </FONT><FONT SIZE=-1><SUP>l</SUP><SUB>k=1</SUB></FONT>x<SUB>k</SUB>(y<SUB>jk</SUB>
+<FONT SIZE=+1>V </FONT>y<SUB>j</SUB>).
+
+<P>В последнем выражении не учитывается ситуации, в которых автомат должен
+оставаться в том же самом устойчивом состоянии при изменении входных сигналов.
+Построение функций возбуждения для рассматриваемого способа удобно выполнять
+непосредственно по диаграмме переходов автомата. Например, для диаграммы
+переходов, приведенной на&nbsp; рис. 4,г, после преобразования имеем:
+<BR>&nbsp;
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _ _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+_
+<UL>
+<UL>
+<UL>y<SUB>1</SUB>'=x<SUB>1</SUB>y<SUB>1</SUB> <FONT SIZE=+1>V </FONT><FONT SIZE=+0>x<SUB>1</SUB>x<SUB>2</SUB>(y<SUB>2
+</SUB></FONT><FONT SIZE=+1>V </FONT><FONT SIZE=+0>y<SUB>3</SUB>) ;&nbsp;&nbsp;&nbsp;
+y<SUB>2</SUB>'=x<SUB>1</SUB>x<SUB>2</SUB>y<SUB>1</SUB> </FONT><FONT SIZE=+1>V
+</FONT><FONT SIZE=+0>(x<SUB>1</SUB> </FONT><FONT SIZE=+1>V </FONT><FONT SIZE=+0>x<SUB>2</SUB>)y<SUB>2</SUB>
+</FONT><FONT SIZE=+1>V </FONT><FONT SIZE=+0>x<SUB>2</SUB>y<SUB>3</SUB>
+;&nbsp;&nbsp;&nbsp; y<SUB>3</SUB>'=x<SUB>1</SUB>x<SUB>2</SUB>(y<SUB>1</SUB>
+</FONT><FONT SIZE=+1>V </FONT><FONT SIZE=+0>y<SUB>3</SUB>)</FONT></UL>
+</UL>
+</UL>
+&nbsp;
+
+<P>
+<HR>
+
+<P><A HREF="part9231a.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9232.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

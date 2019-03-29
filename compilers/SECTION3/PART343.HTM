@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part343</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part342.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part344.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%"><I><FONT COLOR="#3333FF"><FONT SIZE=+1><B>3.4.3 Построение
+функции СЛЕД(&lt;B>)&nbsp;</B>&nbsp;</FONT></FONT></I>
+<OL>Аргументом функции <B><FONT COLOR="#800040">СЛЕД</FONT></B> является
+нетерминальный символ, например &lt;B>, а значение функции <B><FONT COLOR="#800040">СЛЕД</FONT></B>(&lt;B>)
+представляет собой множество терминалов, которые могут следовать непосредственно
+за нетерминалом&nbsp; &lt;B>&nbsp; в цепочках, выводимых из начального
+символа грамматики.
+<BR>Вычисление значения функции СЛЕД(&lt;B>) должно выполняться&nbsp; по
+следующим правилам:
+<BR>1)&nbsp;&nbsp;&nbsp; Если в схеме грамматики имеются правила вида
+<OL><FONT COLOR="#000099">&lt;X<SUB>1</SUB>>&nbsp;<B> <FONT FACE="symbol">®</FONT></B>
+µ<SUB>1</SUB>&lt;B><FONT FACE="Symbol">a</FONT><SUB>1</SUB>,</FONT>&nbsp;
+<FONT COLOR="#000099">&lt;X<SUB>2</SUB>>&nbsp;<B> <FONT FACE="symbol">®</FONT></B>
+µ<SUB>2</SUB>&lt;B><FONT FACE="Symbol">a</FONT><SUB>2</SUB>, ... , &lt;X<SUB>n</SUB>>&nbsp;<B>
+<FONT FACE="symbol">®</FONT></B> µ<SUB>n</SUB>&lt;B><FONT FACE="Symbol">a</FONT><SUB>n</SUB>,</FONT>
+<BR>&nbsp;</OL>
+и все цепочки <FONT FACE="Symbol">a</FONT> <SUB>i</SUB><FONT FACE="Symbol">
+=</FONT>/<FONT FACE="Symbol">= </FONT>$ , то
+<OL><B><FONT COLOR="#000099">СЛЕД(&lt;B>) = ПЕРВ(<FONT FACE="Symbol">a</FONT>
+<SUB>1</SUB>) </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+ПЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>2</SUB>) </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+... </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+ПЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>n</SUB>).</FONT></B>
+<BR>&nbsp;</OL>
+2)&nbsp;&nbsp; Если же среди приведенных выше правил имеется хотя бы одна
+цепочка <FONT FACE="Symbol">a</FONT><SUB>i</SUB> = $, например пусть <FONT FACE="Symbol">a</FONT><SUB>1</SUB>
+= $, то функция вычисляется так:
+<DIR><B><FONT COLOR="#000099">СЛЕД(&lt;B>) = СЛЕД(&lt;X<SUB>1</SUB>>) </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+ПЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>2</SUB>) </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+... </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+ПЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>n</SUB>).</FONT></B></DIR>
+Выполним вычисление функции СЛЕД для нетерминалов грамматики Г<SUB>3.2</SUB>
+. Вначале определим функцию для нетерминала &lt;A>, который встречается
+в правой части правила (9).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СЛЕД(&lt;A>)
+= ПЕРВ(f) = {f}.
+<BR>Нетерминал &lt;C> входит в правые части правил (1) и (4), учитывая
+также, что нетерминал &lt;D> являетя анулирующим, получаем:
+<DIR>СЛЕД(&lt;C>) = ПЕРВ(&lt;D>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(&lt;E>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>ПЕРВ(c)
+= {c,d,g}.</DIR>
+Нетерминал &lt;B> входит в правые части правил (1), (2), (5), поэтому имеем:
+<OL>СЛЕД(&lt;B>) =ПЕРВ(&lt;C>c) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+СЛЕД(&lt;A>)&nbsp; <FONT COLOR="#333333"><B><FONT FACE="Symbol"><FONT SIZE=+1>И</FONT></FONT></B>
+</FONT>СЛЕД(&lt;C>),</OL>
+подставляя в полученное выражение значения функций, входящих в правую часть,
+получаем:
+<OL>СЛЕД(&lt;B>) = { a, c, d, }<B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+{ f } <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+U { c, d, g, } = { a, c, d, g, f }.</OL>
+Для нетерминала &lt;D> , который входит в правила (2), (4) , (5) и&nbsp;
+(8), с учетом того, что нетерминал &lt;B> является аннулирующим, получаем:
+<DIR>СЛЕД(&lt;D>) =ПЕРВ(&lt;B>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+СЛЕД(&lt;A>)&nbsp; <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(&lt;E>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(a&lt;B>),</DIR>
+учитывая, что , для нетерминала &lt;E>, входящего в правило (4)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СЛЕД(&lt;E>)
+= СЛЕД(&lt;B>) = {a,d,c,g,f},
+<BR>окончательно имеем:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СЛЕД(&lt;D>)
+= ПЕРВ(&lt;B>)<B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+СЛЕД(&lt;A>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>ПЕРВ(&lt;E>)
+<B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+{a} =
+<DIR>
+<DIR>
+<DIR>
+<DIR>= {b}<B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+{f} <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+{c,g} <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+{a} = {a,b,c,g,f}.</DIR>
+</DIR>
+</DIR>
+</DIR>
+&nbsp;</OL>
+
+<HR WIDTH="100%">
+<UL>
+<LI>
+<A HREF="Part342.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part344.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part35</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part344.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part36.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%"><A NAME="3.4.5 Слаборазделенные грамматики"></A><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>3.5
+Слаборазделенные грамматики</FONT></FONT></I></B>
+<DIR>Используя введенные понятия,&nbsp; можно дать определение слаборазделенной
+грамматики.
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="84%" HEIGHT="12%" BGCOLOR="#FFFF80" >
+<TR>
+<TD>
+<DIR><B><I>Определение</I></B>. КС-грамматика называется слаборазделенной,
+если выполняются&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+следующие три условия:&nbsp;
+<DIR>
+<LI>
+правая часть каждого правила представляет собой либо пустую цепочку $,
+либо начинается с терминального символа,&nbsp;</LI>
+
+<LI>
+если два правила имеют одинаковые левые части, то правые части правил должны
+начинаться разными символами,&nbsp;</LI>
+
+<LI>
+для каждого нетерминала A, такого что A ==>* $ множество начальных символов
+не должно пересекаться&nbsp; с множеством символов, следующих за A.:</LI>
+</DIR>
+</DIR>
+
+<DIR>
+<DIR>
+<DIR>
+<DIR><B><FONT COLOR="#000099">ПЕРВ(A) <FONT FACE="Symbol"><FONT SIZE=+1>З</FONT></FONT>
+СЛЕД(A) = $</FONT></B>&nbsp;
+<BR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</TD>
+</TR>
+</TABLE>
+&nbsp;</DIR>
+
+<DIR>Используя приведенное определение, выясним, является ли следующая
+грамматика слаборазделенной:</DIR>
+
+<UL>
+<UL>
+<UL><B><FONT COLOR="#0000A0">Г<SUB>3. 3</SUB></FONT>&nbsp;</B><FONT COLOR="#0000A0">
+: R = {(1) &lt;I>&nbsp;</FONT><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0">
+a&lt;A></FONT> ,
+<UL><FONT COLOR="#0000A0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(2) &lt;I>&nbsp;</FONT><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0">
+b</FONT> ,
+<BR><FONT COLOR="#0000A0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(3) &lt;A></FONT><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0">
+c&lt;I>a</FONT> ,
+<BR><FONT COLOR="#0000A0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(4) &lt;A></FONT><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0">
+$ }.</FONT></UL>
+</UL>
+</UL>
+</UL>
+
+<UL>Эта грамматика не содержит правил с одинаковой левой&nbsp; частью,
+начинающихся одинаковыми терминалами, поэтому нужно проверить только условие
+(3) для правила (4). Вычисляя функции
+<UL>
+<UL>ПЕРВ(&lt;A>) = {c} и СЛЕД(&lt;A>) = СЛЕД(&lt;I>) = {a},</UL>
+</UL>
+находим, что множество значений функции ПЕРВ(&lt;A>) и множество значений
+функции СЛЕД(&lt;A>) не имеют общих элементов. Следовательно, грамматика
+Г<SUB><FONT COLOR="#000000">3.3</FONT></SUB> является слаборазделенной.
+<BR>Проверка выполнения условия (3) для грамматики</UL>
+
+<UL>
+<UL><B><FONT COLOR="#0000A0">Г<SUB>3. 4</SUB></FONT></B><FONT COLOR="#0000A0">:
+R = { &lt;I>&nbsp;</FONT><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0">
+a&lt;I>&lt;A> | $</FONT> ,
+<UL><FONT COLOR="#0000A0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;A>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> a | b }</FONT></UL>
+</UL>
+</UL>
+
+<UL>дает следующие результаты:
+<UL>
+<UL>ПЕРВ(&lt;I>) = {a} и СЛЕД(&lt;I>) = ПЕРВ(&lt;A>) = {a,b},</UL>
+</UL>
+которые показывают, что пересечение множеств ПЕРВ(&lt;I>) и СЛЕД(&lt;I>)
+не пусто. Следовательно грамматика Г<SUB><FONT COLOR="#000000">3.4</FONT></SUB>
+не является&nbsp; слаборазделенной.
+<BR>&nbsp;</UL>
+
+<HR WIDTH="100%">
+<UL>
+<LI>
+<A HREF="Part344.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part36.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

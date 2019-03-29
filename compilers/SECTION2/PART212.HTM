@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Part212</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part211.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part213.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+
+<P>
+<HR WIDTH="100%">
+<BR><A NAME="2.12 Пример построения автомата."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.12
+Пример построения автомата.</FONT></FONT></I></B>
+
+<P>Процедуру построения автомата рассмотрим на примере грамматики:
+<BR>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 9</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R={&lt;E>&nbsp; <FONT FACE="symbol">®</FONT>&lt;E> + &lt;T> | &lt;T>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;T>&nbsp; <FONT FACE="symbol">® </FONT>&lt;T>
+* &lt;F> | &lt;F>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;F>&nbsp; <FONT FACE="symbol">®</FONT>
+( &lt;E> ) | a}.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+<UL>Для искомого автомата имеем:
+
+<P><FONT COLOR="#000099">M<SUB>3</SUB>:&nbsp; P = {a, + , * , ) , ( },&nbsp;&nbsp;
+H = {E , T , F , a , + , x , ) , h<SUB>0 </SUB>, ( },&nbsp;&nbsp; S = {s<SUB>0
+</SUB>},&nbsp;&nbsp; F = {s<SUB>0</SUB>}</FONT>
+
+<P>Для всех правил грамматики строим команды типа (1):
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">(1)&nbsp;&nbsp;&nbsp; f<SUP><FONT SIZE=-2>0</FONT></SUP>
+(s<SUB>0 </SUB>, <FONT FACE="Symbol">e</FONT> , E) = {(s<SUB>0 </SUB>,
+T+E) ; (s<SUB>0 </SUB>, T)},</FONT>
+<BR><FONT COLOR="#000099">(2)&nbsp;&nbsp;&nbsp; f<SUP><FONT SIZE=-2>0</FONT></SUP>
+(s<SUB>0 </SUB>, <FONT FACE="Symbol">e</FONT> , T) = {(s<SUB>0 </SUB>,
+F*T) ; (s<SUB>0 </SUB>, F)},</FONT>
+<BR><FONT COLOR="#000099">(3)&nbsp;&nbsp;&nbsp; f<SUP><FONT SIZE=-2>0</FONT></SUP>
+(s<SUB>0 </SUB>, <FONT FACE="Symbol">e</FONT> , F) = {(s<SUB>0 </SUB>,
+)E( ) ; (s<SUB>0 </SUB>, a)},</FONT></UL>
+</UL>
+</UL>
+Для всех терминальных символов строим команды типа (2):
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">(4)&nbsp;&nbsp; f ( s<SUB>0</SUB>, a, a ) = (
+s<SUB>0</SUB>, $ ),</FONT>
+<BR><FONT COLOR="#000099">(5)&nbsp;&nbsp; f ( s<SUB>0 </SUB>, + , + ) =
+(s<SUB>0 </SUB>, $ ),</FONT>
+<BR><FONT COLOR="#000099">(6)&nbsp;&nbsp; f ( s<SUB>0 </SUB>, * , * ) =
+(s<SUB>0 </SUB>, $ ),</FONT>
+<BR><FONT COLOR="#000099">(7)&nbsp;&nbsp; f ( s<SUB>0 </SUB>, ( , ( ) =
+(s<SUB>0 </SUB>, $ ),</FONT>
+<BR><FONT COLOR="#000099">(8)&nbsp;&nbsp; f ( s<SUB>0 </SUB>, ) , ) ) =
+(s<SUB>0 </SUB>, $ ),</FONT></UL>
+</UL>
+</UL>
+Для перехода в конечное состояние построим команду:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">(9)&nbsp;&nbsp; f (s<SUB>0 </SUB>, <FONT FACE="Symbol">e</FONT>
+, h<SUB>0</SUB>) = ( s<SUB>0 </SUB>, $ ).</FONT></UL>
+</UL>
+</UL>
+Построенный автомат является недетерминированным.
+<BR>Начальную конфигурацию с цепочкой a + a*a запишем так: (s<SUB>0 </SUB>,
+a+a*a , h<SUB>0</SUB>E).
+<BR>Последовательность тактов работы построенного автомата, показывающая,
+что заданная&nbsp; цепочка&nbsp; допустима, имеет вид:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>(s<SUB>0 </SUB>, a+a*a , h<SUB>0</SUB>E)&nbsp;&nbsp; |--&nbsp;&nbsp;
+(s<SUB>0 </SUB>, a+a*a , h<SUB>0</SUB>T+E)&nbsp;&nbsp; |--
+<BR>(s<SUB>0 </SUB>, a+a*a , h<SUB>0</SUB>T+T)&nbsp;&nbsp; |--&nbsp;&nbsp;
+(s<SUB>0 </SUB>, a+a*a , h<SUB>0</SUB>T+F)&nbsp;&nbsp; |--
+<BR>(s<SUB>0 </SUB>, a+a*a , h<SUB>0</SUB>T+a)&nbsp;&nbsp; |--&nbsp;&nbsp;
+(s<SUB>0 </SUB>, +a*a , h<SUB>0</SUB>T+)&nbsp;&nbsp; |--
+<BR>(s<SUB>0 </SUB>, a*a , h<SUB>0</SUB>T)&nbsp;&nbsp;&nbsp; |--&nbsp;&nbsp;&nbsp;
+(s<SUB>0 </SUB>, a*a , h<SUB>0</SUB>F*T)&nbsp;&nbsp;&nbsp; |--
+<BR>&nbsp;(s<SUB>0 </SUB>, a*a , h<SUB>0</SUB>F*F)&nbsp;&nbsp;&nbsp; |--&nbsp;&nbsp;&nbsp;
+(s<SUB>0 </SUB>, a*a , h<SUB>0</SUB>F*a)&nbsp;&nbsp;&nbsp; |--
+<BR>(s<SUB>0 </SUB>, *a , h<SUB>0</SUB>F* )&nbsp;&nbsp;&nbsp; |--&nbsp;&nbsp;&nbsp;
+(s<SUB>0 </SUB>, a , h<SUB>0</SUB>F)&nbsp;&nbsp;&nbsp; |--
+<BR>(s<SUB>0 </SUB>, a , h<SUB>0</SUB>a)&nbsp;&nbsp;&nbsp; |--&nbsp;&nbsp;&nbsp;
+(s<SUB>0 </SUB>, $ , h<SUB>0</SUB>)&nbsp;&nbsp;&nbsp; |--
+<BR>(s<SUB>0 </SUB>, $ , $).</UL>
+</UL>
+</UL>
+Отметим, что последовательность правил, используемая построенным автоматом,&nbsp;
+соответствует левому выводу входной цепочки:
+
+<P>E <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B> E+T&nbsp;
+<B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>&nbsp;&nbsp;
+T+T&nbsp; <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>
+F+T <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B> a+T&nbsp;
+<B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B> a+T*F&nbsp;
+<B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B> a+F*F&nbsp;
+<B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B> a+a*F&nbsp;
+<B><FONT FACE="symbol"><FONT COLOR="#000099">Ю&nbsp; </FONT></FONT></B>a+a*a.
+
+<P>Если по такому выводу строить дерево, то построение будет происходить
+<BR>сверху вниз, т.е. от корня дерева к листьям.
+<BR>&nbsp;
+<UL>
+<UL>&nbsp;<IMG SRC="Ris2.gif" HEIGHT=377 WIDTH=376></UL>
+</UL>
+Такой способ построения дерева по заданной цепочке называется <B><FONT COLOR="#800040">нисходящим</FONT>.</B>
+<BR>Магазинные автоматы называют часто распознавателями, поскольку они
+определяют, является ли цепочка, подаваемая на вход автомата, допустимой
+или нет, и следовательно, отвечают на вопрос, принадлежит ли эта цепочка
+языку, пораждаемому грамматикой, использованной для построения автомата.
+<BR>Учитывая характер построения вывода в магазине, автоматы рассмотренного
+типа называют&nbsp;<A NAME="нисходящим"></A><B><FONT COLOR="#800040">нисходящими
+распознавателями</FONT>.</B>
+<BR>Еще раз подчеркнем , что доказательство допустимости цепочки нисходящим
+магазинным автоматом ( НМА) предусматривает поиск определенной последовательности
+конфигураций.
+<BR>Такой поиск может существенно увеличить время работы автомата. Детерминированные
+автоматы не требуют поиска и работают быстрее,&nbsp; поэтому именно такие
+автоматы применяются на практике. Детерминированные автоматы-распознаватели
+могут быть построены не для всех, а только для некоторых&nbsp; видов КС-грамматик.</UL>
+&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD>
+<UL><B><I>Определение</I></B>. Если язык L допускается детерминированным
+М-автоматом ,&nbsp;&nbsp; то он называется <B><FONT COLOR="#993300">детерминированным
+языком</FONT></B>.</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR>Учитывая значение детерминированных автоматов для практических применений,&nbsp;
+посвятим им последующие разделы.
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;<A HREF="Part211.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part213.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

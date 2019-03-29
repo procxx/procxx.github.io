@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Part29</TITLE>
+</HEAD>
+<BODY>
+&nbsp;
+<LI>
+&nbsp;<A HREF="Part28.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part210.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+
+<P>
+<HR WIDTH="100%">
+<BR><A NAME="2.9 Работа магазинного автомата."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.9
+Работа магазинного автомата.</FONT></FONT></I></B>
+
+<P>Чтобы описать как работает автомат, введем понятие конфигурации.
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I>Определение</I>.</B>&nbsp;&nbsp;&nbsp; Конфигурацией автомата
+<B><FONT COLOR="#000099">М</FONT></B> называют тройку <B><FONT COLOR="#000099">(s,
+<FONT FACE="Symbol">a</FONT> , <FONT FACE="Symbol">g</FONT> )</FONT></B><FONT COLOR="#000099">&nbsp;<B>
+<FONT FACE="symbol">О</FONT></B></FONT>&nbsp; <B><FONT COLOR="#000099">S
+x P* x H*</FONT></B> ,</TD>
+</TR>
+</TABLE>
+где <B><FONT COLOR="#000099">s</FONT></B> - текущее состояние управляющего
+устройства,
+<BR><B><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT></B> -неиспользованная
+часть входной цепочки <B><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT>
+</FONT><FONT FACE="symbol">О</FONT> P*</B> ,самый левый символ этой цепочки
+<B><FONT COLOR="#000099">a</FONT></B> находится под головкой. Если <B><FONT COLOR="#000099">a
+=<FONT FACE="Symbol">e</FONT></FONT></B> , то считается, что входная цепочка
+прочитана.
+<BR><B><FONT FACE="Symbol"><FONT COLOR="#000099">g</FONT></FONT></B> -цепочка
+, записанная в магазине, <B><FONT COLOR="#000099"><FONT FACE="Symbol">g</FONT>
+</FONT><FONT FACE="symbol">О</FONT> H*</B> ,самый правый символ цепочки
+считается вершиной магазина. Если <B><FONT COLOR="#000099"><FONT FACE="Symbol">g=</FONT>
+$</FONT></B> , то магазин пуст.
+<BR>Работа автомата может быть представлена как смена конфигураций. Один
+такт работы автомата заключается в определении новой конфигурации по заданной.
+Это записывается так:
+<BR>&nbsp;
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+( s, a<FONT FACE="Symbol">a</FONT> , <FONT FACE="Symbol">g</FONT> h ) |--
+( s', <FONT FACE="Symbol">a</FONT> , <FONT FACE="Symbol">gb </FONT>)</FONT></B>
+
+<P>При этом предполагается, что автомат читает символ <B><FONT COLOR="#000099">a</FONT></B>,
+находящийся под головкой, и символ <B><FONT COLOR="#000099">h</FONT></B>,
+<BR>находящийся в вершине магазина, определяет новое состояние <B><FONT COLOR="#000099">s'</FONT></B>
+и записывает цепочку <B><FONT FACE="Symbol"><FONT COLOR="#000099">b</FONT></FONT></B>
+в
+<BR>магазин вместо символа <B><FONT COLOR="#000099">h</FONT></B>. Если
+<B><FONT COLOR="#000099"><FONT FACE="Symbol">b</FONT> =$</FONT></B> , то
+верхний символ оказывается удаленным из магазина.
+<BR>Такая смена конфигураций возможна, если функция <B><FONT COLOR="#000099">f(
+s, a, h )</FONT></B> определена и ей принадлежит
+<BR>значение <B><FONT COLOR="#000099">( s', <FONT FACE="Symbol">b </FONT>).</FONT></B>
+Описанный такт работы выполняется с перемещением головки. Для описания
+работы автомата нам потребуется другой вид такта, предполагающий изменение
+состояний и магазина без перемещения входной головки. Если&nbsp; <B><FONT COLOR="#000099">f<SUP><FONT SIZE=-2>0</FONT></SUP>(s,
+<FONT FACE="Symbol">e</FONT>, h)</FONT></B> определена и ей принадлежит
+значение <B><FONT COLOR="#000099">(s', <FONT FACE="Symbol">b</FONT> )</FONT></B>
+, то он определяет смену конфигураций так:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">( s, a<FONT FACE="Symbol">a</FONT> , <FONT FACE="Symbol">g</FONT>
+h ) |-- ( s', a<FONT FACE="Symbol">a</FONT> , <FONT FACE="Symbol">gb </FONT>)</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Таким образом, могут быть три случая при работе автомата:
+<UL>
+<LI>
+<B><FONT COLOR="#000099">&nbsp;f(s, a, h)</FONT></B> определена и выполняется
+такт работы,</LI>
+
+<LI>
+&nbsp;<B><FONT COLOR="#000099">f(s, a, h) </FONT></B>не определена, но
+определена функция <B><FONT COLOR="#000099">f<SUP><FONT SIZE=-2>0</FONT></SUP>(s,
+<FONT FACE="Symbol">e</FONT>, h) </FONT></B>и выполняется пустой такт.</LI>
+
+<LI>
+&nbsp;Функции <B><FONT COLOR="#000099">f(s, a, h)</FONT></B> и <B><FONT COLOR="#000099">f<SUP><FONT SIZE=-2>0</FONT></SUP>(s,
+<FONT FACE="Symbol">e</FONT>, h)</FONT></B>&nbsp;<B><FONT COLOR="#000099">&nbsp;</FONT></B>
+не определены, в этом случае дальнейшая работа автомата невозможна.</LI>
+</UL>
+В общем виде действия, задаваемые функцией переходов и выполняемые автоматом,&nbsp;
+демонстрирует следующая форма записи:
+<BR>&nbsp;
+<UL><B><FONT COLOR="#000099">f(s, &lt;входной символ>, &lt;магазинный символ>)=(s<SUB>1</SUB>,
+&lt;заносимая цепочка>)</FONT></B></UL>
+При этом следует иметь в виду, что при выполнении такта вначале читается
+символ в вершине, а затем на его место заносится новый символ или цепочка.&nbsp;
+Отдельные значения функции переходов часто называют командами магазинного
+автомата.
+<BR><FONT COLOR="#993300"><B>Начальной</B> </FONT>конфигурацией называется
+конфигурация <B><FONT COLOR="#000099">(s<SUB>о</SUB>, <FONT FACE="Symbol">a</FONT>
+, h<SUB>о</SUB>)</FONT></B><FONT COLOR="#000099"> </FONT>, где <B><FONT COLOR="#000099">s<SUB>о</SUB></FONT></B>
+-начальное состояние и <B><FONT COLOR="#000099">h<SUB>о</SUB></FONT></B>
+- маркер дна магазина, а<FONT COLOR="#993300"> <B>заключительной</B> -
+</FONT>конфигурация <B><FONT COLOR="#000099">(s, $ , $)</FONT></B> , где
+<B><FONT COLOR="#000099">s</FONT></B> принадлежит множеству конечных состояний
+<B><FONT COLOR="#000099">F.</FONT></B>
+<BR>Для обозначения последовательности сменяющих друг друга конфигураций
+условимся
+<BR>использовать знак |--*. Таким образом последовательность
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>( s<SUB>1</SUB>, <FONT FACE="Symbol">a</FONT> <SUB>1</SUB>, <FONT FACE="Symbol">g</FONT>
+<SUB>1 </SUB>) |-- ( s<SUB>2</SUB>, <FONT FACE="Symbol">a</FONT> <SUB>2</SUB>,
+<FONT FACE="Symbol">g</FONT> <SUB>2</SUB>) |-- ...|-- ( s<SUB>n</SUB>,
+<FONT FACE="Symbol">a</FONT> <SUB>n</SUB>,<FONT FACE="Symbol">g</FONT>
+<SUB>n </SUB>)</UL>
+</UL>
+</UL>
+записывается в сокращенном виде так:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">(s<SUB>1</SUB>,<FONT FACE="Symbol">a</FONT>
+<SUB>1</SUB>, <FONT FACE="Symbol">g</FONT> <SUB>1 </SUB>) |--* ( s<SUB>n</SUB>,
+<FONT FACE="Symbol">a</FONT> <SUB>n</SUB>,<FONT FACE="Symbol">g</FONT>
+<SUB>n </SUB>).</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+<HR WIDTH="100%">
+<LI>
+&nbsp;<A HREF="Part29.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part210.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;
+</BODY>
+</HTML>

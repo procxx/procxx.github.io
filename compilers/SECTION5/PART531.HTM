@@ -1,0 +1,167 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s78</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.3.1"></A><A HREF="part522.html#5.2.2."><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part532.html#5.3.2"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>
+<FONT COLOR="#009900">След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="index5.html#idx5">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp; 5.3. <FONT FACE="Times New Roman Cyr">L
+- атрибутные транслирующие грамматики</FONT></FONT></I></B>
+
+<P><B><I><FONT COLOR="#3333FF">&nbsp; 5.3.1. <FONT FACE="Times New Roman Cyr">L
+- атрибутные транслирующие грамматики</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Задачей настоящего
+раздела является не только знакомство с атрибутными описаниями <B><FONT COLOR="#993300">переводов</FONT></B><FONT COLOR="#000000">,
+но и</FONT><B><FONT COLOR="#993300"> </FONT></B>с нисходящими атрибутными
+преобразователями. Они должны обрабатывать цепочки входных символов с атрибутами
+и для каждой входной цепочки либо строить выходную цепочку в качестве ее
+<B><FONT COLOR="#993300">перевода</FONT></B>, либо отвергать ее как не
+принадлежащую входному языку. Такие устройства должны обеспечивать вычисление
+атрибутов в ходе нисходящего разбора. Возможность такой обработки предоставляет
+не всякая <B><FONT COLOR="#993300">АТ-грамматика</FONT></B>, а только грамматики,
+отвечающие определенным требованиям, которые выражаются в виде ограничений
+как на характер зависимости атрибутов правил грамматики, так и на вид правил
+вычисления атрибутов. Вначале рассмотрим подкласс <FONT COLOR="#993300"><B>атрибутивных
+транслирующих</B> <B>грамматик</B></FONT><B> </B>с ограничениями на зависимости
+атрибутов, обеспечивающими их вычисление при нисходящем разборе. Такие
+грамматики называются <FONT COLOR="#993300"><B>L - атрибутными транслирующими</B>
+<B>грамматиками</B></FONT> (<B><FONT COLOR="#993300">LАТ-грамматиками</FONT></B>).</FONT>
+<BR>&nbsp;
+<TABLE BORDER COLS=1 WIDTH="100%" BGCOLOR="#FFFF99" >
+<TR>
+<TD><I><FONT FACE="Times New Roman Cyr">&nbsp;<B>Определение.&nbsp;</B></FONT></I><B>&nbsp;</B>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr"><B>&nbsp; <FONT COLOR="#993300">АТ-грамматика</FONT></B>
+является <B><FONT COLOR="#993300">L - атрибутной транслирующей грамматикой</FONT></B>,
+если выполняются следующие три условия:</FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; 1) Каждый наследуемый
+атрибут символа правой части правила грамматики должен вычисляться с использованием
+либо наследуемых атрибутов символов левой части правила, либо с использованием
+произвольных атрибутов символов правой части правила, расположенных левее
+данного символа.</FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; 2) Каждый синтезируемый
+атрибут символа левой части правила грамматики должен вычисляться с использованием
+наследуемых атрибутов этого символа левой части правила или произвольных
+атрибутов символов правой части этого правила.</FONT>&nbsp;
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; 3) Каждый синтезируемый
+атрибут символа действия должен вычисляться по наследуемым атрибутам этого
+символа действия.</FONT>&nbsp;
+<BR>&nbsp;</TD>
+</TR>
+</TABLE>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Значение условия 1
+состоит в том, что оно обеспечивает зависимость наследуемых атрибутов от
+величин, находящихся только слева от них в правиле грамматики (символ L
+в обозначении <B><FONT COLOR="#993300">LАТ-грамматики</FONT></B> - это
+сокращение от <B>Left </B>- левый). Это условие позволяет обрабатывать
+атрибуты сверху вниз, потому что каждый символ обрабатывается до того,
+как прочитаны символы справа от него. Условия 2 и 3 обеспечивают исключение
+круговых зависимостей атрибутов. Все три условия, взятые вместе, приводят
+к следующему порядку вычисления атрибутов для правила вида</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><B><FONT COLOR="#3333FF">&lt;A></FONT></B>
+</FONT><B><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">
+&lt;B>&lt;C>:</FONT></FONT></B></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">1) наследуемые атрибуты <B><FONT COLOR="#3333FF">&lt;A></FONT></B>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr">2) наследуемые атрибуты <B><FONT COLOR="#3333FF">&lt;B></FONT></B>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr">3) синтезируемые атрибуты <B><FONT COLOR="#3333FF">&lt;B></FONT></B>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr">4) наследуемые атрибуты <B><FONT COLOR="#3333FF">&lt;C></FONT></B>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr">5) синтезируемые атрибуты <B><FONT COLOR="#3333FF">&lt;C></FONT></B>,</FONT>
+<BR><FONT FACE="Times New Roman Cyr">6) синтезируемые атрибуты <B><FONT COLOR="#3333FF">&lt;A></FONT></B>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Чтобы убедиться
+в том, что заданная<FONT COLOR="#993300"> <B>АТ-грамматика</B></FONT> обладает
+свойствами <B><FONT COLOR="#993300">LАТ-грамматики</FONT></B>, нужно проверить
+для каждого правила грамматики выполнение условий 1 и 2, а также для каждого
+символа действия - выполнение условия 3. Такая проверка заключается в анализе
+зависимостей атрибутов для каждого правила их вычисления.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В качестве иллюстрации
+выполним анализ возможных зависимостей атрибутов, отвечающих описанным
+условиям, для следующего правила:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;A>/a1%x1%y1
+</FONT></FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">&lt;B>/b1&lt;C>%x2&lt;D>%y2/a2/b2&lt;E>/a3</FONT></FONT></UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Анализ зависимостей
+этого правила должен заключаться в проверке того, что правила вычисления
+атрибутов <FONT COLOR="#3333FF">b1</FONT>, <FONT COLOR="#3333FF">a2</FONT>,
+<FONT COLOR="#3333FF">b2</FONT>, <FONT COLOR="#3333FF">a3</FONT> должны
+удовлетворять условию 1, а правила вычисления атрибутов <FONT COLOR="#3333FF">x1</FONT>,
+<FONT COLOR="#3333FF">y1</FONT> - условию 2. Согласно условию 1 правило
+вычисления атрибута <FONT COLOR="#3333FF">b1</FONT> может использовать
+для вычисления только атрибут a1, поэтому такие правила могут, например,
+иметь вид:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">b1</FONT> :=
+<FONT COLOR="#3333FF">f(a1)</FONT> или <FONT COLOR="#3333FF">b1</FONT>
+:= <FONT COLOR="#3333FF">112</FONT>.</FONT></UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Последнее из приведенных
+выражений обозначает множественное присваивание, когда двум величинам одновременно
+присваивается одно и то же значение.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">Отметим также, что правила вычисления
+не могут иметь, например, следующий вид:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">b1 </FONT>:=
+<FONT COLOR="#3333FF">x1</FONT> или <FONT COLOR="#3333FF">b1</FONT> :=
+<FONT COLOR="#3333FF">g(y2,b1)</FONT>.</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Условие 1 для рассматриваемого
+правила позволяет использовать для вычисления атрибутов <FONT COLOR="#3333FF">a2</FONT>
+и <FONT COLOR="#3333FF">b2</FONT> в качестве аргументов величины <FONT COLOR="#3333FF">a1</FONT>,
+<FONT COLOR="#3333FF">b1</FONT>, <FONT COLOR="#3333FF">x2</FONT>, а при
+вычислении <FONT COLOR="#3333FF">a3</FONT> аргументами могут быть <FONT COLOR="#3333FF">a1</FONT>,
+<FONT COLOR="#3333FF">b1</FONT>, <FONT COLOR="#3333FF">x2</FONT>, <FONT COLOR="#3333FF">y2</FONT>,
+<FONT COLOR="#3333FF">a2</FONT>, <FONT COLOR="#3333FF">b2</FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Согласно условию
+правила 2 при вычислении атрибутов <FONT COLOR="#3333FF">x1</FONT> и <FONT COLOR="#3333FF">y1
+</FONT>могут быть использованы любые атрибуты кроме самих <FONT COLOR="#3333FF">x1</FONT>,
+<FONT COLOR="#3333FF">y1</FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Условие 3 используется
+для проверки символов действия. Чтобы убедиться в его выполнении, нужно
+просмотреть список аргументов правил вычисления атрибутов и убедиться,
+что среди них нет синтезированных атрибутов.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="part522.html#5.2.2."><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part532.html"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

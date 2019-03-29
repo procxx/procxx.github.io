@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part157.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part159.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"></H4>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.5.8.<I> Грамматики, описывающие условные
+операторы и операторы цикла</I></FONT></FONT></H4>
+
+<UL>Допустим, что рассматриваются условные операторы, аналогичные используемым
+в языке Паскаль, с разделителями<FONT COLOR="#000099"> '<B>if</B>', '<B>then</B>',
+'<B>else</B>'.</FONT> В качестве условия в таких операторах разрешается
+использовать отношения, состоящие из двух идентификаторов, соединенных
+знаками = и &lt;. Структура такого оператора определяется двумя видами&nbsp;
+последовательностей фиксированной длины, для описания которых можно воспользоваться
+простым перечислением компонентов. Первая последовательность определяет
+полный и сокращенный условные операторы, а вторая - конструкцию "отношение".
+Схема грамматики, задающая эти последовательности, может быть изображена
+так:
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 28</SUB> : R = {&nbsp; &lt;V><FONT FACE="symbol">
+® </FONT>.if.&lt;R4>&lt;C2>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;C2><FONT FACE="symbol"> ® </FONT>.then.&lt;S>&lt;C3>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;C3><FONT FACE="symbol"> ® </FONT>.else.&lt;S>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;C3><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R4><FONT FACE="symbol"> ® </FONT>&lt;I>&lt;R3>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R3><FONT FACE="symbol"> ® </FONT>&lt;
+&lt;I>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R3><FONT FACE="symbol"> ® </FONT>= &lt;I>
+} .</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+&nbsp;</UL>
+В этой грамматике <B><FONT COLOR="#000099">&lt;S></FONT></B> определяется
+схемой грамматики <B>Г<SUB>1. 27</SUB> </B>. Рассмотрим описание операторов
+цикла, подобных используемым в языке Паскаль, с разделителями <FONT COLOR="#000099">'<B>while</B>',
+'<B>do</B>', '<B>repeat</B>', '<B>until</B>'.</FONT> Каждый оператор может
+быть описан в виде простой последовательности ограниченной длины, в которой
+используются построенные ранее грамматика Г<SUB>1. <FONT FACE="">28 </FONT></SUB>и
+грамматика Г<SUB>1. 27</SUB> . На практике часто встречаются ситуации,
+когда удобнее работать с грамматикой, правая часть правил которой&nbsp;
+начинается терминальным символом. Построение подобных грамматик сводится
+к тому, что для каждого терминального символа заданной конструкции языка
+строится отдельное правило. Для рассматриваемых операторов цикла такие
+схемы грамматик с использованием определенных ранее нетерминальных символов&nbsp;
+имеют вид:</UL>
+
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 29</SUB>:&nbsp;&nbsp;&nbsp; R = {
+&lt;W><FONT FACE="symbol"> ® </FONT>.while. &lt;R4>&lt;C4>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;C4><FONT FACE="symbol"> ® </FONT>.do.
+&lt;S> }</FONT></B></UL>
+</UL>
+<B><FONT COLOR="#000099">Г<SUB>1. 30</SUB>:&nbsp;&nbsp;&nbsp; R = { &lt;W1><FONT FACE="symbol">
+® </FONT>.repeat.&lt;S>&lt;C5>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&lt;C5><FONT FACE="symbol"> ® </FONT>.until.&lt;R4>
+}.</FONT></B></UL>
+</UL>
+&nbsp;</UL>
+</UL>
+</UL>
+
+<HR ALIGN=LEFT WIDTH="60%">
+<LI>
+<A HREF="Part158.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part159.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

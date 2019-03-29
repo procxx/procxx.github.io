@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part36</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part35.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part37.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%"><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;</FONT></FONT></I></B>
+<BR><A NAME="3.5 LL(1) - грамматики."></A><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;
+3.6 LL(1) - грамматики.</FONT></FONT></I></B>
+<UL>Разделенные и слаборазделенные грамматики представляют собой подклассы
+грамматик более общего вида, которые называются LL(1) грамматиками, и которые
+определяются следующим образом.
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="93%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I>Определение.</I></B> КС-грамматика является LL(1) грамматикой
+тогда и&nbsp; только тогда, когда&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+выполняются следующие два условия:&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1 . Для каждого нетерминала, являющегося левой&nbsp; частью нескольких
+правил:&nbsp;
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A>&nbsp; <FONT FACE="symbol">®</FONT><FONT FACE="Symbol">a</FONT> <SUB>1</SUB>
+| <FONT FACE="Symbol">a</FONT> <SUB>2</SUB> | ... | <FONT FACE="Symbol">a</FONT>
+<SUB>n</SUB>,&nbsp;</FONT></B>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+необходимо, чтобы пересечение функций <B><FONT COLOR="#000099">ПЕРВ(<FONT FACE="Symbol">a</FONT>
+<SUB>i</SUB>) и ПЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>j</SUB>) </FONT></B>было&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+пусто для всех i =/= j.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 . Для каждого аннулирующего нетерминала <B><FONT COLOR="#000099">&lt;A></FONT></B>,такого
+что <B><FONT COLOR="#000099">&lt;A> ==>* $,</FONT></B>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+необходимо, чтобы пересечение&nbsp; множеств<B><FONT COLOR="#000099"> ПЕРВ(&lt;A>)
+и СЛЕД(&lt;A>) </FONT></B>было&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+пустым.&nbsp;</TD>
+</TR>
+</TABLE>
+Из определения следует, что грамматики LL(1), в отличие от разделенных
+грамматик и слаборазделенных, могут содержать правила, начинающиеся нетерминальными
+символами. Проверим относится ли рассмотренная ранее грамматика Г<SUB>43</SUB>&nbsp;
+к классу LL(1).
+<BR>Для этого необходимо вначале проверить наличие одинаковых значений
+функций ПЕРВ для правил с одинаковой левой частью. Для правил (1) и (2)
+имеем
+<BR>&nbsp;
+<UL>
+<UL>ПЕРВ(&lt;B>&lt;C>a) = ПЕРВ(&lt;B>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(&lt;C>) = {a,b,d,c},
+<BR>ПЕРВ(g&lt;D>&lt;B>) = {g},</UL>
+</UL>
+а для правил (5) и (6) имеем
+<BR>&nbsp;
+<UL>
+<UL>ПЕРВ(&lt;D>a&lt;B>) = ПЕРВ(&lt;D>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(a&lt;B>) = {a,d},
+<BR>ПЕРВ(ca) = {c}.</UL>
+</UL>
+Полученные результаты показывают, что первое условие LL(1) грамматики выполняется.
+<BR>Второе условие необходимо проверить для правил (3) и (7) рассматриваемой
+грамматики. Вычисляя функции ПЕРВ и СЛЕД для правила (8), имеем:
+<UL>
+<UL>ПЕРВ(&lt;B>) = {b} и СЛЕД(&lt;B>) = {a,c,d,g,f}.</UL>
+</UL>
+Эти функции не имеют одинаковых значений, следовательно грамматика Г<SUB>43</SUB>
+является грамматикой LL(1).
+<BR>Рассматриваемый класс грамматик можно определить также с помощью множеств
+выбора следующим образом:
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="87%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I><FONT COLOR="#000000">Определение</FONT><FONT COLOR="#000099">
+</FONT></I></B>. КС-грамматика называется LL(1) грамматикой тогда&nbsp;
+и только тогда, когда&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+множества ВЫБОР, построенные&nbsp; для правил с одинаковой левой&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+частью, не содержат одинаковых элементов.&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR>&nbsp;
+<HR WIDTH="100%"></UL>
+
+<UL>
+<LI>
+<A HREF="Part35.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part37.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

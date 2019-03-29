@@ -1,0 +1,168 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part25.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part27.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;
+<BR>
+<HR WIDTH="100%">
+
+<P><A NAME="2.6 Исключение цепных правил."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.6
+Исключение цепных правил.</FONT></FONT></I></B></UL>
+&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD>
+<UL><B><I>Определение</I>.</B> Правило грамматики вида &lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;B>,&nbsp; где &lt;A>,&lt;B> <B><FONT COLOR="#000099"><FONT FACE="symbol">О</FONT>V<SUB>A</SUB></FONT></B>,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+называется&nbsp;<A NAME="цепным."></A><B><FONT COLOR="#993300">цепным.</FONT></B></UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD>
+<UL><I><B>Утверждение</B>. </I>Для<I> </I>КС-грамматики Г, содержащей цепные
+правила , можно&nbsp;
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+построить эквивалентную ей грамматику Г', не содержащую цепных правил.</UL>
+</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Идея доказательства заключается в следующем. Если схема грамматики
+имеет вид
+<BR>&nbsp;
+<UL>
+<UL>R = {...,&lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;B>,...,&lt;B> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;C>, ... , &lt;C> <B><FONT FACE="symbol"><FONT COLOR="#000099">® </FONT></FONT></B>a&lt;X>
+},</UL>
+</UL>
+то такая грамматика&nbsp; эквивалентна грамматике со схемой
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>R' = {...,&lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+a&lt;X>,...},</UL>
+</UL>
+</UL>
+</UL>
+поскольку вывод в грамматике со схемой R цепочки a&lt;X> :
+<UL>
+<UL>
+<UL>
+<UL>&lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю&lt;</FONT></FONT></B>
+B> <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B> &lt;C>
+<B><FONT FACE="symbol"><FONT COLOR="#000099">Ю </FONT></FONT></B>a&lt;X></UL>
+</UL>
+</UL>
+</UL>
+может быть получен&nbsp; в грамматике со схемой R' с помощью правила &lt;A>
+<B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B> a&lt;X>.
+<BR>В общем случае доказательство последнего утверждения можно выполнить
+так.
+<BR>Разобьем R на два подмножества R<SUB>1</SUB> и R<SUB>2</SUB>, включая
+в R<SUB>1</SUB> все правила вида &lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">®
+&lt;</FONT></FONT></B> B>.
+<BR>Для каждого правила из R<SUB>1</SUB> найдем множество правил S(&lt;A<SUB>i</SUB>>),
+которые строятся так:
+<BR>если &lt;A<SUB>i</SUB>> <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>
+* &lt;A<SUB>j</SUB>> и в R<SUB>2</SUB> есть правило &lt;A<SUB>j</SUB>>
+<B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B> <FONT FACE="Symbol">a</FONT>
+, где <FONT FACE="Symbol">a</FONT> - цепочка словаря <B><FONT COLOR="#000000">(V<SUB>т</SUB>
+<FONT FACE="symbol">И</FONT>V<SUB>A</SUB>)</FONT></B><SUP>*</SUP> ,
+<BR>то в S(&lt;A<SUB>i</SUB>>) включим правило &lt;A<SUB>i</SUB>><SUB>&nbsp;
+</SUB><B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>&nbsp;&nbsp;
+<FONT FACE="Symbol">a</FONT> .
+<BR>Построим новую схему R' путем объединения правил R<SUB>2</SUB> и всех
+построенных
+<BR>множеств S(&lt;A<SUB>i</SUB>>). Получим грамматику Г' = {V<SUB>т </SUB>,V<SUB>a
+</SUB>, I , R'}, которая <FONT COLOR="#000000">эквивалентна</FONT>
+<BR>заданной и не содержит правил вида &lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;B>.
+<BR>В качестве примера выполним исключение цепных правил из грамматики<B>
+Г<FONT COLOR="#000000"><SUB>1. 9</SUB></FONT></B><FONT COLOR="#000000"></FONT>
+<BR>со схемой :
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 9</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;</FONT></B><FONT COLOR="#000099">&nbsp;<B>
+R={&lt;E> <FONT FACE="symbol">®</FONT>&nbsp;&nbsp; &lt;E> + &lt;T> | &lt;T>,</B></FONT>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt; T> <FONT FACE="symbol">® &lt;</FONT> T> * &lt;F> | &lt;F>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;F> <FONT FACE="symbol">®</FONT> ( &lt;E> ) | a}.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+
+<UL>Вначале разобьем правила грамматики на два подмножества:
+<BR>&nbsp;
+<UL>R<SUB>1 </SUB>= { &lt;E> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;T>,&lt;T> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>&nbsp;&nbsp;
+&lt;F> } ,
+<BR>R<SUB>2 </SUB>= { &lt;E> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;E>+&lt;T>, &lt;T> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;T>*&lt;F>, &lt;F><B><FONT FACE="symbol"><FONT COLOR="#000099">® </FONT></FONT></B>(&lt;E>)
+| a }</UL>
+Для каждого правила из R1 построим соответствующее подмножество.
+<BR>&nbsp;
+<UL>S(&lt;E>) = { &lt;E> <B><FONT FACE="symbol"><FONT COLOR="#000099">®&lt;</FONT></FONT></B>
+T>*&lt;F>, &lt;E> <B><FONT FACE="symbol"><FONT COLOR="#000099">® </FONT></FONT></B>(&lt;E>)
+| a },
+<BR>S(&lt;T>) = { &lt;T> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+(&lt;E>) | a}</UL>
+В результате получаем искомую схему грамматики без цепных правил в виде:
+
+<P>R2 U S(&lt;E>) U S(&lt;T>) = { &lt;E> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+--> &lt;T>+&lt;T> | &lt;T>*&lt;F> | (&lt;E>) | a,
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>&lt;T> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;T>*&lt;F> | (&lt;E>) | a,
+<BR>&lt;F> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+(&lt;E>) | a }</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Последний вид рассматриваемых преобразований связан с удалением из
+<BR>грамматики правил с пустой правой частью.</UL>
+&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD>
+<UL><I><B>Определение</B>.</I> Правило вида &lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+$ называется&nbsp;<A NAME="аннулирующим"></A><B><FONT COLOR="#993300">аннулирующим
+правилом.</FONT></B></UL>
+</TD>
+</TR>
+</TABLE>
+
+<HR WIDTH="100%">
+<LI>
+&nbsp;<A HREF="Part26.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part27.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;
+</BODY>
+</HTML>

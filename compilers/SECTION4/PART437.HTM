@@ -1,0 +1,720 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="Author" CONTENT="V.Fomichev">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Part437</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#009900" VLINK="#804040" ALINK="#993300">
+<A HREF="Part436.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+<FONT COLOR="#008000">Пред.Страница<A HREF="Part44.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="../../../s81.html#8.1. Конечные">
+</A>След.Страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="#8. Преобразователи">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT>
+<BR>
+<HR WIDTH="100%">
+<BR><B><I><FONT COLOR="#000099"><FONT SIZE=+1>&nbsp; 4.3.7&nbsp; Построение
+восходящих преобразователей.</FONT></FONT></I></B>
+
+<P>Построение восходящих преобразователей,&nbsp; так же как в&nbsp; рассмотренном
+выше случае, выполняется на основе распознавателя путем модификации команд
+за счет выполнения операции передачи&nbsp; выходных символов.&nbsp; Одно
+из отличий построения восходящих преобразователей заключается в том, что
+для их построения должна быть использована транслирующая грамматика в постфиксной
+форме.
+<BR>&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="85%" HEIGHT="15%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD>&nbsp;<B><I> Определение.</I></B> Транслирующая грамматика,&nbsp; записанная
+в&nbsp; форме,&nbsp;&nbsp; когда все&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+символы действия в правых частях распо&nbsp; ложены правее всех&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+терминальных и&nbsp; нетерминальных&nbsp;&nbsp; символов, называется&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+постфиксной&nbsp; транслирующей грамматикой.&nbsp;
+<BR>&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;&nbsp;&nbsp;&nbsp; Это определение&nbsp; говорит&nbsp; о&nbsp; том,&nbsp;
+что&nbsp; правила&nbsp; постфиксной транслирующей грамматики должны иметь
+вид:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp; &lt;A> <FONT FACE="symbol">®</FONT>
+<FONT FACE="Symbol">a</FONT>{ z },</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+где&nbsp; <B><FONT FACE="Symbol"><FONT COLOR="#000099">a О</FONT></FONT></B>(
+V<SUB>T</SUB>&nbsp; <FONT FACE="Symbol">И</FONT>&nbsp; V<SUB>А</SUB>) *&nbsp;
+и<B><FONT COLOR="#000099"> z</FONT></B> <FONT FACE="Symbol">О </FONT>V<SUB>Tвых</SUB>
+.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; Любая транслирующая грамматика может&nbsp;
+быть&nbsp; преобразована&nbsp; в постфиксную&nbsp; форму путем разбиения
+правил грамматики и добавления новых нетерминальных символов.&nbsp; Например,
+для преобразования правила
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;<B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp; &lt;A>&nbsp; <FONT FACE="symbol">®
+</FONT>a{ z }&lt;B>{ w },</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+введем дополнительный нетерминал&nbsp;&nbsp; и разобьем исходное правило
+на две части. В результате получаем правило в постфиксной форме:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;<B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp; &lt;D> <FONT FACE="symbol">®
+</FONT>a{ z },&nbsp;</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp; &lt;A>&nbsp; <FONT FACE="symbol">®
+</FONT>&lt;D>&lt;B>{w}.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp; Воспользуемся этим&nbsp; приемом для преобразования
+к постфиксной форме транслирующей&nbsp; грамматики,&nbsp; которая&nbsp;
+задает&nbsp; преобразование арифметических выражений без скобок, описываемых
+грамматикой 4. 2, в постфиксную форму.
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">Г <SUB>4. 2</SUB> </FONT></B><FONT COLOR="#000099">:
+&lt;I> <B><FONT FACE="symbol">® </FONT></B>a{a}&lt;R>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R> <B><FONT FACE="symbol">® </FONT></B>+a{a}{+}&lt;R>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R><B><FONT FACE="symbol">®</FONT></B>-a{a}{-}&lt;R>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R><B><FONT FACE="symbol">® </FONT></B>$.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp; Добавляем три новых нетерминала <FONT COLOR="#000099">&lt;P>,&nbsp;
+&lt;Q>,&nbsp; &lt;S></FONT> и,&nbsp; разбивая правила грамматики, получаем
+грамматику в постфиксной форме.
+<BR><FONT COLOR="#000099">&nbsp;</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B>Г <SUB>4. 3</SUB></B> :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;I>&nbsp; <B><FONT FACE="symbol">®
+</FONT></B>&lt;S>&lt;R>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;S>&nbsp; <B><FONT FACE="symbol">® </FONT></B>a{a},</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R>&nbsp; <B><FONT FACE="symbol">® </FONT></B>&lt;P>&lt;R>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;P>&nbsp; <B><FONT FACE="symbol">® </FONT></B>+a{a}{+},</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R>&nbsp; <B><FONT FACE="symbol">® </FONT></B>&lt;Q>&lt;R>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Q>&nbsp; <B><FONT FACE="symbol">® </FONT></B>-a{a}{-},</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R>&nbsp; <B><FONT FACE="symbol">® </FONT></B>$.</FONT>
+<BR>&nbsp;
+<BR>Напомним, что при построении восходящих распознавателей&nbsp; обработка
+каждого правила A
+<BR><FONT COLOR="#000099">&lt;A> <FONT FACE="symbol">®</FONT> <FONT FACE="Symbol">a</FONT>x</FONT>
+с номером k с символом x, занимающим самую правую позицию в правой части
+правила, связывалась операция&nbsp; <FONT COLOR="#000099">Свертка(k)</FONT>.&nbsp;
+В&nbsp; постфиксной транслирующей грамматике самую правую позицию могут
+занимать символы действия, поэтому при построении восходящего преобразователя
+эти символы можно объединить с операцией свертки в одну&nbsp; операцию,&nbsp;
+которую&nbsp; назовем
+<BR><FONT COLOR="#000099">Свертка&nbsp; - Действие(k) (СД(k))</FONT>. Учитывая,
+что все символы действия постфиксной транслирующей грамматики могут быть
+объединены&nbsp; с&nbsp; операциями свертки, приходим к заключению, что
+процедура построения восходящего распознавателя может быть применена для
+построения&nbsp; восходящего преобразователя при условии, что вместо операции
+<FONT COLOR="#000099">Cвертка (k)</FONT> будет использоваться операция
+<FONT COLOR="#000099">Свертка -&nbsp; Действие(k)</FONT>&nbsp; для&nbsp;
+правил построения постфиксной транслирующей грамматики,&nbsp; содержащая
+символы действия.
+<BR>В&nbsp; качестве&nbsp; иллюстрации&nbsp; последнего&nbsp; утверждения
+рассмотрим построение преобразователя для грамматики <B><FONT COLOR="#000099">Г
+<SUB>4. 3</SUB></FONT></B>. Выполняя последовательно шаги процедуры построения
+SLR(1) преобразова-
+<BR>теля&nbsp; для грамматики с аннулирующими правилами и заменяя операции
+<FONT COLOR="#000099">Свертка(k)</FONT> для правил 2, 4 и 6 операциями
+<FONT COLOR="#000099">Свертка&nbsp; -&nbsp; Действие(k)</FONT>, получаем&nbsp;
+таблицы переходов и действий искомого преобразователя в следующем виде.
+
+<P>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Таблица 4.1
+<CENTER><TABLE BORDER COLS=9 WIDTH="42%" >
+<TR>
+<TD>
+<UL>&nbsp;</UL>
+</TD>
+
+<TD>&nbsp; I</TD>
+
+<TD>&nbsp; S</TD>
+
+<TD>&nbsp; R</TD>
+
+<TD>&nbsp; P</TD>
+
+<TD>&nbsp; Q</TD>
+
+<TD>&nbsp; +</TD>
+
+<TD>&nbsp; -&nbsp;</TD>
+
+<TD>&nbsp; a</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; I<SUB>0</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; S</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>R<SUB>1</SUB></TD>
+
+<TD>&nbsp; P</TD>
+
+<TD>&nbsp; Q</TD>
+
+<TD>&nbsp; +</TD>
+
+<TD>&nbsp; -</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;R<SUB>1</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;a<SUB>2</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; P</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;R<SUB>3</SUB></TD>
+
+<TD>&nbsp; P</TD>
+
+<TD>&nbsp; Q</TD>
+
+<TD>&nbsp; +</TD>
+
+<TD>&nbsp; -</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;R<SUB>3</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; +</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;a<SUB>4</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;a<SUB>4</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; Q</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;R<SUB>5</SUB></TD>
+
+<TD>&nbsp; P</TD>
+
+<TD>&nbsp; Q</TD>
+
+<TD>&nbsp; +</TD>
+
+<TD>&nbsp; -</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;R<SUB>5</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; -</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;a<SUB>6</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;a<SUB>6</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; h<SUB>0</SUB></TD>
+
+<TD>&nbsp;I<SUB>0</SUB></TD>
+
+<TD>&nbsp; S</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;a<SUB>2</SUB></TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Таблица 4.2</CENTER>
+
+<CENTER><TABLE BORDER COLS=5 WIDTH="30%" >
+<TR>
+<TD></TD>
+
+<TD>&nbsp;&nbsp; +</TD>
+
+<TD>&nbsp;&nbsp; -</TD>
+
+<TD>&nbsp;&nbsp; a</TD>
+
+<TD>&nbsp; |--</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; I<SUB>0</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp; D</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;&nbsp; S</TD>
+
+<TD>&nbsp; П</TD>
+
+<TD>&nbsp;&nbsp; П</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp; c<SUB>7</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;&nbsp; R<SUB>1</SUB>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;c<SUB>1</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;c<SUB>1</SUB></TD>
+
+<TD>&nbsp;CD2</TD>
+
+<TD>&nbsp;CD2</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>CD2</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;&nbsp; P</TD>
+
+<TD>&nbsp; П</TD>
+
+<TD>&nbsp;&nbsp; П</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;&nbsp; c<SUB>7</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;&nbsp; R<SUB>3</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp; c<SUB>3</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;&nbsp; +</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;&nbsp; П</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; a<SUB>4</SUB></TD>
+
+<TD>&nbsp;CD4</TD>
+
+<TD>&nbsp;CD4</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;CD4</TD>
+</TR>
+
+<TR>
+<TD>&nbsp;&nbsp; Q</TD>
+
+<TD>&nbsp;&nbsp; П</TD>
+
+<TD>&nbsp;&nbsp; П</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;&nbsp; c<SUB>7</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp; R<SUB>5</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp; c<SUB>5</SUB></TD>
+</TR>
+
+<TR>
+<TD>&nbsp;&nbsp; -</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;&nbsp; П</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; a<SUB>6</SUB></TD>
+
+<TD>&nbsp;CD6</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;CD6</TD>
+
+<TD>&nbsp;CD6</TD>
+</TR>
+
+<TR>
+<TD>&nbsp; a<SUB>4</SUB></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;&nbsp; П</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В качестве демонстрации работы преобразователя
+построим последовательность конфигураций для входной цепочки а + а - а|--,
+дополнив эту последовательность указателем выполняемого действия.</CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<UL>
+<UL>
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Вход&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Магазин&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Действие&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Выход</FONT></CENTER>
+</UL>
+</UL>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. а
++ а - а|--&nbsp;&nbsp;&nbsp;&nbsp; h<SUB>0</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+П&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.&nbsp; + а - а|--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h<SUB>0</SUB> a<SUB>2</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+СД2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3. + а - а|--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h<SUB>0 </SUB>S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+П&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4.&nbsp; а - а|--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0</SUB> S +&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+П&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5.&nbsp; - а|--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0 </SUB>S + a<SUB>4</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+СД4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa +</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6. - а|--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0 </SUB>S P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+П&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa +</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7.&nbsp; а|--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0 </SUB>S P-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+П&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa +</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8.&nbsp;&nbsp; |--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0</SUB> S P - a<SUB>6</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СД6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa + a -</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9.&nbsp;&nbsp; |--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0</SUB> S P Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; С7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa + a -</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10.&nbsp; |--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0 </SUB>S P Q R<SUB>5</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; С5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa + a -</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+11.&nbsp; |--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0 </SUB>S PR<SUB>3</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+С3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aa
++ a -</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+12.&nbsp; |--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0</SUB> S R<SUB>1</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+С1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa + a -</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+13.&nbsp; |--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+h<SUB>0</SUB>&nbsp; I<SUB>0</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Д&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+aa + a -</FONT></CENTER>
+
+<CENTER>&nbsp;&nbsp;&nbsp; Приведенная последовательность конфигураций
+показывает,&nbsp; что выходная цепочка формируется при выполнении операций
+СД2,&nbsp; СД4&nbsp; и СД6 соответственно на 2, 5 и 8 шаге.</CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER>
+<HR WIDTH="100%"></CENTER>
+
+<CENTER><A HREF="Part437.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT COLOR="#008000">Пред.Страница&nbsp;</FONT>&nbsp;<A HREF="Part44.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT COLOR="#008000"><A HREF="../../../s81.html#8.1. Конечные">
+</A>След.Страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="#8. Преобразователи">
+</A>Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+</BODY>
+</HTML>

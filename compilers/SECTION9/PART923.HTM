@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Асинхронные автоматы</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="Part922.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9231.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+<BLOCKQUOTE>
+<BLOCKQUOTE><B><I><U><FONT COLOR="#0000FF">9.2.3 КОДИРОВАНИЕ СОСТОЯНИЙ</FONT></U></I></B></BLOCKQUOTE>
+</BLOCKQUOTE>
+<FONT COLOR="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Состязания возникают
+в схемах, построенных на реальных элементах памяти с задержками, только
+в тех случаях, когда срабатывают одновременно несколько элементов памяти.
+Следовательно, для того, чтобы построить схему без состязаний, необходимо
+закодировать состояния автомата таким образом, чтобы при каждом переходе
+изменялось состояние только одного элемента памяти. Например, если в автомате
+определен переход из состояния s<SUB>i</SUB> в состояние s<SUB>j</SUB>,
+то их следует кодировать соседними кодами. Напомним, что соседними называются
+коды, отличающиеся значением только одного разряда.</FONT>
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если автомат
+имеет l состояний, то кодирование соседними наборами при использовании
+h = ]log2l[ внутренних переменных в большинстве случаев выполнить невозможно,
+поэтому в процессе кодирования расширяют алфавит состояний автомата и вводят
+дополнительные неустойчивые состояния, которые обеспечивают реализацию
+всех переходов в схеме с изменением только одного элемента памяти.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="Part922.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9231a.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

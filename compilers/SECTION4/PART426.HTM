@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part434</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part425.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part43.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+
+<P>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.2.6.&nbsp; Примеры&nbsp;
+СУ - схем.</FONT></FONT></I></B>
+
+<P>Описанные способы задания перевода в основном используются при построении
+компиляторов.
+<BR>Они являются основой для проектирования лексических и синтаксических
+анализаторов. Чтобы показать, как описание перевода может быть использовано
+применительно к языкам программирования, приведем несколько СУ - схем,
+задающих перевод последовательности операторов или отдельных опреаторов
+в польскую запись.
+<BR>Правила СУ - схемы <FONT COLOR="#000099">Т<SUB>5</SUB></FONT>, изображенные
+ниже, определяют перевод последовательности операторов присваивания, разделенных
+точкой с запятой, в последовательность постфиксных записей. В правой части
+каждого оператора присваивания может находиться инфиксное арифметическое
+выражение без скобок, в котором могут быть использованы знаки сложения
+и умножения. Начальным символом СУ - схемы является <FONT COLOR="#000099">U</FONT>,
+а терминальный символ <FONT COLOR="#000099">i</FONT> используется для обозначения
+идентификатора.</UL>
+
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">Т<SUB>4.5</SUB>: Q&nbsp; = {&nbsp; &lt;U> <FONT FACE="symbol">╝</FONT>
+&lt;A<SUB>2</SUB>>. , &lt; A<SUB>2</SUB>>{.};</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt; A<SUB>2</SUB> ><FONT FACE="symbol">╝</FONT> &lt;S>&lt; R<SUB>2</SUB>
+> ,&nbsp; &lt;S>&lt; R<SUB>2</SUB></FONT> >;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R<SUB>2</SUB> ><FONT FACE="symbol">╝</FONT> ;&lt;S>&lt; R<SUB>2</SUB>
+>,&nbsp; {; }&lt;S>&lt; R<SUB>2</SUB></FONT> >;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R<SUB>2</SUB> ><FONT FACE="symbol">╝</FONT> $ ,&nbsp; $</FONT> ;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;S ><FONT FACE="symbol">╝</FONT> i &lt;B<SUB>2</SUB> >,&nbsp; {i}&lt;B<SUB>2</SUB></FONT>
+>;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;B<SUB>2</SUB> ><FONT FACE="symbol">╝</FONT> :=&lt;H> , &lt; H>{:=}</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;H ><FONT FACE="symbol">╝</FONT> i &lt;R> ,&nbsp; {i}&lt;R>;</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R> <FONT FACE="symbol">╝</FONT> +i &lt;R>&nbsp; ,&nbsp; {i}{+}&lt;R>;</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R> <FONT FACE="symbol">╝</FONT> *i &lt;R>&nbsp; ,&nbsp; {i}{*}&lt;R>;</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R> <FONT FACE="symbol">╝</FONT> $&nbsp; ,&nbsp; $</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}.</FONT></UL>
+</UL>
+</UL>
+</UL>
+Правила СУ - схемы, описывающей перевод условных операторов в постфиксную
+форму записи имеет вид:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&nbsp; Т<SUB>4.6</SUB>: Q = {&nbsp;&nbsp;&nbsp;
+&lt;R<SUB>4</SUB> ><FONT FACE="symbol">╝</FONT> i &lt;R<SUB>3</SUB> > ,
+{i}&lt;R<SUB>3</SUB></FONT> >;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R<SUB>3</SUB> ><FONT FACE="symbol">╝</FONT> &lt;i , {&lt;}{i}</FONT>
+;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;R<SUB>3</SUB> ><FONT FACE="symbol">╝</FONT> =i , {=}{i}</FONT> ;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;V> <FONT FACE="symbol">╝</FONT> .IF.&lt;R<SUB>4</SUB> >&lt;C<SUB>2</SUB>
+> ,&nbsp; &lt;R<SUB>4</SUB> >&lt;C<SUB>2</SUB></FONT> >;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C<SUB>2</SUB> ><FONT FACE="symbol">╝</FONT> .THEN.&lt;S>&lt; C<SUB>3</SUB>
+> , {M<SUB>1</SUB>}{УПЛ}&lt;S>&lt; C<SUB>3</SUB></FONT> >;
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C<SUB>3</SUB> ><FONT FACE="symbol">╝</FONT> .ELSE.&lt;S>,&nbsp;&nbsp;
+{M<SUB>2</SUB>}{M<SUB>1</SUB>}{БП}&lt;S>{M<SUB>2</SUB>};</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C<SUB>3</SUB> ><FONT FACE="symbol">╝</FONT> $&nbsp; , {M<SUB>1</SUB>}}.</FONT></UL>
+</UL>
+</UL>
+</UL>
+Схема построена, исходя из допущения о том, что в качестве отношения &lt;R<SUB>4</SUB>>
+и условном операторе могут быть использованы выражения, состоящие из двух
+идентификаторов, разделяемых знаками меньше или равенства. В схеме символы
+М<SUB>1</SUB> и М<SUB>2</SUB> обозначают метки,
+<BR>а УПЛ и БП - команды перехода.
+<BR>Правила СУ - схем, задающих перевод двух операторов цикла языка Паскаль
+в постфиксную форму записи, можно записать так:
+<BR>&nbsp;
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">Т<SUB>4.7</SUB>: Q = { &lt;W> <FONT FACE="symbol">╝</FONT>
+WHILE &lt;R<SUB>4</SUB> >&lt;C<SUB>4</SUB> >,&nbsp;&nbsp; {M<SUB>1</SUB>}&lt;R<SUB>4</SUB>>{M<SUB>2</SUB>}{УПЛ}&lt;C<SUB>4</SUB></FONT>
+>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C<SUB>4</SUB> ><FONT FACE="symbol">╝</FONT> DO &lt;S> ,&nbsp; &lt;
+S>{M<SUB>1</SUB>}{БП}{M<SUB>2</SUB>}</FONT> }.
+<BR>&nbsp;
+
+<P><FONT COLOR="#000099">&nbsp;T<SUB>4.8</SUB>: Q = {&lt;W<SUB>1</SUB>><FONT FACE="symbol">╝</FONT>
+REPEAT &lt;S> &lt;C<SUB>5</SUB> >,&nbsp; {M<SUB>1</SUB>}&lt;S>&lt; C<SUB>5</SUB></FONT>
+>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C<SUB>5</SUB> ><FONT FACE="symbol">╝</FONT> UNTIL &lt;R<SUB>4</SUB>
+>,&nbsp; &lt;R<SUB>4</SUB>>{M<SUB>1</SUB>}{УПЛ} }.</FONT></UL>
+</UL>
+</UL>
+</UL>
+&nbsp;
+
+<P>В последних двух СУ - схемах &lt;R<SUB>4</SUB> >обозначает отношение,
+определенное в СУ - схеме Т<SUB>7.6</SUB>, а &lt;S> -оператор присваивания,
+определение которого дано в Т<SUB>7.5</SUB>.
+<BR>&nbsp;</UL>
+
+<HR WIDTH="100%">
+<BR>&nbsp;<A HREF="Part426.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part43.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

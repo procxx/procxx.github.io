@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part416</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part423.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part425.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+
+<P>
+<HR WIDTH="100%">
+<UL>&nbsp;<B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.2.4.&nbsp;&nbsp;
+Вычисление постфиксных записей</FONT></FONT></I></B>
+
+<P>Вычисление постфиксной записи выражения можно представить следующим
+образом.
+<BR>1. Просматриваем выражение слева направо пока не найдем два стоящих
+рядом операнда, за
+<BR>&nbsp;&nbsp;&nbsp; которыми&nbsp; следует знак операции.
+<BR>2. Выполняем операцию и записываем результат вместо&nbsp; выбранных
+операндов и операций.
+<BR>3. Повторяем пункт (1) пока не получим вместо выражения&nbsp; единственный
+результат.
+<BR>Вычисление построенного постфиксного выражения можно представить в
+следующем виде:</UL>
+
+<CENTER><FONT COLOR="#000099">1. ab+cd-*</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">2. R<SUB>1</SUB>cd-*</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">3. R<SUB>1</SUB>R<SUB>2</SUB>*</FONT></CENTER>
+
+<CENTER><FONT COLOR="#000099">4. R<SUB>3</SUB></FONT></CENTER>
+
+<UL>
+
+<P>На практике вычисление постфиксных выражений реализуется с применением
+магазина. В этом случае вычисления выполняются по следующим правилам.
+<BR>1. Прочитать очередной символ входной цепочки.
+<BR>2. Если входной символ - операнд, то выполнить его запись&nbsp;&nbsp;
+в магазин.
+<BR>3. Если входной символ - оператор,то прочитать два операнда&nbsp; из
+магазина, выполнить
+<BR>&nbsp;&nbsp;&nbsp; операцию и результат занести в магазин&nbsp;&nbsp;
+как операнд.
+<BR>4. Повторять п.1, пока во входной цепочке не будут прочитаны&nbsp;
+все символы.
+<BR>Последовательность вычислений продемонстрируем на примере входной цепочки
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ab+cd-*
+<BR>и изобразим ее в виде следующей схемы:
+<BR>&nbsp;
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Вход&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Магазин&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Операция
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ab+cd-*
+<BR>1.&nbsp;&nbsp;&nbsp;&nbsp; b+cd-*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a
+<BR>2.&nbsp;&nbsp;&nbsp;&nbsp; +cd-*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ab
+<BR>3.&nbsp;&nbsp;&nbsp;&nbsp; cd-*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R<SUB>1</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a+b=R<SUB>1</SUB>
+<BR>4.&nbsp;&nbsp;&nbsp;&nbsp; d-*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R<SUB>1</SUB>c
+<BR>5.&nbsp;&nbsp;&nbsp;&nbsp; -*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R<SUB>1</SUB>cd
+<BR>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R<SUB>1</SUB>R<SUB>2</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+c-d&nbsp; = R<SUB>2</SUB>
+<BR>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R<SUB>3</SUB>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R<SUB>1</SUB>*R<SUB>2 </SUB>= R<SUB>3</SUB></UL>
+</UL>
+</UL>
+
+<HR WIDTH="100%">
+<BR><A HREF="Part424.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part425.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+</BODY>
+</HTML>

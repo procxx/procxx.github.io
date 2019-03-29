@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part22.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part24.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>
+<HR WIDTH="100%">
+
+<P><A NAME="2.3 Определения недостижимых символов."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.3
+Определения недостижимых символов.</FONT></FONT></I></B>
+<BR>&nbsp;
+<TABLE WIDTH="80%" HEIGHT="10%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><I>Определение.&nbsp;</I> Символ X&nbsp;<B><FONT COLOR="#000000"><FONT FACE="symbol">
+О </FONT>V<SUB>т</SUB><FONT FACE="symbol">И</FONT> V<SUB>A</SUB></FONT></B>&nbsp;
+называется&nbsp;<A NAME="недостижимым"></A><B><FONT COLOR="#993300">недостижимым</FONT></B>
+в КС-грамматике Г, если X не появляется ни в одной выводимой цепочке.</TD>
+</TR>
+</TABLE>
+Рассматривая правила грамматики, можно заметить , что если нетерминал в
+левой части правила является достижимым , то и все символы правой части
+являются достижимыми. Это свойство правил является основой процедуры выявления
+недостижимых символов, которую можно записать так:
+<OL>
+<LI>
+Образовать одноэлементный список, состоящий из начального символа</LI>
+
+<LI>
+Если найдено правило, левая часть которого уже имеется в списке, то включить
+в&nbsp; список все символы, содержащиеся в его правой части.</LI>
+
+<LI>
+&nbsp;Если на шаге 2 новые нетерминалы в список больше&nbsp; не&nbsp; добавляются,&nbsp;
+то получен список всех достижимых нетерминалов, а нетерминалы, не попавшие
+в список, являются недостижимыми.</LI>
+</OL>
+Например, применяя приведенные правила к следующей грамматике:
+<BR>&nbsp;
+<OL>
+<OL>
+<OL>
+<OL><B><FONT COLOR="#000099">Г<SUB>2. 1</SUB> :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R = {&nbsp;&nbsp; &lt;I> <FONT FACE="symbol">®</FONT>a&lt;I>b,</FONT></B>
+<OL>
+<OL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">®</FONT>c,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;A>
+<FONT FACE="symbol">®</FONT>b&lt;I>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;A>
+<FONT FACE="symbol">®</FONT>a&nbsp;&nbsp; },</FONT></B></OL>
+</OL>
+</OL>
+</OL>
+</OL>
+</OL>
+находим, что A является недостижимым символом.
+<BR>&nbsp;
+
+<P>
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part23.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part24.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;</UL>
+
+</BODY>
+</HTML>

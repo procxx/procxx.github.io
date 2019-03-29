@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part131.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part133.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"></H4>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.3.2. <I>Грамматики типа 1</I></FONT></FONT></H4>
+
+<UL><A NAME="gr1"></A><B><FONT COLOR="#000000">Грамматики типа 1</FONT></B>,
+которые называют также <B><FONT COLOR="#000000">контекстно-зависимыми грамматиками</FONT></B>,не
+допускают использования любых правил. Правила вывода в таких грамматиках
+должны иметь вид:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099"><FONT FACE="symbol">c</FONT><SUB>1</SUB>&lt;A><FONT FACE="symbol">c</FONT><SUB>2
+</SUB><FONT FACE="symbol">® c</FONT><SUB>1</SUB><FONT FACE="symbol">w c</FONT><SUB>2</SUB>,</FONT></B>
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+где <B><FONT COLOR="#000099"><FONT FACE="symbol">c</FONT><SUB>1</SUB>,<FONT FACE="symbol">
+c</FONT><SUB>2</SUB></FONT></B> - цепочки, возможно пустые, из множества<B><FONT COLOR="#000099">
+(V<SUB>т </SUB><FONT FACE="symbol">И</FONT> V<SUB>a</SUB>)*,</FONT></B>
+символ <B><FONT COLOR="#000099">&lt;А> <FONT FACE="symbol">О </FONT>V<SUB>a</SUB>
+</FONT></B>и цепочка&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT COLOR="#000099">w <FONT FACE="symbol">О </FONT>(V<SUB>т </SUB><FONT FACE="symbol">И</FONT>
+V<SUB>a</SUB>)*</FONT></B>. Цепочки <B><FONT COLOR="#000099"><FONT FACE="symbol">c</FONT><SUB>1</SUB>
+и<FONT FACE="symbol"> c</FONT><SUB>2</SUB></FONT></B> остаются неизменными
+при применении правила, поэтому их называют контекстом (соответственно
+левым и правым), а грамматику - контекстно зависимой.
+
+<P>Грамматики типа 1 значительно удобнее на практике, чем грамматики типа
+0, поскольку в левой части правила заменяется всегда один нетерминальный
+символ, который можно связать с некоторым синтаксическим понятием, в то
+время как в грамматике типа 0 можно заменять сразу несколько символов,
+в том числе и терминальных.
+
+<P>Например, грамматика:
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1.</SUB></FONT><SUB> <FONT COLOR="#000099">4</FONT></SUB><FONT COLOR="#000099">:</FONT></B>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">V<SUB>т </SUB>= {a, b, c, d}, V<SUB>a </SUB>=
+{&lt;I>, &lt;A>, &lt;B>}</FONT></B>
+<UL><B><FONT COLOR="#000099">R = { &lt;I> <FONT FACE="symbol">® </FONT>aA&lt;I>,</FONT></B>
+<UL><B><FONT COLOR="#000099">A&lt;I> <FONT FACE="symbol">® </FONT>AA&lt;I>,</FONT></B>
+<BR><B><FONT COLOR="#000099">AAA <FONT FACE="symbol">® </FONT>A&lt;B>A,</FONT></B>
+<BR><B><FONT COLOR="#000099">A <FONT FACE="symbol">® </FONT>b,</FONT></B>
+<BR><B><FONT COLOR="#000099">b&lt;B>A <FONT FACE="symbol">® </FONT>bcdA,</FONT></B>
+<BR><B><FONT COLOR="#000099">b&lt;I> <FONT FACE="symbol">® </FONT>ba }</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+&nbsp;</UL>
+</UL>
+</UL>
+является контекстно-зависимой, поскольку второе и шестое правила имеют
+непустой левый контекст, а третье и пятое правила содержат оба контекста.
+Вывод в такой грамматике может иметь вид:
+<BR>&nbsp;
+<UL><B><FONT COLOR="#000099">&lt;I> <FONT FACE="symbol">Ю </FONT>a&lt;A>&lt;I>
+<FONT FACE="symbol">Ю </FONT>a&lt;A>&lt;A>&lt;I> <FONT FACE="symbol">Ю
+</FONT>ab&lt;A>&lt;I> <FONT FACE="symbol">Ю </FONT>abb&lt;I> <FONT FACE="symbol">Ю
+</FONT>abba.</FONT></B></UL>
+</UL>
+
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part132.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part133.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<BR>&nbsp;
+<BR>&nbsp;
+</BODY>
+</HTML>

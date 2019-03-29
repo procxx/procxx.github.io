@@ -1,0 +1,87 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>АРИФМЕТИЧЕСКИЕ И ЛОГИЧЕСКИЕ ОСНОВЫ ВЫЧИСЛИТЕЛЬНОЙ ТЕХНИКИ</title>
+</head>
+<body>
+<a href="part916d.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part917b.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+<br>
+<hr WIDTH="100%">
+<p><b><i><font color="#0000FF"><font size=+1>9.1.7 Кодирование с числом
+элементов памяти, равным числу состояний .</font></font></i></b>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Этот способ кодирования заключается в
+том, что каждому из l состояний автомата ставится в соответствие один элемент
+памяти. В каждый момент времени только один элемент памяти должен находиться
+в состоянии “1”, а остальные - в состоянии “0”, поскольку автомат может
+находиться только в одном состоянии. Пример кодирования пяти состояний
+описанным способом приведен в табл. 11. Используемый способ часто называют
+кодированием с применением кодов “один из l”. Следует отметить, что этот
+способ кодирования позволяет упростить процедуру построения функций возбуждения
+и функций выходов за счет исключения этапа минимизации. Остановимся на
+этом вопросе подробнее.
+<ul>
+<ul>
+<ul>
+<ul>
+<ul>
+<ul><img SRC="DRAW/table11.gif" ></ul>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если для кодирования состояний используются
+l двоичных переменных <font color="#000099">у<sub>1</sub>, y<sub>2</sub>
+, ..., y<sub>l</sub></font>, то существует <font color="#000099">2<sup>l</sup>
+</font>различных двоичных наборов значений этих переменных. Обозначим множество
+всех двоичных наборов Н. Разобьем это множество на l пересекающихся подмножеств
+<font color="#000099">H<sub>1</sub>, H<sub>2</sub>, ..., H<sub>l</sub>
+</font>таким образом, чтобы в каждое подмножество H<sub>l</sub> входили
+<font color="#000099">2<sup>l-1</sup></font> двоичных наборов, определяющих
+переключательную функцию вида y<sub>i</sub>. В каждое подмножество H<sub>i</sub>
+входит только один набор <font face="SYMBOL">~x</font><sub>i</sub>, используемый
+при кодировании. Он состоит из l - 1 нуля и одной единицы, стоящей на i-м
+месте. При этом множество H<sub>i</sub> ' = H<sub>i</sub> - <font face="SYMBOL">~x</font><sub>i</sub>,
+представляет собой совокупность неиспользованных двоичных наборов.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пусть автомат переходит из состояния
+s', которому приписан код <font face="SYMBOL">~x</font><sub>i</sub> , в
+состояние s”, которому приписан код <font face="SYMBOL">~x</font><sub>i</sub>,
+под действием набора входных сигналов <font face="SYMBOL">d</font><sub>1</sub>,
+<font face="SYMBOL">d</font><sub>2</sub>,
+...,<font face="SYMBOL">d</font><sub>n</sub>. Если в качестве элемента
+памяти используется триггер D, то функция возбуждения, реализующая такой
+переход , имеет вид :
+<ul>
+<ul>
+<ul><img SRC="DRAW/f_t11.gif" ></ul>
+</ul>
+</ul>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Представим эту функцию следующим образом:
+<font color="#000099">y<sub>k</sub>'
+= x<sub>1</sub><sup><font face="SYMBOL">d</font><sub>1</sub></sup> x<sub>2</sub><sup><font face="SYMBOL">d</font><sub>2</sub></sup>
+... x<sub>n</sub><sup><font face="SYMBOL">d</font><sub>n</sub></sup><font face="SYMBOL">c</font>(у<sub>1</sub>,
+y<sub>2</sub>, ..., y<sub>l</sub>)</font>. Функция <font color="#000099"><font face="SYMBOL">c</font>(у<sub>1</sub>,
+y<sub>2</sub>, ..., y<sub>l</sub>). </font>является неполностью определенной
+переключательной функцией. Доопределим ее единицами на всех наборах, входящих
+в множество H<sub>i</sub>'. В результате получаем функцию, совокупность
+единичных наборов которой совпадает с множеством H<sub>i</sub>. Согласно
+построению, такая функция является переменной y<sub>i</sub>, поэтому имеем
+<font color="#000099">y<sub>k</sub>'
+= x<sub>1</sub><sup><font face="SYMBOL">d</font><sub>1</sub></sup> x<sub>2</sub><sup><font face="SYMBOL">d</font><sub>2</sub></sup>
+... x<sub>n</sub><sup><font face="SYMBOL">d</font><sub>n</sub></sup> у<sub>i</sub></font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Приведенные рассуждения показывают,
+что при выбранном способе кодирования каждый дизъюнктивный член функций
+возбуждения (функций выхода) содержит только одну внутреннюю переменную,
+определяющую соответствующее состояние автомата.
+<hr><a href="part916d.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part917b.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+</body>
+</html>

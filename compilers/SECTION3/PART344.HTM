@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part344</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part343.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part35.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%"><I><FONT COLOR="#3333FF"><FONT SIZE=+1><B>3.4.4
+Построение множества ВЫБОР.&nbsp;</B>&nbsp;</FONT></FONT></I>
+<DIR>Множество <B><FONT COLOR="#800040">ВЫБОР</FONT></B>, которое потребуется
+нам для построения переходов магазинных автоматов,можно определить&nbsp;
+с помощью функций ПЕРВ и СЛЕД следующим образом:
+<DIR>1)&nbsp;&nbsp; Если правило грамматики имеет вид <B><FONT COLOR="#000099">&lt;B>
+- > <FONT FACE="Symbol">a</FONT></FONT></B> и<B><FONT COLOR="#000099">
+<FONT FACE="Symbol">a</FONT> </FONT></B>не является аннулирующей цепочкой,
+другими словами не существует вывод <B><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT>
+==>*$</FONT></B>, то
+<BR>&nbsp;
+<DIR>
+<DIR>
+<DIR><B><FONT COLOR="#000099">ВЫБОР(&lt;B>&nbsp; <FONT FACE="symbol">®</FONT>
+<FONT FACE="Symbol">a</FONT> ) = ПЕРВ( <FONT FACE="Symbol">a</FONT> ).</FONT></B></DIR>
+</DIR>
+</DIR>
+&nbsp;
+<BR>2)&nbsp;&nbsp;&nbsp; Для аннулирующих правил грамматики вида <B><FONT COLOR="#000099">&lt;B>&nbsp;
+<FONT FACE="symbol">®</FONT>$,</FONT></B> мно-
+<BR>жество выбора определяется так
+<BR>&nbsp;
+<DIR>
+<DIR>
+<DIR><B><FONT COLOR="#0000A0">ВЫБОР(&lt;B>&nbsp;</FONT><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT><FONT COLOR="#0000A0"> $) = СЛЕД(&lt;B>).</FONT></B></DIR>
+</DIR>
+</DIR>
+&nbsp;
+<BR>3)&nbsp;&nbsp;&nbsp; Если правило грамматики имеет вид <B><FONT COLOR="#000099">&lt;B>&nbsp;
+<FONT FACE="symbol">®</FONT> µ </FONT></B>и <B><FONT COLOR="#000099">µ</FONT></B>
+яв-
+<BR>ляется аннулирующей цепочкой, то</DIR>
+</DIR>
+
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR><B><FONT COLOR="#0000A0">ВЫБОР(&lt;B>&nbsp;</FONT><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT><FONT COLOR="#0000A0"> µ) = ПЕРВ(µ)
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000099"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#0000A0">
+СЛЕД(&lt;B>).</FONT></B></DIR>
+</DIR>
+</DIR>
+&nbsp;</DIR>
+Для рассматриваемой грамматики Г<SUB>3.2</SUB> множества ВЫБОР для каждого
+из правил, построенные описанным выше способом, имеют вид:
+<DIR>
+<DIR>ВЫБОР(&lt;A>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+&lt;B>&lt;C>c) = ПЕРВ(&lt;B>&lt;C>c) = {a,b,c,d},
+<BR>ВЫБОР(&lt;A>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+g&lt;D>&lt;B>) = ПЕРВ(g&lt;D>&lt;B>) = {g},
+<BR>ВЫБОР(&lt;B>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+$) = ПЕРВ($) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+СЛЕД(&lt;B>) = {a,c,d,g,f},
+<BR>ВЫБОР(&lt;B>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+b&lt;C>&lt;D>&lt;E>) = ПЕРВ(b&lt;C>&lt;D>&lt;E>) = {b},
+<BR>ВЫБОР(&lt;C>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+&lt;D>a&lt;B>) = ПЕРВ(&lt;D>a&lt;B>) = {a,d},
+<BR>ВЫБОР(&lt;C>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+ca) = ПЕРВ(ca) = {a},
+<BR>ВЫБОР(&lt;D>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+$) = ПЕРВ($) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+СЛЕД(&lt;D>) = {a,b,c,g,f},
+<BR>ВЫБОР(&lt;D>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+d&lt;D>) = ПЕРВ(d&lt;D>) = {d},
+<BR>ВЫБОР(&lt;E>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+g&lt;A>f) = ПЕРВ(g&lt;A>f) = {g},
+<BR>ВЫБОР(&lt;E>&nbsp;<B><FONT COLOR="#000099"> </FONT><FONT FACE="symbol"><FONT COLOR="#000000">®</FONT></FONT></B>
+c) = ПЕРВ(c) = {c}.</DIR>
+</DIR>
+</DIR>
+&nbsp;
+<HR WIDTH="100%">
+<UL>
+<LI>
+<A HREF="Part343.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part35.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

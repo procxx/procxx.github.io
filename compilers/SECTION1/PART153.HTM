@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part152.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part154.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"></H4>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.5.3. <I>Пример построения грамматик</I></FONT></FONT></H4>
+
+<UL>Применение приведенных рекомендаций рассмотрим на следующем примере.
+Требуется построить грамматику для языка L ,терминальный словарь которого
+V<SUB>т </SUB>= {*, |}, а цепочки, образующие язык, имеют следующую структуру:
+<UL>а) каждая цепочка начинается буквой * и заканчивается двумя буквами
+**.
+<BR>b) между началом и концом цепочек могут быть:
+<UL>b1) либо непустая последовательность палочек
+<BR>b2) либо несколько таких последовательностей, разделенных символами
+*.</UL>
+</UL>
+1. Вначале построим несколько цепочек заданного языка, которые могут быть
+представлены в следующем виде:
+<BR>&nbsp;
+<UL>* |||**,
+<BR>* |*|*|**,
+<BR>* ||*||||*|||||** ,
+<BR>* |||*|*||*||||||** .</UL>
+2. Рассматривая приведенные цепочки, можно выделить следующие их структурные
+компоненты:
+<UL>
+<LI>
+начало цепочки (символ * ),</LI>
+
+<LI>
+конец цепочки (символы ** ),</LI>
+
+<LI>
+непустая группа палочек,</LI>
+
+<LI>
+последовательность групп палочек, разделенных звездочками.</LI>
+</UL>
+3. Обозначим группу палочек символом <B><FONT COLOR="#000099">&lt;A></FONT></B>,
+а последовательность групп палочек символом <B><FONT COLOR="#000099">&lt;B></FONT></B>.
+<BR>4. Выделенные структуры можно рассматривать как списки. Так последовательность
+палочек представляет собой список без разделителей, элементом которого
+является палочка. Правила грамматики, задающей такой список, имеют вид:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>| &lt;B>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol"> ® </FONT>| &lt;B>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol"> ® </FONT>$.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Последовательность групп палочек, разделенных звездочкой, представляет
+собой список с разделителем, элементом такого списка является группа палочек<B><FONT COLOR="#000099">
+&lt;A></FONT></B>, а разделителем - звездочка. Правила грамматики, задающей
+такой список, можно записать так:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;C><FONT FACE="symbol"> ® </FONT>&lt;A>&lt;E>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;E><FONT FACE="symbol"> ® </FONT>*&lt;A>&lt;E>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;E><FONT FACE="symbol"> ® </FONT>$.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Учитывая, что каждая цепочка языка должна иметь начало и конец, и , выбирая
+в качестве начального символа грамматики <B><FONT COLOR="#000099">&lt;I></FONT></B>,
+получаем правило, определяющее общий вид цепочки:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol"> ® </FONT>*&lt;C>**.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+5. Объединяя построенные правила, окончательно получаем схему искомой грамматики
+в виде:
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 19</SUB>:&nbsp;&nbsp;&nbsp; R = {
+&lt;I><FONT FACE="symbol"> ® </FONT>*&lt;C>**,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;C><FONT FACE="symbol"> ® </FONT>&lt;A>&lt;E>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;E><FONT FACE="symbol"> ® </FONT>*&lt;A>&lt;E>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;E><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>| &lt;B>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol"> ® </FONT>| &lt;B>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol"> ® </FONT>$ }</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+6. С помощью правил построенной грамматики может быть получена, например,
+следующая цепочка:
+<UL>&nbsp;
+<UL>&lt;I><FONT FACE="symbol"> Ю </FONT>*&lt;C>**<FONT FACE="symbol"> Ю
+</FONT>*&lt;A>&lt;E>**<FONT FACE="symbol"> Ю </FONT>*&lt;A>*&lt;A>&lt;E>**<FONT FACE="symbol">
+Ю</FONT>
+<UL>&nbsp;*&lt;A>*&lt;A>*&lt;A>&lt;E><FONT FACE="symbol"> Ю </FONT>*&lt;A>*&lt;A>*&lt;A>**<FONT FACE="symbol">
+Ю</FONT>
+<BR>&nbsp;*&lt;A>*&lt;A>* | &lt;B>**<FONT FACE="symbol"> Ю </FONT>*&lt;A>*&lt;A>*
+| ** <FONT FACE="symbol">Ю</FONT>
+<BR>&nbsp;*&lt;A>* | &lt;B>* | **<FONT FACE="symbol"> Ю </FONT>*&lt;A>*
+| * | ** <FONT FACE="symbol">Ю</FONT>
+<BR>&nbsp;* | &lt;B>* | * | **<FONT FACE="symbol"> Ю </FONT>* | * | * |
+**.</UL>
+</UL>
+&nbsp;</UL>
+Построенный вывод иллюстрирует возможность порождения цепочек заданного
+языка с помощью построенной грамматики.
+
+<P>Одной из основных областей применения формальных грамматик является
+описание языков программирования. Учитывая широкое использование подобных
+описаний в литературе и их важное значение для создания компиляторов, рассмотрим
+построение грамматик для основных конструкций языков программирования.
+Чтобы сократить размеры грамматик, на рассматриваемые конструкции накладываются
+некоторые, иногда существенные, ограничения.
+<BR>&nbsp;
+<BR>
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part152.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=12 WIDTH=12 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part154.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<BR>&nbsp;</UL>
+
+</BODY>
+</HTML>

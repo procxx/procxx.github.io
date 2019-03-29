@@ -1,0 +1,61 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>АРИФМЕТИЧЕСКИЕ И ЛОГИЧЕСКИЕ ОСНОВЫ ВЫЧИСЛИТЕЛЬНОЙ ТЕХНИКИ</title>
+</head>
+<body>
+<a href="part916a.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part916c.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+<br>
+<hr WIDTH="100%">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Полученный результат показывает, что
+кодирование соседей первого рода соседними кодами обеспечивает получение
+более простого аналитического выражения функций возбуждения за счет склеивания
+элементарных конъюнкций, соответствующих соседям.<img SRC="DRAW/pic19.gif" >
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 HEIGHT="1%" BGCOLOR="#FFFFCC" >
+<tr>
+<td><a NAME="соседи2"></a><b><i>Определение. </i></b>Если состояния s<sub>k</sub>
+и s<sub>j</sub> являются соседями первого рода и под действием одного и
+того же сигнала x' автомат переходит из состояния s<sub>k </sub>в состояние
+s<sub>k</sub>', а из состояния s<sub>j</sub> - в состояние s<sub>j</sub>',
+то состояния s<sub>k</sub>' и s<sub>j</sub>' называют <b>соседями второго
+рода</b>.</td>
+</tr>
+</table>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Фрагмент графа автомата, иллюстрирующий
+это определение, приведен на рис. 19. Нетрудно заметить, что элементарные
+конъюнкции, соответствующие соседям первого рода, одновременно войдут также
+в те функции возбуждения yi', значения которых определяются компонентами
+<font face="SYMBOL">d</font><sub>i
+</sub>= 1 и <font face="SYMBOL">d</font><sub>i
+</sub>' = 1. Для того чтобы
+такие элементарные конъюнкции вошли в большое число функций возбуждения,
+необходимо кодировать состояния s<sub>k</sub>' и s<sub>j</sub>' кодами,
+обладающими наибольшим числом совпадающих единиц. Следовательно, состояния,
+являющиеся соседями второго рода, следует кодировать также соседними кодами,
+поскольку эти коды всегда имеют наибольшее число совпадающих компонентов.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Практическое определение соседей первого
+и второго рода удобно выполнять по<font color="#000099"> <i>инверсной таблице
+переходов</i> </font>. Строки такой таблицы, как обычно, отмечаются состояниями
+автомата, а столбцы - входными сигналами. В каждую клетку таблицы, соответствующую
+состоянию s<sub>i</sub> и входному сигналу х, заносятся все состояния,
+из которых автомат выполняет переход в s<sub>i</sub> под действием х. Из
+способа построения инверсной таблицы переходов следует, что состояния,
+расположенные в одной клетке такой таблицы, являются соседями первого рода.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Определение соседей второго рода выполняется
+по инверсной таблице переходов следующим образом. Если состояния s' и s”
+являются соседями первого рода и если эти два состояния встречаются в таблице
+еще раз в разных строках и в одном и том же столбце, то состояния s<sub>i</sub>
+и s<sub>j</sub>, отмечающие строки, в которых расположены s' и s”, являются
+соседями второго рода.&nbsp;
+<hr><a href="part916a.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part916c.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+</body>
+</html>

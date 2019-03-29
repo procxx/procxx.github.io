@@ -1,0 +1,53 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>АРИФМЕТИЧЕСКИЕ И ЛОГИЧЕСКИЕ ОСНОВЫ ВЫЧИСЛИТЕЛЬНОЙ ТЕХНИКИ</title>
+</head>
+<body>
+<a href="part916c.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part917a.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+<br>
+<hr WIDTH="100%">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ниже приводятся два примера, поясняющие
+описанный способ кодирования состояний.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Пример 4. Закодировать состояние автомата,
+переходы которого заданы табл. 8. Построим инверсную таблицу переходов
+(табл. 9). По этой таблице находим, что состояния:<font color="#000099">
+(s<sub>0</sub>, s<sub>2</sub>), (s<sub>1</sub>, s<sub>2</sub>), (s<sub>1</sub>,
+s<sub>4</sub>), (s<sub>1</sub>, s<sub>3</sub>) , (s<sub>2</sub>, s<sub>3</sub>)</font>-
+являются соседями первого рода, а состояния: <font color="#000099">(s<sub>0</sub>,
+s<sub>4</sub>) и (s<sub>3</sub>, s<sub>4</sub>)</font> - соседями второго
+рода. Диаграмма Вейча с выбранным вариантом кодирования приведена на рис.
+20,б. При таком кодировании не учитываются соседи первого рода (<font color="#000099">s<sub>1</sub>,
+s<sub>4</sub>) и (s<sub>1</sub>, s<sub>3</sub>)</font>. Коды состояния
+для этого варианта приведены в табл. 10, а функции возбуждения имеют вид:
+<center><font color="#000099">y<sub>1</sub>' = <font face="SYMBOL"><font size=-2>щ</font></font>
+x <font face="SYMBOL">Ъ<font size=-2>щ</font></font> y<sub>1</sub><font face="SYMBOL"><font size=-2>щ</font></font>
+y<sub>3</sub>;</font>
+<br><font color="#000099">y<sub>2</sub>' = <font face="SYMBOL"><font size=-2>щ</font></font>
+y<sub>3</sub><font face="SYMBOL"><font size=-2>щ</font></font> x;</font>
+<br><font color="#000099">y<sub>3</sub>' =<font face="SYMBOL"><font size=-2>щ</font></font>
+y<sub>3</sub><font face="SYMBOL">Ъ</font> y<sub>2</sub> <font face="SYMBOL">Ъ</font>
+xy<sub>1</sub> <font face="SYMBOL">Ъ<font size=-2>щ</font></font> x<font face="SYMBOL"><font size=-2>щ</font></font>
+y<sub>1</sub> .</font></center>
+
+<ul>
+<ul><img SRC="DRAW/table910.gif" ></ul>
+</ul>
+
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В заключении заметим, что при работе
+с описанным методом остаются неясными несколько моментов. Например: какими
+из соседей следует пренебречь, если все соседства закодировать требуемым
+способом нельзя; как лучше располагать пары соседних кодов, соответствующие
+соседям, друг относительно друга; каким образом лучше располагать состояния
+на диаграмме.&nbsp;
+<hr><a href="part916c.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part917a.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+</body>
+</html>

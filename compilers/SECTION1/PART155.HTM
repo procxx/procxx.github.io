@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part154.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part156.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"></H4>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.5.5. <I>Грамматики для арифметических
+выражений</I></FONT></FONT></H4>
+
+<UL>Условимся рассматривать арифметические выражения, использующие только
+знаки сложения и умножения. Вначале построим грамматику для выражений без
+скобок. Такие выражения представляют собой цепочки, которые можно рассматривать
+как списки с разделителями, в которых роль разделителей выполняют знаки
+операций. В соответствии с этой аналогией получаем схему грамматики, в
+которой символ <B><FONT COLOR="#000099">&lt;I></FONT></B> обозначает идентификатор,
+определение которого приведено выше.
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 23</SUB> :&nbsp; R = { &lt;H><FONT FACE="symbol">
+® </FONT>&lt;I>&lt;R>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>&lt;W>&lt;I>&lt;R>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;W><FONT FACE="symbol"> ® </FONT>+,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;W><FONT FACE="symbol"> ® </FONT>* }.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Чтобы построить грамматику, допускающую использование в арифметических
+выражениях скобок без вложенности, представим структуру таких выражений
+в виде списка с разделителями, элементами которого являются выражения без
+скобок или выражения без скобок, заключенные в скобки. Разделителями этого
+списка являются знаки операций. Такой структуре соответствует следующая
+схема грамматики:
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 24</SUB> :&nbsp; R = { &lt;G><FONT FACE="symbol">
+® </FONT>&lt;H>&lt;Q>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;G><FONT FACE="symbol"> ® </FONT>(&lt;H>)&lt;Q>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;Q><FONT FACE="symbol"> ® </FONT>&lt;W>&lt;G>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;Q><FONT FACE="symbol"> ® </FONT>$ }.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Для построения грамматики арифметических выражений, допускающих применение
+вложенных скобок, следует предусмотреть возможность использования в качестве
+элемента списка не только выражения без скобок, но и выражения, в котором
+могут быть использованы скобки. Схема грамматики, учитывающая эту возможность,
+может быть записана в виде:
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 25</SUB> :&nbsp; R = { &lt;E><FONT FACE="symbol">
+® </FONT>&lt;G>&lt;P>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;E><FONT FACE="symbol"> ® </FONT>(&lt;E>)&lt;P>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;P><FONT FACE="symbol"> ® </FONT>&lt;W>&lt;E>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;P><FONT FACE="symbol"> ® </FONT>$ }.</FONT></B></UL>
+</UL>
+&nbsp;</UL>
+</UL>
+</UL>
+
+<HR ALIGN=LEFT WIDTH="60%">
+<BR>&nbsp;
+<LI>
+<A HREF="Part155.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part156.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

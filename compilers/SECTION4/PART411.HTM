@@ -1,0 +1,147 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part422</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part41.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part412.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+<BR>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.1.1.&nbsp; Синтаксически&nbsp;
+управляемые&nbsp; схемы.</FONT></FONT></I></B>
+
+<P>Обобщением рассматриваемого способа задания перевода&nbsp; с помощью
+двух грамматик является понятие СУ - схемы, которое может быть определено
+следующим образом.&nbsp;<A NAME="SCC"></A>
+<BR>&nbsp;</UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><I><B>Определение</B>.</I> Схемой синтаксически управляемого перевода
+(СУ-схемой)&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+называется совокупность пяти&nbsp; объектов:&nbsp;
+<BR>&nbsp;
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp;
+T = {V<SUB>a</SUB>,V<SUB>твх</SUB>,V<SUB>твых</SUB>,Q,&lt;I>},&nbsp;</FONT></B></UL>
+где <B><FONT COLOR="#000099">V<SUB>a</SUB> </FONT></B>- множество&nbsp;
+нетерминальных символов,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp; V<SUB>твх</SUB>
+</FONT></B>- множество терминальных символов,&nbsp; используемых для построения&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+входных цепочек,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099"> V<SUB>твых</SUB>
+</FONT></B>- множество терминальных символов,&nbsp; используемых для построения&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+выходных цепочек,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099"> &lt;I></FONT></B>-начальный
+символ, &lt;I> <FONT FACE="Symbol">О</FONT> Va,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B><FONT COLOR="#000099">Q
+</FONT></B>- множество правил вида<B><FONT COLOR="#000099">&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝ </FONT><FONT FACE="Symbol">a</FONT> ,<FONT FACE="Symbol">b</FONT>
+</FONT></B>,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+где &lt;A> принадлежит V<SUB>a</SUB>, <FONT FACE="Symbol">a</FONT> <FONT FACE="Symbol">О</FONT>(V<SUB>a</SUB>
+U V<SUB>твх</SUB>)*,&nbsp; <FONT FACE="Symbol">b</FONT> <FONT FACE="Symbol">О</FONT>
+(V<SUB>a</SUB> U V<SUB>твых</SUB>)* и&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+нетерминалы,&nbsp; входящие в цепочку <FONT FACE="Symbol">b</FONT> образуют
+перестановку&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+нетерминалов цепочки <FONT FACE="Symbol">a</FONT> .&nbsp;
+<BR>&nbsp;</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Из приведенного определения следует, что каждое правило СУ- схемы должно
+включать цепочку, построенную из символов входного алфавита и нетерминальных
+символов, и цепочку, построенную из символов выходного алфавита и нетерминальных
+символов, и что в эти цепочки должны входить одни и те же нетерминалы.
+То обстоятельство, что основой СУ - схемы являются две грамматики, устанавливается
+следующим определением:
+<BR>&nbsp;</UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><B><I>Определение</I></B>. Если T = {V<SUB>a</SUB>,V<SUB>твх</SUB>,V<SUB>твых</SUB>,Q,I}
+СУ-схема,&nbsp; то грамматика&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000099">&nbsp;
+Г = {V<SUB>a</SUB>,V<SUB>твх</SUB>,R, I},&nbsp;</FONT>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+где R = {&lt;A> <FONT FACE="symbol">╝ </FONT><FONT FACE="Symbol">a</FONT>
+|&lt;A> <FONT FACE="symbol">╝ </FONT><FONT FACE="Symbol">a</FONT> ,<FONT FACE="Symbol">b</FONT>
+принадлежит Q},&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+называется входной грамматикой&nbsp; СУ-схемы Т, а грамматика&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000099">&nbsp;&nbsp;
+Г'={V<SUB>a</SUB>,V<SUB>твых</SUB>,R',I},&nbsp;</FONT>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+где R' = {&lt;A> <FONT FACE="symbol">╝ </FONT><FONT FACE="Symbol">b</FONT>
+| &lt;A> <FONT FACE="symbol">╝ </FONT><FONT FACE="Symbol">a</FONT> ,<FONT FACE="Symbol">b</FONT>
+принадлежит Q}&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+называется выходной грамматикой СУ-схемы Т.&nbsp;
+<BR>&nbsp;</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>С помощью СУ - схемы можно строить пары соответствующих цепочек. Такое
+построение называется выводом СУ -схемы, а получаемые пары цепочек - выводимыми
+парами.
+<BR>&nbsp;</UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><B><I>Определение</I>.</B> Парой, выводимой с помощью заданной&nbsp;
+СУ-схемы, называют любую&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+пару, которая может быть построена с применением&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+следующих правил:&nbsp;
+
+<P>&nbsp;&nbsp;&nbsp; 1) (&lt;I>,&lt;I>) - выводимая пара,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp; 2) если (<FONT FACE="Symbol">a</FONT> &lt;A><FONT FACE="Symbol">b</FONT>
+,<FONT FACE="Symbol">a</FONT> '&lt;A><FONT FACE="Symbol">b</FONT> ') выводимая
+пара и&nbsp; выделенные нетерминалы&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; соответствуют друг другу&nbsp;
+и в Q существует правило &lt;A><FONT FACE="symbol">╝</FONT><FONT FACE="Symbol">g</FONT>
+,<FONT FACE="Symbol">g</FONT> ', то&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<FONT FACE="Symbol">a</FONT>
+<FONT FACE="Symbol">g</FONT> <FONT FACE="Symbol">b</FONT> , <FONT FACE="Symbol">a</FONT>
+'<FONT FACE="Symbol">g</FONT> '<FONT FACE="Symbol">b</FONT> ') является
+выводимой парой.</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Это записывается так:&nbsp;
+<UL><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(<FONT FACE="Symbol">a</FONT> &lt;A><FONT FACE="Symbol">b</FONT> ,<FONT FACE="Symbol">a</FONT>
+'&lt;A><FONT FACE="Symbol">b</FONT> ') ==> (<FONT FACE="Symbol">a</FONT>
+<FONT FACE="Symbol">g</FONT> <FONT FACE="Symbol">b</FONT> ,<FONT FACE="Symbol">a</FONT>
+'<FONT FACE="Symbol">g</FONT> '<FONT FACE="Symbol">b</FONT> ').</FONT>
+
+<P>Последовательность выводимых пар обозначим как прежде:
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;
+(<FONT FACE="Symbol">a</FONT> &lt;A><FONT FACE="Symbol">b</FONT> ,<FONT FACE="Symbol">a</FONT>
+'&lt;A><FONT FACE="Symbol">b</FONT> ') ==>*&nbsp; (<FONT FACE="Symbol">w</FONT>
+<FONT FACE="Symbol">m</FONT> <FONT FACE="Symbol">p</FONT> ,<FONT FACE="Symbol">w</FONT>
+'<FONT FACE="Symbol">m</FONT> '<FONT FACE="Symbol">p</FONT> ').</FONT></UL>
+
+<HR WIDTH="100%">
+<BR><A HREF="Part41.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part412.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

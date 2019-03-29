@@ -1,0 +1,219 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s791</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.3.3"></A><A HREF="part532.html#5.3.2"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part534.html#5.3.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>
+<FONT COLOR="#006600">След.Страница&nbsp;<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="index5.html#idx5">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+5.3.3. Преобразование LАТ-грамматики в LАТ-грамматику в форме простого
+присваивания.</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В качестве итога
+проведенного анализа опишем последовательность преобразования заданной
+<B><FONT COLOR="#993300">LАТ-грамматики</FONT></B> в <B><FONT COLOR="#993300">LАТ-грамматику</FONT></B>
+в <B><FONT COLOR="#993300">форме простого присваивания</FONT></B>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">1) Для каждой функции <FONT COLOR="#3333FF">f(x1,
+x2, ..., xn)</FONT>, входящей в правила вычисления атрибутов, связанных
+с некоторым правилом грамматики, введем дополнительный символ действия
+с <FONT COLOR="#3333FF">n+1</FONT> атрибутом, который обозначим <FONT COLOR="#3333FF">{f}</FONT>
+и определим следующим образом:</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">{f}/a1/a2/.../an%y</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">где значение y определяется как <FONT COLOR="#3333FF">f(a1,
+a2, ..., an)</FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">2) Для каждого некопирующего правила</FONT>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">(z1, z2, ...,
+zn) </FONT>:= <FONT COLOR="#3333FF">f(x1, x2, ..., xn)</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">связанного с некоторым правилом грамматики,
+включим в правую часть правила грамматики символ</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">{f}/a1/a2/.../an%y</FONT>,</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">полагая, что символы <FONT COLOR="#3333FF">a1,
+a2, ..., an</FONT> и <FONT COLOR="#3333FF">y</FONT> не содержатся в правиле
+грамматики, и заменим некопирующее правило на <FONT COLOR="#3333FF">n+1</FONT>
+копирующих правил вида:</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">ai</FONT> :=
+<FONT COLOR="#3333FF">xi</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">(z1, z2, ...,
+zm) </FONT>:= <FONT COLOR="#3333FF">y</FONT>.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">3) При включении символа действия <FONT COLOR="#3333FF">{f}/a1/a2/.../an%y</FONT>
+необходимо соблюдать следующие ограничения:</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">а) Символ действия должен располагаться
+правее каждого символа правой части правила грамматики, атрибутом которого
+является один из аргументов <FONT COLOR="#3333FF">x1, x2, ..., xn</FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">б) Символ действия должен располагаться
+левее каждого символа правой части грамматики, атрибутом которого является
+один из символов <FONT COLOR="#3333FF">z1, z2, ..., zm</FONT>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">в) Если существует несколько позиций
+для размещения символа действия, то предпочтение следует оказать самой
+левой из возможных позиций.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">4) Два копирующих правила одного и
+того же правила грамматики следует объединить в одно правило, если источник
+одного из них входит в другое. Это объединение осуществляется путем удаления
+правила с лишним источником и объединения его получателя с получателями
+оставшегося правила. Отметим, что следует соблюдать осторожность при объединении
+зависимых правил, использующих в правой части процедуры без параметров,
+которые можно рассматривать как константы и, следовательно, считать источниками,
+поскольку могут возникнуть ошибки за счет того, что разные вызовы процедур
+могут давать разные значения. Например, правила</FONT>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">x</FONT> :=
+<FONT COLOR="#3333FF">СЛЕДУК</FONT> и <FONT COLOR="#3333FF">y </FONT>:=
+<FONT COLOR="#3333FF">СЛЕДУК</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;объединить нельзя, поскольку значениями
+x и y будут указатели на соседние элементы <B>ТЗ</B>. В качестве примера
+преобразования<FONT COLOR="#993300"> <B>АТ-грамматики</B> </FONT>в грамматику
+в <B><FONT COLOR="#993300">форме простого присваивания</FONT></B> выполним
+такое преобразование для <B>г</B>рамматики <B><FONT COLOR="#000099">Г <SUB>5.
+0</SUB></FONT></B>. Введем для правил, содержащих операции операционные
+символы <FONT COLOR="#3333FF">{сложить}</FONT> и <FONT COLOR="#3333FF">{умножить}</FONT>,
+приписывая каждому символу два наследуемых и один синтезируемый атрибуты.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">В результате получаем грамматику в
+<B><FONT COLOR="#993300">форме простого присваивания</FONT></B>:</FONT>
+
+<P><B><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#000099">Г <SUB>5. 3</SUB></FONT></FONT></B> :
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;S></FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">E%a{ОТВЕТ/b} !! b</FONT>:=<FONT COLOR="#3333FF">a</FONT>;</FONT></UL>
+</UL>
+</UL>
+</UL>
+
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E>%d</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">&lt;E>%e+T%f{СЛОЖИТЬ}/x1/x2%y</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! x1</FONT> := <FONT COLOR="#3333FF">e</FONT>; <FONT COLOR="#3333FF">x2</FONT>
+:=<FONT COLOR="#3333FF"> f</FONT>; <FONT COLOR="#3333FF">d</FONT> := <FONT COLOR="#3333FF">y</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E>%g</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">&lt;T>%h</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! g</FONT> := <FONT COLOR="#3333FF">h</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;T>%i</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">&lt;T>%j*&lt;P>%k{УМНОЖИТЬ}/z1/z2%u</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! z1</FONT> := <FONT COLOR="#3333FF">j</FONT>; <FONT COLOR="#3333FF">z2</FONT>
+:= <FONT COLOR="#3333FF">k</FONT>;<FONT COLOR="#3333FF"> i</FONT> :=<FONT COLOR="#3333FF">
+u</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;T>%m </FONT></FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">&lt;P>%n</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! m</FONT> := <FONT COLOR="#3333FF">n</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;P>%p</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">
+(&lt;E>%q)</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! p</FONT> := <FONT COLOR="#3333FF">q</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;P>%r</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">c/s</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+!! r</FONT> :=<FONT COLOR="#3333FF"> s</FONT>;</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Ограничения, накладываемые
+на атрибуты<FONT COLOR="#993300"> <B>LAT–грамматиками</B> </FONT>в <B><FONT COLOR="#993300">форме
+простого присваивания</FONT></B>, делают возможным использование таких
+грамматик для построения <FONT COLOR="#993300"><B>атрибутных преобразователей</B>
+</FONT>(<B><FONT COLOR="#993300">АТ-преобразователей</FONT>). </B>Основой
+построения <B><FONT COLOR="#993300">АТ–преобразователей</FONT> </B>являются
+следующие соображения.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Если из правил <B><FONT COLOR="#993300">LAT-грамматики
+</FONT></B>удалить все атрибуты, то получится <B><FONT COLOR="#993300">транслирующая
+грамматика</FONT></B>, для которой может быть построен нисходящий магазинный
+преобразователь. Следовательно,<FONT COLOR="#993300"> <B>АТ-преобразователь</B></FONT><B>
+</B>можно строить в виде магазинного преобразователя, дополненного действиями,
+связанными с обработкой атрибутов.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; При определении
+значений синтезируемых атрибутов в <B><FONT COLOR="#993300">LAT-грамматиках</FONT></B>
+могут возникать отложенные присваивания, поэтому, планируя работу <B><FONT COLOR="#993300">АТ-преобразователя</FONT></B>,
+необходимо предусмотреть возможность сохранения атрибутов, значения которых
+еще не определены. Для сохранения таких атрибутов может быть использован
+магазин. Простое сохранение атрибутов является недостаточным, поскольку
+необходимо еще сохранять сведения о том, какое значение должен получить
+атрибут. Учитывая, что в форме простого присваивания используется только
+один способ определения значения - с помощью оператора присваивания, можно
+отобразить сведения о присваиваниях в магазине с помощью указателей. Для
+этого в каждый элемент магазина, соответствующий источнику, можно записать
+указатель на элемент, соответствующий приемнику. Такие указатели можно
+устанавливать в магазине при записи в него правой части правила грамматики.
+В этом случае должен обеспечиваться порядок определения значений атрибутов,
+в котором всегда вначале определяется источник, а затем приемник. Получение
+такого порядка вычислений гарантируют свойства<FONT COLOR="#993300"> <B>L
+- атрибутности</B> <B>грамматики</B></FONT><B>.</B> Оно предусматривает,
+что каждое значение атрибута определяется значениями атрибутов, расположенных
+слева от него в правилах грамматики. Учитывая, что в магазин записывается
+зеркальное отображение правой части правила, можно утверждать, что атрибуты,
+расположенные левее рассматриваемого атрибута, будут вычисляться раньше
+него, обеспечивая тем самым требуемый порядок вычисления атрибутов.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="part532.html#5.3.2"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part534.html#5.3.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="index5.html#idx5">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

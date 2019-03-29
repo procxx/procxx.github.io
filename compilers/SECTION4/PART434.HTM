@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s83</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part433.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part435.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=17 WIDTH=17></A></FONT><A HREF="s822.html#8.2.2. Описание Работы Магазинного">
+</A><FONT COLOR="#006600">След.Страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+<BR>&nbsp;
+
+<P><A NAME="8.3.1. Построение Детерминированного"></A><B><I><FONT FACE="Times New Roman"><FONT COLOR="#0000FF"><FONT SIZE=+1>4.3.4.
+Построение&nbsp; преобразователя.</FONT></FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman"><FONT COLOR="#008000">&nbsp;</FONT></FONT><FONT COLOR="#000000">&nbsp;
+Покажем теперь, как по заданной СУ - схеме можно построить детерминированный
+преобразователь. В начале по заданной СУ - схеме построим транслирующую
+грамматику Г. Это всегда можно&nbsp;&nbsp; сделать, поскольку заданная
+СУ - схема должна быть простой. Если входная грамматика заданной СУ - схемы
+относится к классу LL(1) -грамматик, то и входная грамматика транслирующей
+грамматики также должна относиться к этому классу, поскольку при построении
+Т - грамматики входные правила изменениям не подвергались. Учитывая, что
+искомый преобразователь должен в процессе формирования выхода осуществлять
+и распознавание входной цепочки, будем его строить по правилам транслирующей
+грамматики, используя правила построения распознавателя.</FONT>
+<BR><FONT COLOR="#000000">&nbsp;&nbsp; Такой преобразователь должен воспроизводить
+левый вывод входной цепочки в магазине и удалять терминальные символы,
+на ходящиеся в вершине, при совпадении их с очередным символом на входной
+ленте. Однако при этом в магазин будут записываться выходные символы, содержащиеся
+в правилах Т - грамматики, и возникнут неопределенные ситуации при появлении
+выходного символа в вершине магазина. Чтобы исключить такие ситуации, дополним
+этот правила построения преобразователя следующим правилом: при появлении
+выходного символа в вершине магазина он должен передаваться на выход независимо
+от того, какой символ находится под входной головкой.</FONT>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; Построение функции переходов МП
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; (1) Для&nbsp; всех правил вида <B><FONT COLOR="#000099">&lt;A>
+--> b<FONT FACE="Symbol">a</FONT></FONT></B>,&nbsp; где b <FONT FACE="Symbol">О</FONT>
+V<SUB>твх </SUB>и <FONT FACE="Symbol">a</FONT> <FONT FACE="Symbol">О</FONT>(V<SUB>твх</SUB>
+U V<SUB>твых</SUB> U V<SUB>a</SUB>)*, строим ко-
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; манды:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B><FONT COLOR="#000099"><FONT FACE="Symbol">j</FONT>(
+s<SUB>0</SUB>, b,&nbsp; A)=( s<SUB>0</SUB>, <FONT FACE="Symbol">a</FONT>',
+$ )</FONT></B>,</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; где <FONT FACE="Symbol">a</FONT>'
+- зеркальное отображение цепочки <FONT FACE="Symbol">a</FONT>.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; (2) Для всех правил вида <B><FONT COLOR="#000099">&lt;A>
+--> &lt;B><FONT FACE="Symbol">a</FONT></FONT></B>, где B <FONT FACE="Symbol">О</FONT>Va
+и <FONT FACE="Symbol">a</FONT> <FONT FACE="Symbol">О</FONT>(V<SUB>твх</SUB>
+U V<SUB>твых</SUB> U V<SUB>a</SUB>)*, строим коман-
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ды:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">j</FONT>*( s<SUB>0</SUB>, u, A ) = ( s<SUB>0</SUB>,
+<FONT FACE="Symbol">a</FONT>B , $ ),</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; где u <FONT FACE="Symbol">О</FONT>&nbsp;
+ВЫБОР(&lt;A> --> &lt;B><FONT FACE="Symbol">a</FONT><SUB>вх</SUB>) и&nbsp;
+<FONT FACE="Symbol">a</FONT><SUB>вх</SUB> -&nbsp; цепочка,&nbsp; полученная&nbsp;
+из <FONT FACE="Symbol">a</FONT> путем удаления из
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; нее всех выходных
+символов.
+<BR>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Для всех правил вида <B><FONT COLOR="#000099">&lt;A>
+--> $</FONT></B> строим команды:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">j</FONT>*( s<SUB>0</SUB>, u, A ) = ( s<SUB>0</SUB>,
+$, $ ),</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; где u <FONT FACE="Symbol">О</FONT>
+ВЫБОР(&lt;A> --> $).
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; (4) Для всех символов b, принадлежащих, V<SUB>твх
+</SUB>, стоящих на&nbsp; первом месте&nbsp; в&nbsp; правой части правил
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; транслирующей&nbsp;
+грамматики, т.е. символов,заносимых в магазин, строим&nbsp; правило:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">j</FONT>( s<SUB>0</SUB>, b, b ) = ( s<SUB>0</SUB>,
+$, $ ).</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp; (5) Для всех выходных символов {u}, таких что&nbsp;
+u <FONT FACE="Symbol">О</FONT> V<SUB>твых</SUB> U {$}, строим команды:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">j</FONT>*( s<SUB>0</SUB>, z, {u} ) = ( s<SUB>0</SUB>,
+$, {u} ),</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; где z <FONT FACE="Symbol">О</FONT>
+Vтвх.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Точнее команды строятся
+для сочетаний {u}z, таких что z может следовать за {u} в цепочках,
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; выводимых в за&nbsp; данной
+грамматике.
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; (6) Заключительное правило строим так:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">j</FONT>( s<SUB>0</SUB>, $, h0 ) = ( s<SUB>0</SUB>,
+$, $ ).</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+<HR WIDTH="100%">
+
+<P><A HREF="Part434.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part435.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=17 WIDTH=17></A></FONT><A HREF="s822.html#8.2.2. Описание Работы Магазинного">
+</A><FONT COLOR="#006600">След.Страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P><FONT FACE="Times New Roman"><FONT COLOR="#008000">&nbsp;</FONT></FONT>
+</BODY>
+</HTML>

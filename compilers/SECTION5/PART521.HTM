@@ -1,0 +1,179 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s76</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.2.1"></A><A HREF="part515.html#5.1.5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part522.html#5.2.2."><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT COLOR="#3333FF">&nbsp; <FONT FACE="Times New Roman Cyr">5.2.
+Cинтаксический анализ, с использованием АТ-грамматики</FONT></FONT></I></B>
+
+<P><B><I><FONT COLOR="#3333FF">&nbsp; <FONT FACE="Times New Roman Cyr">5.2.1.
+Процесс синтаксического анализа</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">Допустим, что задачей синтаксического
+анализа такой цепочки является выделение каждой переменной элемента памяти
+в виде строки <B><FONT COLOR="#3333FF">ТЗ</FONT></B> и занесение указателя
+этой строки в <B><FONT COLOR="#3333FF">ТП</FONT></B>. Исходными данными
+для выполнения этих действий является указатель на первый свободный элемент
+<B><FONT COLOR="#3333FF">ТЗ</FONT></B>. После завершения обработки описаний
+этот указатель должен изменить значение. Новое значение должно определять
+первый свободный элемент <B><FONT COLOR="#3333FF">ТЗ</FONT></B> после выделения
+памяти для переменных.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">Синтаксис цепочек рассматриваемого
+вида может быть задан следующей грамматикой с начальным символом <B><FONT COLOR="#3333FF">&lt;D></FONT></B>.</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099"><FONT FACE="Times New Roman Cyr">&lt;D> </FONT><FONT FACE="symbol">®</FONT>
+int V &lt;R></FONT>
+<BR><FONT COLOR="#000099">&lt;R><FONT FACE="Times New Roman Cyr"> </FONT><FONT FACE="symbol">®</FONT>
+, V &lt;R></FONT>
+<BR><FONT COLOR="#000099">&lt;R><FONT FACE="Times New Roman Cyr"> </FONT><FONT FACE="symbol">®</FONT>
+$</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">Начальному символу <B><FONT COLOR="#3333FF">&lt;D>
+</FONT></B>придадим два атрибута: наследуемый атрибут <B><FONT COLOR="#3333FF">/b</FONT></B>,
+начальное значение которого зададим в виде указателя на первый свободный
+элемент <B><FONT COLOR="#3333FF">ТЗ</FONT></B>, и синтезируемый атрибут
+<B><FONT COLOR="#3333FF">%a</FONT></B>, значением которого должен быть
+указатель на новый свободный элемент <B><FONT COLOR="#3333FF">ТЗ</FONT></B>
+после выделения памяти для переменных.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">Нетерминальному символу <B><FONT COLOR="#3333FF">&lt;R></FONT></B>,
+обозначающему продолжение списка также припишем два атрибута. Один атрибут
+<B><FONT COLOR="#3333FF">/g</FONT></B> должен быть наследуемым. Он должен
+передавать значение указателя на <B><FONT COLOR="#3333FF">ТЗ</FONT></B>
+следующему правилу при выводе. Другой атрибут <B><FONT COLOR="#3333FF">%f</FONT></B>-
+синтезированный. Он должен использоваться для передачи на выход указателя
+на первый свободный элемент после выделения памяти переменным. Для каждой
+переменной в описании нужно указатель на свободный элемент <B><FONT COLOR="#3333FF">ТЗ</FONT></B>
+записать в соответствующее поле <B><FONT COLOR="#3333FF">ТП</FONT></B>.
+Допустим, что эти действия выполняет символ действия <B>ФОРМ</B>ирование
+<B>У</B>казателя (<B><FONT COLOR="#3333FF">ФОРМУ</FONT></B>), который имеет
+два наследуемых атрибута, первый из которых определяет положение переменной
+в <B><FONT COLOR="#3333FF">ТП</FONT></B>, а второй является указателем
+на первый свободный элемент <B><FONT COLOR="#3333FF">ТЗ</FONT></B>.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В простейшем случае
+указатель на элемент <B><FONT COLOR="#3333FF">ТЗ</FONT></B> для следующей
+переменной может быть получен путем прибавления единицы к предыдущему значению.
+В общем случае это может быть не так, поэтому примем, что новое значение
+указателя <B><FONT COLOR="#3333FF">ТЗ</FONT></B> определяется специальной
+функцией без аргументов <B>СЛЕД</B>ующий <B>УК</B>азатель (<B><FONT COLOR="#3333FF">СЛЕДУК</FONT></B>),</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">Учитывая сказанное выше, грамматику,
+задающую <B><FONT COLOR="#993300">перевод</FONT></B> описаний значения
+таблицы <B><FONT COLOR="#3333FF">ТП</FONT></B>, можно записать так:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#000099">Г <SUB>5.
+1</SUB></FONT> :</FONT></B></UL>
+</UL>
+</UL>
+
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">D%a/b</FONT>
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">int V/c{ФОРМУ}/d/eR%f/g</FONT></FONT>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! d </FONT>:=
+<FONT COLOR="#3333FF">C</FONT>;<FONT COLOR="#3333FF"> e</FONT> :=<FONT COLOR="#3333FF">
+b</FONT>;<FONT COLOR="#3333FF"> a</FONT> :=<FONT COLOR="#3333FF"> f</FONT>;<FONT COLOR="#3333FF">
+g </FONT>:= <FONT COLOR="#3333FF">СЛЕДУК</FONT>;</FONT></UL>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">R%h/k</FONT> </FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">, V/l{ФОРМУ}/m/nR%j/p</FONT></FONT>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! m </FONT>:=
+<FONT COLOR="#3333FF">l</FONT>; <FONT COLOR="#3333FF">n </FONT>:= <FONT COLOR="#3333FF">k</FONT>;
+<FONT COLOR="#3333FF">h </FONT>:= <FONT COLOR="#3333FF">j</FONT>; <FONT COLOR="#3333FF">p
+</FONT>:= <FONT COLOR="#3333FF">СЛЕДУК</FONT>;</FONT></UL>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">R%q/r</FONT> </FONT><FONT FACE="Symbol"><FONT COLOR="#000080">Ю</FONT></FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">$</FONT></FONT>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! q </FONT>:=
+<FONT COLOR="#3333FF">r</FONT>;</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Построим с помощью
+правил этой грамматики совмещенный вывод цепочки</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><B><FONT COLOR="#3333FF">int V/10,V/12,V/14</FONT></B>,
+записывая, справа от выводимой цепочки, отложенные вычисления, а под цепочкой
+– получаемые значения атрибутов. В качестве начального значения наследуемого
+атрибута <B><FONT COLOR="#3333FF">b</FONT></B> возьмем значение<B><FONT COLOR="#3333FF">
+44</FONT></B>.</FONT>
+
+<P><B><FONT FACE="Times New Roman Cyr">Результаты вывода&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Отложенные вычисления</FONT></B>
+
+<P><FONT FACE="Times New Roman Cyr">1. <FONT COLOR="#3333FF">D%a/44</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">2. <FONT COLOR="#3333FF">int V/10{ФОРМУ}/10/44R%f/45</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;
+d</FONT> := <FONT COLOR="#3333FF">10</FONT>; <FONT COLOR="#3333FF">e </FONT>:=
+<FONT COLOR="#3333FF">44</FONT>; <FONT COLOR="#3333FF">g</FONT> := <FONT COLOR="#3333FF">45&nbsp;&nbsp;</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+a</FONT> :=<FONT COLOR="#3333FF"> f</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">3. <FONT COLOR="#3333FF">int V/10,{ФОРМУ}/10/44/,V/12{ФОРМУ}</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/<FONT COLOR="#3333FF">12/45R%j/46</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+m :</FONT>= <FONT COLOR="#3333FF">12</FONT>, <FONT COLOR="#3333FF">n</FONT>
+= <FONT COLOR="#3333FF">45</FONT>, <FONT COLOR="#3333FF">p</FONT> = <FONT COLOR="#3333FF">46</FONT>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;
+a</FONT> :=<FONT COLOR="#3333FF"> f</FONT>;<FONT COLOR="#3333FF"> f</FONT>
+:= <FONT COLOR="#3333FF">j</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr">4. <FONT COLOR="#3333FF">int V/10,{ФОРМУ}/10/44,V/12,{ФОРМУ}</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3366FF">&nbsp;
+/12/45,V/14{ФОРМУ}/14/46R%j'/47,</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">
+m'</FONT> = <FONT COLOR="#3333FF">14</FONT>, <FONT COLOR="#3333FF">n'</FONT>
+= <FONT COLOR="#3333FF">46</FONT>; <FONT COLOR="#3333FF">p'</FONT> = <FONT COLOR="#3333FF">47</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">a</FONT> := <FONT COLOR="#3333FF">f</FONT>;<FONT COLOR="#3333FF">
+f </FONT>:=<FONT COLOR="#3333FF"> j</FONT>; <FONT COLOR="#3333FF">j </FONT>:=
+<FONT COLOR="#3333FF">j'</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">5. <FONT COLOR="#3333FF">int V/10,{ФОРМУ}/10/44,V/12,{ФОРМУ}</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">/12/45,V/14{ФОРМУ}/14/46</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a</FONT> :=<FONT COLOR="#3333FF"> f</FONT>;<FONT COLOR="#3333FF"> f</FONT>
+:=<FONT COLOR="#3333FF"> j</FONT>; <FONT COLOR="#3333FF">j </FONT>:= <FONT COLOR="#3333FF">j'</FONT>;
+<FONT COLOR="#3333FF">j'</FONT> := <FONT COLOR="#3333FF">47</FONT>; <FONT COLOR="#3333FF">a</FONT>
+= <FONT COLOR="#3333FF">47</FONT></FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В каждой строке
+приведенного примера показаны результаты очередного шага вывода, которые
+могут содержать символы действия с найденными значениями атрибутов. Учитывая,
+что атрибуты правой части каждого правила являются независимыми величинами,
+при повторном применении второго правила грамматики для обозначения атрибутов
+были использованы переменные с апострофами. Приведенные примеры показывают,
+что результатом вывода с помощью правил <B><FONT COLOR="#993300">атрибутивной
+грамматики </FONT></B>является цепочка, состоящая из символов действия
+и входных символов, каждому из которых приписаны значения атрибутов. Если
+из заданной<FONT COLOR="#993300"> <B>АТ-грамматики </B></FONT><B>Г </B>удалить
+все атрибуты, то получим транслирующую грамматику <B>Г'</B>, а из каждой
+цепочки, выведенной в грамматике Г после удаления всех атрибутов, может
+быть получена цепочка, выводимая в грамматике Г'. Основываясь на этом соответствии,
+назовем множество пар, состоящих из цепочки входных символов, снабженных
+атрибутами, и цепочки выходных символов, имеющих атрибуты,&nbsp;<A NAME="atrper"></A><B><FONT COLOR="#993300">атрибутным
+переводом</FONT>, </B>определяемым заданной <FONT COLOR="#993300"><B>атрибутной
+грамматикой</B>.</FONT></FONT>
+
+<P>
+<HR>
+
+<P><A HREF="part515.html#5.1.5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part522.html#5.2.2."><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="index5.html#idx5">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>
