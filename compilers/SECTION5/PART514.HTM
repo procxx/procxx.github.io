@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s74</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.1.4"></A><A HREF="part513.html#5.1.3"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part515.html#5.1.5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>
+<FONT COLOR="#006600">След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+5.1.4. Демонстрация вычисления значений атрибутов с левым выводом</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Попытаемся теперь
+совместить вычисление значений атрибутов с левым выводом, полагая, что
+при каждом применении правила грамматики должно выполняться соответствующее
+правило вычисления атрибутов. Если значение атрибутов еще не определено
+и действие выполнить нельзя, то правило вычисления поместим в список отложенных
+вычислений. Если правило вычисления атрибутов можно выполнить, и в результате
+определяется значение некоторого атрибута, то, просматривая список отложенных
+правил, найдем значения всех атрибутов, которые могут быть вычислены с
+помощью полученного значения. Новые значения могут привести к возможности
+вычисления новых правил, поэтому повторим процесс вычислений столько раз,
+сколько возможно, удаляя правила вычисления атрибутов после их использования.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Выполнение совмещенного
+вывода в приведенной грамматике рассмотрим на примере цепочки <B><FONT COLOR="#3333FF">C+C*C</FONT></B>,
+содержащей константы со значениями <B><FONT COLOR="#3333FF">1</FONT></B>,
+<B><FONT COLOR="#3333FF">2</FONT></B>, <B><FONT COLOR="#3333FF">3</FONT></B>.</FONT>
+
+<P><B><FONT FACE="Times New Roman Cyr">Результаты применения&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Список отложенных правил вывода вычислений</FONT></B>
+<OL>
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;S></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E>%a{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E>%e+&lt;T>%f{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">e</FONT>+<FONT COLOR="#3333FF">f</FONT>;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;T>%h+&lt;T>%f{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b </FONT>:= <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">e</FONT>+<FONT COLOR="#3333FF">f</FONT>; <FONT COLOR="#3333FF">e</FONT>
+:= <FONT COLOR="#3333FF">h</FONT> ;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;P>%n+&lt;T>%f{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">e</FONT>+<FONT COLOR="#3333FF">f</FONT>; <FONT COLOR="#3333FF">e</FONT>
+:=<FONT COLOR="#3333FF"> h</FONT>; <FONT COLOR="#3333FF">h</FONT> := <FONT COLOR="#3333FF">n</FONT>;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">C/1+&lt;T>%f{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">e</FONT>+<FONT COLOR="#3333FF">f</FONT>; <FONT COLOR="#3333FF">e</FONT>
+:= <FONT COLOR="#3333FF">h</FONT>; <FONT COLOR="#3333FF">h</FONT> := <FONT COLOR="#3333FF">n</FONT>;<FONT COLOR="#3333FF">
+n</FONT> := <FONT COLOR="#3333FF">1</FONT>;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">C/1+&lt;T>%j*&lt;P>%k{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">1</FONT>+<FONT COLOR="#3333FF">f</FONT>; <FONT COLOR="#3333FF">f</FONT>
+:=<FONT COLOR="#3333FF"> j</FONT>*<FONT COLOR="#3333FF">k</FONT>;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">C/1+&lt;P>%n*&lt;P>%k{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">1</FONT>+<FONT COLOR="#3333FF">f</FONT>; <FONT COLOR="#3333FF">f</FONT>
+:=<FONT COLOR="#3333FF"> j</FONT>*<FONT COLOR="#3333FF">k</FONT>;<FONT COLOR="#3333FF">
+j</FONT> := <FONT COLOR="#3333FF">n</FONT>;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">C/1+C/2*&lt;P>%k{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">1</FONT>+<FONT COLOR="#3333FF">f</FONT>;<FONT COLOR="#3333FF">
+f</FONT> :=<FONT COLOR="#3333FF"> j</FONT>*<FONT COLOR="#3333FF">k</FONT>;<FONT COLOR="#3333FF">
+j</FONT> := <FONT COLOR="#3333FF">n</FONT>;<FONT COLOR="#3333FF"> n</FONT>
+:= <FONT COLOR="#3333FF">2</FONT>;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">C/1+C/2*C/3{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">a</FONT>; <FONT COLOR="#3333FF">a</FONT>
+:= <FONT COLOR="#3333FF">1</FONT>+<FONT COLOR="#3333FF">f</FONT>; <FONT COLOR="#3333FF">f
+</FONT>:= <FONT COLOR="#3333FF">2</FONT>*<FONT COLOR="#3333FF">k</FONT>;
+<FONT COLOR="#3333FF">k</FONT> := <FONT COLOR="#3333FF">3</FONT>;</FONT></LI>
+
+<LI>
+<FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">C/1+C/2*C/3{ответ/b}</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#3333FF">b</FONT> := <FONT COLOR="#3333FF">7</FONT></FONT></LI>
+</OL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; При построении цепочек
+в строках <B>2</B>, <B>3</B>, <B>4</B>, <B>5</B> правила вычисления атрибутов
+заносятся в список отложенных вычислений. Появление первой константы в
+выводимой цепочке приводит к выполнению трех правил в списке. Аналогично,
+сокращение списка отложенных вычислений происходит после получения цепочек
+в строках <B>9</B> и <B>10</B>. Предполагается, что символ действия <B><FONT COLOR="#3333FF">{ответ}</FONT></B>
+в строке <B>11</B> передает полученное значение атрибута на выход.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="part513.html#5.1.3"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part515.html#5.1.5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

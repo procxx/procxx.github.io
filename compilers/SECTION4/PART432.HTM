@@ -1,0 +1,160 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s822</TITLE>
+</HEAD>
+<BODY>
+<A NAME="8.2.2. Описание Работы Магазинного"></A><A HREF="Part431.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part433.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=17 WIDTH=17></A></FONT><A HREF="s822.html#8.2.2. Описание Работы Магазинного">
+</A><FONT COLOR="#006600">След.Страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><FONT COLOR="#0000FF"><FONT SIZE=+1><I>4.3.2. Описание работы магазинного
+преобразователя</I>.</FONT></FONT></B>
+
+<P><FONT FACE="Times New Roman">&nbsp;&nbsp;&nbsp; Для описания работы
+магазинного преобразователя необходимо дать его определение.</FONT>
+<BR>&nbsp;
+<TABLE BORDER >
+<TR>
+<TD VALIGN=CENTER BGCOLOR="#FFFF99"><B><I><FONT FACE="Times New Roman">Определение:</FONT></I></B>
+<BR><FONT FACE="Times New Roman">Преобразователем</FONT> с магазинной памятью
+(Мп)<B> </B>называется совокупность восьми&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+объектов<B>:</B>&nbsp;
+<DIR>
+<CENTER><B>Мп</B>={<B><FONT COLOR="#000080">P</FONT></B>, <B><FONT COLOR="#000080">S</FONT></B>,
+<B><FONT COLOR="#000080">s<SUB>0</SUB></FONT></B>, <B><FONT COLOR="#000080">H</FONT></B>,
+<B><FONT COLOR="#000080">h<SUB>0</SUB></FONT></B>, <B><FONT COLOR="#000080">F</FONT></B>,
+<B><FONT COLOR="#000080">W</FONT></B>, <B><FONT COLOR="#000080">q</FONT></B><FONT FACE="Times New Roman">},</FONT></CENTER>
+
+<CENTER><FONT FACE="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+где </FONT><B><FONT COLOR="#000080">P</FONT></B><FONT FACE="Times New Roman">
+- входной алфавит, состоящий из символов, записываемых на входную ленту;&nbsp;</FONT></CENTER>
+
+<CENTER><B><FONT COLOR="#000080">&nbsp;&nbsp;&nbsp; W</FONT></B><FONT FACE="Times New Roman">
+- выходной алфавит, содержащий символы, записываемые на выходную ленту;&nbsp;</FONT></CENTER>
+
+<CENTER><B><FONT COLOR="#000080">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+H</FONT></B><FONT FACE="Times New Roman"> - магазинный алфавит, содержащий
+символы, записываемые и считываемые из&nbsp;&nbsp;&nbsp;&nbsp; магазина;&nbsp;</FONT></CENTER>
+
+<CENTER><B><FONT COLOR="#000080">h<SUB>0</SUB></FONT></B><FONT FACE="Times New Roman">
+- маркер дна магазина, он принадлежит </FONT><B><FONT COLOR="#000080">H</FONT></B>;&nbsp;</CENTER>
+
+<CENTER><B><FONT COLOR="#000080">S</FONT></B><FONT FACE="Times New Roman">
+- множество состояний преобразователя</FONT>;&nbsp;</CENTER>
+
+<CENTER><B><FONT COLOR="#000080">s<SUB>0</SUB></FONT></B><FONT FACE="Times New Roman">-
+начальное состояние из множества </FONT><B><FONT COLOR="#000080">S</FONT></B>;&nbsp;</CENTER>
+
+<CENTER><B><FONT COLOR="#000080">F</FONT></B><FONT FACE="Times New Roman">
+- множество конечных состояний, представляющих собой подмножество </FONT><B><FONT COLOR="#000080">S</FONT></B>;&nbsp;</CENTER>
+
+<CENTER><B><FONT FACE="Symbol"><FONT COLOR="#000080">j</FONT></FONT></B><FONT FACE="Times New Roman">
+- функция переходов преобразователя, которая задает отображение,&nbsp;</FONT></CENTER>
+</DIR>
+
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000080"><FONT FACE="Symbol">j</FONT>: Sx</FONT></B>{<B><FONT COLOR="#000080">P
+<FONT FACE="Symbol">И</FONT> </FONT></B>{<B><FONT COLOR="#000080">$</FONT></B>}<B><FONT COLOR="#000080">
+x H <FONT FACE="Symbol">Ю</FONT> S x H* x W* .</FONT></B></UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">Она может быть записана в функциональном виде:&nbsp;</FONT>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><B><FONT FACE="Symbol">j</FONT></B>(<B><FONT COLOR="#000080">s</FONT></B>,
+<B><FONT COLOR="#000080">p</FONT></B>, <B><FONT COLOR="#000080">h</FONT></B>)
+= (<B><FONT COLOR="#000080">s'</FONT></B>, <B><FONT FACE="Symbol"><FONT COLOR="#000099">b</FONT></FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">e</FONT></FONT></B><FONT FACE="Times New Roman">),&nbsp;</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">&nbsp;</FONT>&nbsp;
+<BR><FONT FACE="Times New Roman">где </FONT><B><FONT COLOR="#000080">h</FONT></B><FONT FACE="Times New Roman">
+</FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> </FONT><B><FONT COLOR="#000080">H</FONT></B>,&nbsp;
+<B><FONT COLOR="#000080">p</FONT></B><FONT FACE="Times New Roman"> </FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman">
+</FONT><B><FONT COLOR="#000080">P</FONT></B>,&nbsp; <B><FONT FACE="Symbol"><FONT COLOR="#000099">b</FONT></FONT></B><FONT FACE="Times New Roman">
+</FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> </FONT><B><FONT COLOR="#000080">H*</FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">e</FONT></FONT></B><FONT FACE="Times New Roman">
+</FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> </FONT><B><FONT COLOR="#000080">W*</FONT></B><FONT FACE="Times New Roman">
+и </FONT><B><FONT COLOR="#000080">s</FONT></B>,<B><FONT COLOR="#000080">s'
+</FONT></B><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> </FONT><B><FONT COLOR="#000080">S</FONT></B>.</UL>
+</UL>
+</TD>
+</TR>
+</TABLE>
+<FONT FACE="Times New Roman">&nbsp;</FONT>
+<BR><FONT FACE="Times New Roman">Определим конфигурацию <B>Мп</B> как четверку</FONT>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman">(</FONT><B><FONT COLOR="#000080">s</FONT></B>,
+<B><FONT COLOR="#000080">a</FONT><FONT FACE="Symbol"><FONT COLOR="#000099">c</FONT></FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">r</FONT></FONT><FONT COLOR="#000080">h</FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">d</FONT></FONT></B><FONT FACE="Times New Roman">),</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">где </FONT><B><FONT COLOR="#000080">a</FONT><FONT FACE="Symbol"><FONT COLOR="#000099">c</FONT></FONT></B><FONT FACE="Times New Roman">
+</FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> </FONT><B><FONT COLOR="#000080">P*</FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">r</FONT></FONT><FONT COLOR="#000080">h</FONT></B><FONT FACE="Times New Roman">
+</FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> </FONT><B><FONT COLOR="#000080">H*</FONT></B><FONT FACE="Times New Roman">
+и </FONT><B><FONT FACE="Symbol"><FONT COLOR="#000099">d</FONT></FONT></B><FONT FACE="Times New Roman">
+</FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> </FONT><B><FONT COLOR="#000080">W*</FONT></B><FONT FACE="Times New Roman">.</FONT>
+<BR><FONT FACE="Times New Roman">Если такту работы преобразователя соответствует
+конфигурация (</FONT><B><FONT COLOR="#000080">s</FONT></B>, <B><FONT COLOR="#000080">a</FONT><FONT FACE="Symbol"><FONT COLOR="#000099">c</FONT></FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">r</FONT></FONT><FONT COLOR="#000080">h
+</FONT></B>, <B><FONT FACE="Symbol"><FONT COLOR="#000099">d</FONT></FONT></B><FONT FACE="Times New Roman">)
+и определена функция переходов </FONT><B><FONT FACE="Symbol"><FONT COLOR="#000099">j</FONT></FONT></B>(<B><FONT COLOR="#000080">s</FONT></B>,
+<B><FONT COLOR="#000080">a</FONT></B>, <B><FONT COLOR="#000080">h</FONT></B>)
+= (<B><FONT COLOR="#000080">s'</FONT></B>, <B><FONT FACE="Symbol"><FONT COLOR="#000099">b</FONT></FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">e</FONT></FONT></B><FONT FACE="Times New Roman">),
+то происходит смена конфигурации, которую условимся записывать так:</FONT>
+<UL>
+<UL>&nbsp;
+<UL>
+<UL><FONT FACE="Times New Roman">(</FONT><B><FONT COLOR="#000080">s</FONT></B>,
+<B><FONT COLOR="#000080">a</FONT><FONT FACE="Symbol"><FONT COLOR="#000099">c</FONT></FONT></B>,<B><FONT COLOR="#000080">
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000099">r</FONT></FONT><FONT COLOR="#000080">h</FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">d</FONT></FONT></B>) |-- (<B><FONT COLOR="#000080">s'</FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">c</FONT></FONT></B>, <B><FONT FACE="Symbol"><FONT COLOR="#000099">rb</FONT></FONT></B>,<B><FONT COLOR="#000080">
+</FONT><FONT FACE="Symbol"><FONT COLOR="#000099">de</FONT></FONT></B><FONT FACE="Times New Roman">).</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">Последовательность сменяющих друг друга конфигураций,
+как обычно, обозначим символом |--*. В качестве начальной примем конфигурацию,
+которой соответствует заданная входная цепочка </FONT><B><FONT FACE="Symbol"><FONT COLOR="#000099">c</FONT></FONT></B><FONT FACE="Times New Roman">
+на ленте, цепочка </FONT><B><FONT COLOR="#000080">h<SUB>0</SUB>I </FONT></B><FONT FACE="Times New Roman">в
+магазине, начальное состояние </FONT><B><FONT COLOR="#000080">s<SUB>0</SUB></FONT></B><FONT FACE="Times New Roman">
+и пустая цепочка на выходной ленте:</FONT>
+<BR><FONT FACE="Times New Roman">(</FONT><B><FONT COLOR="#000080">s<SUB>0</SUB></FONT></B>,
+<B><FONT FACE="Symbol"><FONT COLOR="#000099">c</FONT></FONT></B>, <B><FONT COLOR="#000080">h<SUB>0</SUB>I</FONT></B>,
+<B><FONT COLOR="#000080">$</FONT></B>).
+<BR><FONT FACE="Times New Roman">&nbsp;&nbsp;&nbsp; Конечной или заключительной
+конфигурацией назовем четверку (</FONT><B><FONT COLOR="#000080">s<SUB>k</SUB>,
+$, $, </FONT><FONT FACE="Symbol"><FONT COLOR="#000099">d</FONT></FONT></B><FONT FACE="Times New Roman">),
+где </FONT><B><FONT COLOR="#000080">s<SUB>k</SUB></FONT></B><FONT FACE="Times New Roman">
+- одно из заключительных состояний из множества </FONT><B><FONT COLOR="#000080">F</FONT></B><FONT FACE="Times New Roman">,
+а </FONT><B><FONT FACE="Symbol"><FONT COLOR="#000099">d</FONT></FONT><FONT COLOR="#000080">
+</FONT></B><FONT FACE="Times New Roman">- выходная цепочка.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="Part432.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part433.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=17 WIDTH=17></A></FONT><A HREF="s822.html#8.2.2. Описание Работы Магазинного">
+</A><FONT COLOR="#006600">След.Страница<A HREF="index4.htm"><IMG

@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part142.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part144.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H5>
+
+<HR WIDTH="100%"></H5>
+
+<H5>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.4.3.<I> Синтаксические диаграммы</I></FONT></FONT></H5>
+
+<UL>Для того, чтобы улучшить зрительное восприятие и облегчить понимание
+сложных синтаксических описаний, применяют представление правил грамматики
+в виде синтаксических диаграмм. Правила построения таких диаграмм можно
+сформулировать в следующем виде:
+
+<P>1) Каждому правилу вида <B>&lt;A><FONT FACE="symbol"> ® </FONT>a<SUB>1</SUB>
+| a<SUB>2</SUB> |...| a<SUB>k</SUB></B> ставится в соответствие диаграмма,
+структура которой определяется правой частью правила.
+<BR>2) Каждое появление терминального символа <B>x </B>в цепочке a<SUB>i</SUB>
+изображается на диаграмме дугой, помеченной этим символом <B>x</B>, заключенным
+в кружок.
+
+<P><IMG SRC="draw\dr4.gif" HSPACE=100 HEIGHT=70 WIDTH=150>
+
+<P>3) Каждому появлению нетерминального символа <B>&lt;A></B> в цепочке
+a<SUB>i</SUB> ставится в соответствие на диаграмме дуга, помеченная символом,
+заключённым в квадрат.
+<BR>&nbsp;<IMG SRC="draw\dr5.gif" HSPACE=100 HEIGHT=70 WIDTH=150></UL>
+
+<UL>4) Порождающее правило, имеющее вид:
+<UL>
+<UL>
+<UL>
+<UL><B>&lt;A><FONT FACE="symbol"> ® </FONT>a<SUB>1</SUB>a<SUB>2</SUB>...a<SUB>n</SUB></B></UL>
+</UL>
+</UL>
+</UL>
+изображается на диаграмме следующим образом:
+
+<P><IMG SRC="draw\dr6.gif" HSPACE=50 HEIGHT=70 WIDTH=400></UL>
+
+<UL>5) Порождающее правило, имеющее вид:
+<UL>
+<UL>
+<UL>
+<UL><B>&lt;A><FONT FACE="symbol"> ® </FONT>a<SUB>1 </SUB>| a<SUB>2 </SUB>|
+... | a<SUB>n</SUB></B></UL>
+</UL>
+</UL>
+</UL>
+изображается на диаграмме так:
+<BR><IMG SRC="draw\dr7.gif" HSPACE=90 HEIGHT=220 WIDTH=250></UL>
+
+<UL>6) Если порождающее правило задано в виде итерации:
+<UL>
+<UL>
+<UL>
+<UL><B>&lt;A><FONT FACE="symbol"> ® </FONT>{a}<SUP>*</SUP>,</B></UL>
+</UL>
+</UL>
+</UL>
+то ему соответствует диаграмма:
+
+<P><IMG SRC="draw\dr8.gif" HSPACE=90 HEIGHT=100 WIDTH=250>
+
+<P>Число синтаксических диаграмм, которые можно построить для заданной
+схемы грамматики, определяется числом правил. Чтобы сократить число диаграмм,
+их объединяют, заменяя нетерминальные символы, входящие в диаграмму, построенными
+для них диаграммами.
+
+<P>Правила 3-6 предусматривают, что в качестве цепочки a<SUB>1</SUB> на
+объединенной диаграмме могут быть использованы диаграммы построенные для
+этих цепочек. В качестве примера рассмотрим следующую грамматику с начальным
+символом <B>&lt;A></B><I> </I>:
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 14</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+V<SUB>т </SUB>= { x, +, (, ) }, V<SUB>a </SUB>= {&lt;A>, &lt;B>, &lt;C>},</FONT></B>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">R =&nbsp; {&lt;A><FONT FACE="symbol"> ® </FONT>x
+| (&lt;B>),</FONT></B>
+<UL><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol"> ® </FONT>&lt;A>&lt;C>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;C><FONT FACE="symbol"> ® </FONT>{+&lt;A>}*}.</FONT></B></UL>
+</UL>
+</UL>
+&nbsp;</UL>
+</UL>
+Синтаксические диаграммы для такой грамматики имеют вид:
+<UL><IMG SRC="DRAW\DR9.GIF" HEIGHT=290 WIDTH=380></UL>
+Заменяя нетерминальные символы, соответствующими диаграммами, получаем
+объединенную диаграмму в виде:
+<UL><IMG SRC="DRAW\DR10.GIF" HEIGHT=200 WIDTH=520></UL>
+</UL>
+
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part143.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part144.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<BR>&nbsp;
+</BODY>
+</HTML>

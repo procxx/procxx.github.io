@@ -1,0 +1,63 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>АРИФМЕТИЧЕСКИЕ И ЛОГИЧЕСКИЕ ОСНОВЫ ВЫЧИСЛИТЕЛЬНОЙ ТЕХНИКИ</title>
+</head>
+<body>
+<a href="part912a.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница&nbsp;<a href="part912c.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+<br>
+<hr WIDTH="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>3.<i> Выбор числа элементов
+памяти и кодирование состояний автомата.</i></b><i> </i>Кодирование состояний
+заключается в том, что каждому состоянию<font color="#000066"> s<sub>i</sub>
+<font face="Symbol">О</font> S</font> однозначным образом ставится в соответствие
+набор внутренних переменных <font color="#000066">у<sub>1</sub>, у<sub>2</sub>,
+..., у<sub>h</sub></font>. Состояния и соответствующие им коды обычно представляют
+в виде таблицы, которая называется таблицей кодирования состояний автомата.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Если автомат имеет l состояний, то,
+для того, чтобы получить однозначное соответствие, необходимо иметь не
+менее l различных двоичных кодов. Последнее условие можно записать в виде
+<font color="#000066">l <font face="Symbol">Ј</font> 2h</font>. Откуда
+находим
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000066">
+] log<sub>2</sub>l [&nbsp;&nbsp; <font face="SYMBOL">Ј&nbsp;&nbsp;&nbsp;</font>
+h,&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(1)
+<p>где ] a [ означает ближайшее целое, не меньшее а.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Из неравенства (1) следует, что минимальное
+число элементов памяти, необходимое для получения однозначного кодирования,<font color="#000066">
+h = ] log<sub>2</sub> l [.</font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Кодирование состояний существенно влияет
+на сложность комбинационной части схемы автомата. Для того, чтобы упростить
+комбинационную схему, часто используют избыточное кодирование, выбирая
+h большим, чем это необходимо для получения однозначного кодирования. Избыточное
+кодирование используется также для построения схем без состязаний. Кодирование
+состояний кажется целесообразным выполнять совместно с кодированием входных
+и выходных сигналов, однако такая задача оказывается весьма сложной и практически
+не реализуется.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp; 4.<i> Построение функций возбуждения.</i></b>Функция
+возбуждения <font color="#000066">y<sub>i</sub>'</font> определяет, какой
+сигнал нужно подать на вход i-го элемента памяти, чтобы получить код состояния,
+в которое автомат должен перейти. Функции возбуждения при структурном синтезе
+соответствуют функциям перехода абстрактного автомата. Это соответствие
+показывает, что функции возбуждения должны зависеть от внутренних переменных
+<font color="#000066">y<sub>1</sub>, y<sub>2</sub>, ..., y<sub>h</sub></font>,
+определяющих состояние автомата, и входных переменных <font color="#000066">х<sub>1</sub>,
+х<sub>2</sub>, ..., х<sub>n</sub></font>, относящихся к одному и тому же
+моменту времени. Последнее обстоятельство позволяет нам рассматривать функции
+возбуждения как
+<br>переключательные функции:
+<br><img SRC="DRAW/f2.gif" BORDER=0 height=110 width=390>
+<br>&nbsp;
+<p>
+<hr WIDTH="100%">
+<br><a href="part912a.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15></a><font color="#009900"><font size=-1>Пред.Страница<a href="part912c.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>
+След.Страница&nbsp;<a href="index91.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Раздел&nbsp;<a href="../index.htm"><img SRC="DRAW/GrBall.gif" BORDER=0 height=15 width=15 align=ABSCENTER></a>&nbsp;
+Содержание</font></font>
+</body>
+</html>

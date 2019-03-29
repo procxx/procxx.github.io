@@ -1,0 +1,290 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>3.9.1 Расширенный матричный автомат</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="Part3111.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part312.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+<HR NOSHADE WIDTH="100%">
+
+<P><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>3.11.2. Пример работы расширенного
+магазинный автомат</FONT></FONT></I></B>
+
+<P>В качестве иллюстрации работы расширенного автомата рассмотрим автомат,
+допускающий язык L={<FONT FACE="Symbol">ww</FONT><SUP><FONT SIZE=-2>R </FONT></SUP>|
+<FONT FACE="Symbol">w</FONT> <FONT FACE="Symbol">О {</FONT>a, b}*}.
+
+<P><FONT COLOR="#000099">M7.1:&nbsp;&nbsp;&nbsp; P = {a, b}, S = {s<SUB>0</SUB>,
+s<SUB>1</SUB>},&nbsp; H = {a, b, &lt;I>, h<SUB>0</SUB>}, F = {s<SUB>1</SUB>}
+,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;</FONT>
+<UL>
+<UL><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, a,
+h<SUB>0</SUB>) = (s<SUB>0</SUB>, h<SUB>0</SUB>a),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, a, &lt;I>) = (s<SUB>0</SUB>,
+&lt;I>a),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, b,
+h<SUB>0</SUB>) = (s<SUB>0</SUB>, h<SUB>0</SUB>b),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, b, &lt;I>) = (s<SUB>0</SUB>,
+&lt;I>b),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, a,
+a) = (s<SUB>0</SUB>, aa),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>, a, a&lt;I>a) = (s<SUB>0</SUB>,
+&lt;I>),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, b,
+a )= (s<SUB>0</SUB>, ba),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>, b, a&lt;I>a) = (s<SUB>0</SUB>,
+&lt;I>),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, a,
+b) = (s<SUB>0</SUB>, ab),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>, a, b&lt;I>b) = (s<SUB>0</SUB>,
+&lt;I>),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>(s<SUB>0</SUB>, b,
+b) = (s<SUB>0</SUB>, bb),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>, b, b&lt;I>b) = (s<SUB>0</SUB>,
+&lt;I>),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>,
+a, aa) = (s<SUB>0</SUB>, &lt;I>),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>, $, a&lt;I>a) = (s<SUB>0</SUB>,
+&lt;I>),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>,
+b, aa) = (s<SUB>0</SUB>, &lt;I>),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>, $, b&lt;I>b) = (s<SUB>0</SUB>,
+&lt;I>),</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>,
+a, bb) = (s<SUB>0</SUB>, &lt;I>),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>, $, h<SUB>0</SUB>&lt;I>) =
+(s<SUB>1</SUB>, $).</FONT>
+<BR><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>*(s<SUB>0</SUB>,
+b, bb) = (s<SUB>0</SUB>, &lt;I>),</FONT></UL>
+</UL>
+Это недетерминированный автомат. Если на входе задана цепочка abba, то
+его работу можно представить в виде следующего ряда конфигураций:
+<BR>&nbsp;
+<CENTER><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="30%" HEIGHT="20%" >
+<TR>
+<TD>
+<UL>
+<UL>№
+<BR>&nbsp;</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;Вход</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;Магазин</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;Состояние</UL>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<UL>1.</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;abba|-</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;h<SUB>0</SUB></UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;s<SUB>0</SUB></UL>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<UL>2.</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;bba|-</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;h<SUB>0</SUB>a</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;s<SUB>0</SUB></UL>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<UL>3.</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;ba|-</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;h<SUB>0</SUB>ab</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;s<SUB>0</SUB></UL>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<UL>4.</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;a|-</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;h<SUB>0</SUB>abb</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;s<SUB>0</SUB></UL>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<UL>5.</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;a|-</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;h<SUB>0</SUB>a&lt;I></UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;s<SUB>0</SUB></UL>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<UL>6.</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;|-</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;h<SUB>0</SUB>a&lt;I>a</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;s<SUB>0</SUB></UL>
+</UL>
+</TD>
+</TR>
+
+<TR>
+<TD>
+<UL>
+<UL>7.</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;|-</UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;h<SUB>0</SUB>&lt;I></UL>
+</UL>
+</TD>
+
+<TD>
+<UL>
+<UL>&nbsp;s<SUB>1</SUB></UL>
+</UL>
+</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<UL>
+<UL>&nbsp;</UL>
+</UL>
+
+<HR NOSHADE WIDTH="100%">&nbsp;<A HREF="Part3112.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part312.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part431</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part414.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part416.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+
+<P>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.1.5.&nbsp; Транслирующие
+грамматики</FONT></FONT></I></B>
+<BR>&nbsp;
+<BR>Основой построения СУ -схем перевода является использование двух грамматик,
+с помощью которых осуществляется синхронный вывод входной и выходной цепочек.
+Построение транслирующих грамматик предполагает применение другого подхода,
+который предусматривает использование одной грамматики и разрешает включение
+как входных, так и выходных
+<BR>символов в каждое правило такой грамматики.<A NAME="Tgram"></A></UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><B><I>Определение</I></B>. <B><FONT COLOR="#660000">Транслирующей грамматикой</FONT></B>
+(Т -грамматикой)&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+называется&nbsp; КС-грамматика, множество терминальных&nbsp; символов&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+которой разбито на множество входных символов и множество&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+выходных&nbsp; символов, которые называются также&nbsp; символами действия.&nbsp;
+<BR>&nbsp;</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Примером Т - грамматики может служить следующая грамматика:
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000099">Г<SUB>Т4.1</SUB>:&nbsp; V<SUB>твх </SUB>= {a,b,c},
+V<SUB>твых </SUB>= {x,y,z}, V<SUB>a </SUB>= { I,A}</FONT></UL>
+</UL>
+&nbsp;
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R = {&lt;I> <FONT FACE="symbol">╝ </FONT>a&lt;I>x&lt;A>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>z,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝ </FONT>&lt;A>&lt;C>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝ </FONT>by</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}.</FONT></UL>
+</UL>
+</UL>
+&nbsp;
+
+<P>Чтобы не возникало путаницы в случае использования одинаковых символов
+во входном и выходном алфавитах, условимся выделять выходные символы фигурными
+скобками.
+<BR>С использованием таких обозначений правила грамматики Г<SUB>Т7.1</SUB>
+имеют вид:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">R = {&lt;I><FONT FACE="symbol">╝</FONT>a&lt;I>{x}&lt;A>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I><FONT FACE="symbol">╝</FONT>{z},</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;A><FONT FACE="symbol">╝</FONT>&lt;A>c,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;A><FONT FACE="symbol">╝</FONT>b{y}</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Вывод в транслирующих грамматиках выполняется по тем же правилам, что и
+в обычных КС - грамматиках. Например, в рассматриваемой грамматике из начального
+символа может
+<BR>быть выведена следующая цепочка:
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000099">&lt;I> ==> a&lt;I>{x}&lt;A> ==> a{z}{x}&lt;A>
+==> a{z}{x]b{y}</FONT></UL>
+</UL>
+&nbsp;
+<BR>Каждый символ или цепочка символов, заключенные в фигурные скобки,
+должны рассматриваться как единый символ, называемый символом действия.
+В общем случае
+<BR>цепочки символов, заключенные в фигурные скобки, можно интерпретировать
+как имена процедур, выполнение которых производит требуемый эффект на выходе.
+При описании
+<BR>перевода обычно предусматривают, что каждый символ действия представляет
+собой процедуру, осуществляющую передачу символа, заключенного в фигурные
+скобки, на выход. Когда нужно подчеркнуть, что используется такая интерпретация
+символов действия, то Т - грамматику называют&nbsp;<A NAME="chainTgram"></A><FONT COLOR="#993366">грамматикой
+цепочного перевода.</FONT>
+<BR>
+<HR WIDTH="100%"></UL>
+&nbsp;<A HREF="Part415.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part416.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

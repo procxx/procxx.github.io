@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part433</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part416.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part42.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+
+<P>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.1.7.&nbsp; Построение транслирующей
+грамматики по&nbsp; СУ - схеме.</FONT></FONT></I></B></UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><B><I>Определение.</I></B> Множество пар цепочек, выводимых с&nbsp;
+помощью правил заданной Т -&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+грамматики,&nbsp; образуют перевод, определяемый этой&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+грамматикой.&nbsp;</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Последнее определение позволяет нам сделать вывод, что один и тот же
+перевод может быть задан как с помощью СУ - схемы, так и с помощью Т -
+грамматики. Эти два способа задания являются равноправными и, более того,
+они допускают преобразование друг в друга.
+<BR>Возможность одного из таких преобразований устанавливается следующим
+утверждением.</UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><I>Утверждение.</I> Для каждой простой СУ-схемы Т&nbsp; можно построить
+транслирующую&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+грамматику Г<SUB>Т</SUB> такую, что переводы,&nbsp;&nbsp; порождаемые СУ
+- схемой и&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Т - грамматикой, совпадают.&nbsp;
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">
+C(T) = C(Г<SUB>Т</SUB>)&nbsp;</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Чтобы показать справедливость этого утверждения, опишем способ построения
+Т - грамматики по заданной СУ - схеме.
+<BR>Допустим, что задана СУ - схема
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">Т = {V<SUB>твх</SUB>, V<SUB>твых</SUB>,V<SUB>a</SUB>,Q,I}</FONT></UL>
+</UL>
+</UL>
+</UL>
+и требуется построить Т - грамматику</UL>
+<FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Г~ = {V'<SUB>твх</SUB>,V'<SUB>твых</SUB>,V'<SUB>a</SUB>,R,I}</FONT>.
+<UL>Для того чтобы получить тот же самый перевод, необходимо, чтобы
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">V<SUB>твх </SUB>= V<SUB>твх</SUB>', V<SUB>твых
+</SUB>= V<SUB>твх</SUB>', V<SUB>a </SUB>= V<SUB>a</SUB>'.</FONT></UL>
+</UL>
+</UL>
+Рассмотрим преобразование правила из множества Q СУ - схемы&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#000099">A<FONT FACE="symbol">╝</FONT><FONT FACE="Symbol">a</FONT>
+,<FONT FACE="Symbol">b</FONT></FONT> , где цепочки
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT> = x<SUB>о</SUB>A<SUB>о</SUB>х<SUB>1</SUB>А<SUB>1</SUB>...x<SUB>n</SUB>A<SUB>n&nbsp;&nbsp;
+</SUB>и&nbsp;&nbsp;&nbsp; <FONT FACE="Symbol">b</FONT> = y<SUB>о</SUB>A<SUB>о</SUB>у<SUB>1</SUB>A<SUB>1</SUB>...у<SUB>n</SUB>A<SUB>n</SUB>,</FONT></UL>
+</UL>
+и поставим в соответствие этому правилу правило грамматики в виде:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">А <FONT FACE="symbol">╝ </FONT>x<SUB>о</SUB>у<SUB>о</SUB>A<SUB>о</SUB>х<SUB>1</SUB>у<SUB>1</SUB>A<SUB>1</SUB>...x<SUB>n</SUB>y<SUB>n</SUB>A<SUB>n</SUB>.</FONT></UL>
+</UL>
+</UL>
+Это можно сделать всегда, поскольку СУ - схема - простая и в каждом ее
+правиле используются одни и те же нетерминалы в одном и том же порядке.
+Рассмотренное построение обеспечивает включение во входную цепочку выходных
+символов цепочки, порождаемой СУ-схемой. Следовательно, каждый шаг вывода
+в Т - грамматике будет добавлять к выводимой цепочке те же символы, что
+и СУ - схема добавляет к выходной цепочке.
+<BR>Применение описанных положений рассмотрим на примере построения Т -
+грамматики по СУ - схеме <FONT COLOR="#000099">Т<SUB>4.4</SUB></FONT>.
+<BR>Используя фигурные скобки для представления выходных символов и выполняя
+пре-образование, получаем:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">R = {&lt;A> <FONT FACE="symbol">╝</FONT> x{x},</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝</FONT> (&lt;B>),</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;B> <FONT FACE="symbol">╝</FONT> &lt;A>&lt;C>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C> <FONT FACE="symbol">╝</FONT> +&lt;A>{+}&lt;C>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C> <FONT FACE="symbol">╝</FONT> $</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Перевод цепочки<FONT COLOR="#000099"> ((x+x)+x)</FONT> с применением правил
+построенной грамматики может быть получен с помощью следующего вывода:
+<BR>&nbsp;
+<UL><FONT COLOR="#000099">&lt;A> ==> &lt;A>&lt;C> ==> (&lt;B>)&lt;C> ==>
+(&lt;A>&lt;C>)&lt;C> ==>((&lt;B>)&lt;C>)&lt;C> ==></FONT>
+
+<P><FONT COLOR="#000099">((&lt;A>&lt;C>)&lt;C>)&lt;C> ==></FONT> <FONT COLOR="#000099">((x{x}&lt;C>)&lt;C>
+==> ((x{x}+&lt;A>{+}&lt;C>)&lt;C>)&lt;C> ==></FONT>
+
+<P><FONT COLOR="#000099">((x{x}+x{x}{+}&lt;C>)&lt;C>)&lt;C> ==></FONT>
+<FONT COLOR="#000099">((x{x}+x{x}{+})&lt;C>)&lt;C> ==></FONT>
+
+<P><FONT COLOR="#000099">((x{x}+x{x}{+})+&lt;A>{+}&lt;C>)&lt;C> ==></FONT>
+<FONT COLOR="#000099">((x{x}+x{x}{+})+x{x}{+}&lt;C>)&lt;C> ==></FONT>
+
+<P><FONT COLOR="#000099">((x{x}+x{x}{+})+x{x}{+})&lt;C> ==></FONT> <FONT COLOR="#000099">((x{x}+x{x}{+})+x{x}{+}).</FONT></UL>
+Исключая из полученной цепочки вначале выходные, а затем входные символы,
+получаем выводимую пару
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">((x+x)+x,{x}{x}{+}{x}{+}),</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+которая совпадает с результатом вывода в заданной СУ - схеме.</UL>
+
+<HR WIDTH="100%">
+<BR>&nbsp;<A HREF="Part417.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part42.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

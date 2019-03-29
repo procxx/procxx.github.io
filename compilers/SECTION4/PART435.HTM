@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s833</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part434.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part436.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=17 WIDTH=17></A></FONT><A HREF="s822.html#8.2.2. Описание Работы Магазинного">
+</A><FONT COLOR="#006600">След.Страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><FONT COLOR="#0000FF"><FONT SIZE=+1><I>4.3.5. Пример построения&nbsp;
+преобразователя</I>.</FONT></FONT></B>
+
+<P>&nbsp;&nbsp;<FONT FACE="Times New Roman"> Применение правил построения
+команд преобразователя рассмотрим на примере транслирующей грамматики Г,
+которая описывает перевод инфиксных выражений, состоящих из идентификаторов
+и знаков + и *, в постфиксные польские выражения. Эта грамматика имеет
+следующую схему:</FONT>
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;<FONT FACE="Times New Roman"><B><FONT COLOR="#000099">Г <SUB>4.
+1</SUB></FONT></B> </FONT>:&nbsp;&nbsp;&nbsp; <FONT COLOR="#000080">R </FONT>=
+{&lt;<FONT COLOR="#000080">E</FONT>> <FONT FACE="Symbol">Ю</FONT> <FONT COLOR="#000080">+</FONT>&lt;<FONT COLOR="#000080">E</FONT>>&lt;<FONT COLOR="#000080">E</FONT>>{<FONT COLOR="#000080">+</FONT>},
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;<FONT COLOR="#000080">E</FONT>> <FONT FACE="Symbol">Ю</FONT> <FONT COLOR="#000080">x</FONT>&lt;<FONT COLOR="#000080">E</FONT>>&lt;<FONT COLOR="#000080">E</FONT>>{<FONT COLOR="#000080">x</FONT>},
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;<FONT COLOR="#000080">E</FONT>> <FONT FACE="Symbol">Ю</FONT> <FONT COLOR="#000080">a</FONT>{<FONT COLOR="#000080">a</FONT>}}</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">&nbsp; Используя правило построения команд
+преобразователя (1) для правил грамматики, начинающихся входным терминальным
+символом, получаем команды преобразователя</FONT> <FONT FACE="Times New Roman">Мп</FONT>1:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000080">q</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB>,
++, </FONT>&lt;<FONT COLOR="#000080">E</FONT>>) = (<FONT COLOR="#000080">s<SUB>0</SUB>,
+</FONT>{<FONT COLOR="#000080">+</FONT>}&lt;<FONT COLOR="#000080">E</FONT>>&lt;<FONT COLOR="#000080">E</FONT>><FONT COLOR="#000080">,
+$</FONT>),
+<BR><FONT COLOR="#000080">q</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB>,
+*, </FONT>&lt;<FONT COLOR="#000080">E</FONT>>) = (<FONT COLOR="#000080">s<SUB>0</SUB>,
+</FONT>{<FONT COLOR="#000080">*</FONT>}&lt;<FONT COLOR="#000080">E</FONT>>&lt;<FONT COLOR="#000080">E</FONT>><FONT COLOR="#000080">,
+$</FONT>),
+<BR><FONT COLOR="#000080">q</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB>,
+a, </FONT>&lt;<FONT COLOR="#000080">E</FONT>>) = (<FONT COLOR="#000080">s<SUB>0</SUB>,
+</FONT>{<FONT COLOR="#000080">a</FONT>}, <FONT COLOR="#000080">$</FONT>)</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">Правила построения команд вида (2),(3),(4)
+к заданной грамматике неприменимы, поэтому с помощью правил вида (5) построим
+команды, обеспечивающие передачу выходных символов на выход. Эти команды
+имеют вид:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">+</FONT>, {<FONT COLOR="#000080">+</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">+</FONT>), <FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">*</FONT>, {<FONT COLOR="#000080">+</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">+</FONT>),
+<BR><FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">a</FONT>, {<FONT COLOR="#000080">+</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">+</FONT>), <FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$'</FONT>, {<FONT COLOR="#000080">+</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">+</FONT>),
+<BR><FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">*</FONT>, {<FONT COLOR="#000080">*</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">*</FONT>), <FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">+</FONT>, {<FONT COLOR="#000080">*</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">*</FONT>),
+<BR><FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">*</FONT>,<FONT COLOR="#000080"> </FONT>{<FONT COLOR="#000080">a</FONT>})
+= (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">*</FONT>), <FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$'</FONT>,<FONT COLOR="#000080"> </FONT>{<FONT COLOR="#000080">*</FONT>})
+= (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">*</FONT>),
+<BR><FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">a</FONT>,<FONT COLOR="#000080"> </FONT>{<FONT COLOR="#000080">a</FONT>})
+= (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">a</FONT>), <FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">+</FONT>{<FONT COLOR="#000080">a</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">a</FONT>),
+<BR><FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">*</FONT>,<FONT COLOR="#000080"> </FONT>{<FONT COLOR="#000080">a</FONT>})
+= (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">a</FONT>), <FONT COLOR="#000080">q*</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$'</FONT>, {<FONT COLOR="#000080">a</FONT>}) = (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">a</FONT>)</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">&nbsp;&nbsp; Для перехода в заключительное
+состояние </FONT><B><FONT COLOR="#000080">s<SUB>1</SUB></FONT></B><FONT FACE="Times New Roman">
+в соответствии с правилом (6) построим команду:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000080">q</FONT>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>,
+<FONT COLOR="#000080">$'</FONT>, <FONT COLOR="#000080">h<SUB>0</SUB></FONT>)
+= (<FONT COLOR="#000080">s<SUB>1</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">$</FONT>)</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">&nbsp;&nbsp; Чтобы посмотреть как работает
+построенный преобразователь, рассмотрим построение выходной цепочки для
+входа +a*aa. Последовательность конфигураций, получаемых с помощью команд
+<B>преобразователя</B> имеет вид:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">+a*aa</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB>E</FONT>, <FONT COLOR="#000080">$</FONT>)
+|-- (<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">a*aah<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>}<FONT COLOR="#000080">EE,
+$</FONT>) |--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">*aa</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>}<FONT COLOR="#000080">T{a}</FONT>,
+<FONT COLOR="#000080">$) </FONT>|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">*aa</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>}<FONT COLOR="#000080">E</FONT>,
+<FONT COLOR="#000080">a) </FONT>|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">aa</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>}{<FONT COLOR="#000080">*</FONT>}<FONT COLOR="#000080">T{a}</FONT>,
+<FONT COLOR="#000080">a) </FONT>|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">a</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>}{<FONT COLOR="#000080">*</FONT>}<FONT COLOR="#000080">E</FONT>,
+<FONT COLOR="#000080">aa) </FONT>|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>}{<FONT COLOR="#000080">*</FONT>}{<FONT COLOR="#000080">a}</FONT>,
+<FONT COLOR="#000080">aa) </FONT>|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>}{<FONT COLOR="#000080">*</FONT>},
+<FONT COLOR="#000080">aaa) </FONT>|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>{<FONT COLOR="#000080">+</FONT>},
+<FONT COLOR="#000080">aaa*</FONT>)<FONT COLOR="#000080"> </FONT>|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">h<SUB>0</SUB></FONT>, <FONT COLOR="#000080">aaa*+</FONT>)
+|--
+<BR>(<FONT COLOR="#000080">s<SUB>0</SUB></FONT>, <FONT COLOR="#000080">$</FONT>,
+<FONT COLOR="#000080">$</FONT>, <FONT COLOR="#000080">aaa*+</FONT>).</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman">&nbsp;&nbsp; Результатом работы преобразователя</FONT>
+<FONT FACE="Times New Roman">является выходная цепочка <FONT COLOR="#000099">aaa*+</FONT>,
+представляющая постфиксную запись заданной входной цепочки.</FONT>
+
+<P>
+<HR>
+<BR><A HREF="Part435.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part436.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=17 WIDTH=17></A></FONT><A HREF="s822.html#8.2.2. Описание Работы Магазинного">
+</A><FONT COLOR="#006600">След.Страница<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>&nbsp;
+</BODY>
+</HTML>

@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+<A HREF="Part133.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part135.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT>&nbsp;
+<HR WIDTH="100%">
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.3.4. <I>Грамматики типа 3</I></FONT></FONT></H4>
+
+<UL><A NAME="gr3"></A><B><FONT COLOR="#000000">Грамматики типа 3</FONT></B>
+называют <FONT COLOR="#000000"><B>автоматными грамматиками</B> </FONT><B>(А
+- грамматиками)</B>. Правила вывода в таких грамматиках имеют вид:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>a</FONT>
+</B>или <B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>a&lt;B></FONT></B>
+или <B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>&lt;B>
+a</FONT></B>,
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+где <B><FONT COLOR="#000099">a<FONT FACE="symbol"> О</FONT> V<SUB>т</SUB>,
+&lt;A>, &lt;B><FONT FACE="symbol"> О </FONT>V<SUB>a</SUB>,</FONT></B> причем
+грамматика может иметь только правила вида <B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol">
+®</FONT> a&lt;B></FONT></B> - правосторонние правила, либо только&nbsp;
+вида <B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>&lt;B>a</FONT></B>
+- левосторонние правила. Примерами автоматных грамматик могут служить правосторонняя
+грамматика<B><FONT COLOR="#000099"> Г<SUB>1.</SUB></FONT><SUB> <FONT COLOR="#000099">6</FONT></SUB></B>
+и левосторонняя грамматика <B><FONT COLOR="#000099">Г<SUB>1. 7</SUB>.</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 6</SUB>:</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">V<SUB>т </SUB>= {a, b}, V<SUB>a </SUB>= {&lt;I>,
+&lt;A>},</FONT></B>
+<UL><B><FONT COLOR="#000099">R = { &lt;I> <FONT FACE="symbol">® </FONT>a&lt;I>,</FONT></B>
+<UL><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol"> ® </FONT>a&lt;A>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>b&lt;A>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>b&lt;Z>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;Z><FONT FACE="symbol"> ®</FONT> $ }.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+<B><FONT COLOR="#000099">Г<SUB>1. 7</SUB>:</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">V<SUB>т </SUB>= {a, b}, V<SUB>a </SUB>= {&lt;I>,
+&lt;A>},</FONT></B>
+<UL><B><FONT COLOR="#000099">R = { &lt;I><FONT FACE="symbol"> ® </FONT>&lt;A>b,</FONT></B>
+<UL><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>&lt;A>b,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>&lt;Z>a,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;Z><FONT FACE="symbol"> ® </FONT>&lt;Z>a,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;Z><FONT FACE="symbol"> ®</FONT> $ }.</FONT></B></UL>
+</UL>
+</UL>
+&nbsp;</UL>
+</UL>
+</UL>
+Эти грамматики являются эквивалентными и порождают язык</UL>
+
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">L(Г<SUB>7</SUB>) = {a...ab...b | n,m > 0}.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+Между множествами языков различных типов существует отношение включения:
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">{ L<SUB> </SUB></FONT></B><SUB><FONT COLOR="#000099">типа
+3<B> </B></FONT></SUB><B><FONT COLOR="#000099">} <FONT FACE="symbol">М</FONT>
+{ L </FONT></B><FONT COLOR="#000099"><SUB>типа 2</SUB><B> }<FONT FACE="symbol">
+М</FONT>{ L<SUB> </SUB></B><SUB>типа 1</SUB><B> }<FONT FACE="symbol"> М</FONT>{
+L </B><SUB>типа 0</SUB><B>}.</B></FONT></UL>
+</UL>
+</UL>
+Доказано, что существуют языки типа 0, не являющиеся языками типа 1, языки
+типа 2, не являющиеся языками типа 1, и языки типа 3, не являющиея языками
+типа 2.
+
+<P>Учитывая, что наибольшее практическое применение находят грамматики
+типа 2 и типа 3, дальнейшее изложение посвящается рассмотрению именно этих
+типов грамматик.
+
+<P>
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part134.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part135.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+</UL>
+&nbsp;
+</BODY>
+</HTML>

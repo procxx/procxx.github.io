@@ -1,0 +1,197 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part342</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part341.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part343.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%">
+<DL>
+<UL>&nbsp;</UL>
+<B><I><FONT COLOR="#3333FF">&nbsp;
+<FONT SIZE=+1>3.4.2 Построение функции ПЕРВ(µ)&nbsp;</FONT></FONT></I></B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;</FONT></FONT></I>
+<BR>&nbsp;
+<MENU>Значение функции ПЕРВ(<FONT FACE="Symbol">m</FONT>) можно определить
+пользуясь следующими правилами:
+<BR>1)&nbsp; Если цепочка <B>µ</B> начинается терминальным символом и имеет
+вид <B><FONT COLOR="#0000A0">bµ'</FONT></B>, то функция
+<BR>&nbsp;
+<MENU>
+<MENU>
+<MENU>
+<MENU>
+<MENU>
+<MENU><B><FONT COLOR="#0000A0">ПЕРВ(µ) = {b}</FONT>,</B></MENU>
+</MENU>
+</MENU>
+</MENU>
+</MENU>
+</MENU>
+&nbsp;
+<BR>2)&nbsp; Если цепочка <B>µ</B> является пустой цепочкой,<B><FONT COLOR="#000099">
+µ = $</FONT></B>, то функция
+<BR>&nbsp;
+<OL>
+<OL>
+<OL>
+<OL>
+<OL>
+<OL><B><FONT COLOR="#0000A0">ПЕРВ(µ) = $</FONT>,</B>
+<BR>&nbsp;</OL>
+</OL>
+</OL>
+</OL>
+</OL>
+</OL>
+3)&nbsp;&nbsp; Если цепочка<B><FONT COLOR="#000099"> µ</FONT></B> начинается
+нетерминальным символом <B><FONT COLOR="#0000A0">&lt;B></FONT></B> и имеет
+вид <B><FONT COLOR="#0000A0">&lt;B>µ'</FONT></B>, а в схеме грамматики
+имеется n&nbsp; правил, в любой части которых находится символ <FONT COLOR="#0000A0"><B>&lt;B></B>:</FONT>
+<BR>&nbsp;
+<MENU>
+<MENU>
+<MENU>
+<MENU><B><FONT COLOR="#0000A0">&lt;B>&nbsp;</FONT><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT> <FONT FACE="Symbol">a</FONT><SUB>1</SUB> |
+<FONT FACE="Symbol">a</FONT><SUB>2</SUB> | ... | <FONT FACE="Symbol">a</FONT><SUB>n</SUB>
+,</FONT></B></MENU>
+</MENU>
+</MENU>
+</MENU>
+и, если не существует вывода<FONT COLOR="#0000A0"> </FONT><B><FONT COLOR="#000099">&lt;B>
+==>* $,</FONT></B> то функция <B><FONT COLOR="#0000A0">ПЕРВ(&lt;B>µ')</FONT></B>
+представляет собой объединение множеств:
+<BR>&nbsp;
+<MENU>
+<MENU><B><FONT COLOR="#0000A0">ПЕРВ(&lt;B>µ') =</FONT><FONT COLOR="#000099">
+ПЕРВ(<FONT FACE="Symbol">a</FONT><SUB>1</SUB>) </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+ПЕРВ (<FONT FACE="Symbol">a</FONT><SUB>2</SUB>) </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">...</FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">ПЕРВ(<FONT FACE="Symbol">a</FONT><SUB>n</SUB>),</FONT></B></MENU>
+</MENU>
+4)&nbsp;&nbsp; Если цепочка µ начинается нетерминальным символом и имеет
+вид <B><FONT COLOR="#0000A0">&lt;B>µ'</FONT></B>, в схему грамматики входят
+n правил вида
+<BR>&nbsp;
+<MENU>
+<MENU>
+<MENU><B><FONT COLOR="#000099">&lt;B>&nbsp; <FONT FACE="symbol">®</FONT>
+<FONT FACE="Symbol">a</FONT><SUB>1</SUB> | <FONT FACE="Symbol">a</FONT><SUB>2</SUB>
+| ... | <FONT FACE="Symbol">a</FONT><SUB>n </SUB>,</FONT></B></MENU>
+</MENU>
+</MENU>
+и <B><FONT COLOR="#0000A0">&lt;B></FONT></B> является аннулирующим нетерминалом,
+т.е. существует&nbsp; <B><FONT COLOR="#0000A0">&lt;B> ==> *$</FONT></B>,
+то функция</MENU>
+
+<DIR>&nbsp;
+<DIR><B><FONT COLOR="#0000A0">ПЕРВ(&lt;B>µ')=ПЕРВ(µ') <FONT FACE="Symbol"><FONT SIZE=+1>И</FONT></FONT>
+П</FONT><FONT COLOR="#000099">ЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>1</SUB>)</FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+ПЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>2</SUB>) </FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">...</FONT><FONT FACE="Symbol"><FONT COLOR="#0000A0"><FONT SIZE=+1>И</FONT></FONT></FONT><FONT COLOR="#000099">
+ПЕРВ(<FONT FACE="Symbol">a</FONT> <SUB>n</SUB>).</FONT></B></DIR>
+В качестве примера выполним вычисление функции ПЕРВ для правил следующей
+грамматики:</DIR>
+&nbsp;
+<BR>&nbsp;
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT COLOR="#0000A0">&nbsp;<B>Г</B></FONT><B><SUB><FONT COLOR="#000099">3.
+2</FONT></SUB></B><FONT COLOR="#0000A0"> :&nbsp;&nbsp;&nbsp;&nbsp; R =
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) &lt;A>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> &lt;B>&lt;C>c,</FONT>
+<DIR>
+<DIR>
+<DIR><FONT COLOR="#0000A0">(2) &lt;A>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> g&lt;D>&lt;B>,</FONT>
+<BR><FONT COLOR="#0000A0">(3) &lt;B>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> $,</FONT>
+<BR><FONT COLOR="#0000A0">(4) &lt;B>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> b&lt;C>&lt;D>&lt;E>,</FONT>
+<BR><FONT COLOR="#0000A0">(5) &lt;C>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> &lt;D>a&lt;B>,</FONT>
+<BR><FONT COLOR="#0000A0">(6) &lt;C>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> ca,</FONT>
+<BR><FONT COLOR="#0000A0">(7) &lt;D>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> $,</FONT>
+<BR><FONT COLOR="#0000A0">(8) &lt;D>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> d&lt;D>,</FONT>
+<BR><FONT COLOR="#0000A0">(9) &lt;E>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> g&lt;A>f,</FONT>
+<BR><FONT COLOR="#0000A0">(10) &lt;E>&nbsp;</FONT><B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B><FONT COLOR="#0000A0"> c&nbsp;&nbsp;
+}.</FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+&nbsp;</DIR>
+</DIR>
+Вначале найдем значения функции для правых частей правил (2), (4), (6),
+(8), (9) , (10) , начинающихся терминальными символами:
+<DIR>
+<DIR>
+<DIR>ПЕРВ(g,&lt;D>,&lt;B>) = {g}
+<BR>ПЕРВ(b&lt;C>&lt;D>&lt;E>) = {b}
+<BR>ПЕРВ(ca) = {c}
+<BR>ПЕРВ(d&lt;D>) = {d}
+<BR>ПЕРВ(g&lt;A>f) {g}
+<BR>ПЕРВ(c) = {c}</DIR>
+</DIR>
+</DIR>
+Затем вычислим функцию для правил (5) и (6) :
+<DIR>
+<DIR>
+<DIR>ПЕРВ (&lt;C>) = ПЕРВ (&lt;D>a&lt;B>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ (ca).</DIR>
+</DIR>
+</DIR>
+Учитывая, что &lt;D> является аннулирующим нетерминалом, получаем:
+<DIR>
+<DIR>
+<DIR>ПЕРВ(&lt;C>) = ПЕРВ(a&lt;B>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>ПЕРВ(&lt;D>)
+<B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>{c}
+= {a}<FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT>{<FONT COLOR="#333333"><FONT SIZE=+1>d</FONT></FONT>}<FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT>{c}={a,d,c}.</DIR>
+</DIR>
+</DIR>
+При вычислении функции для правил (1) и (2) также необходимо иметь в виду
+то, что &lt;B> является аннулирующим терминалом, поэтому имеем:
+<DIR>
+<DIR>
+<DIR>ПЕРВ(&lt;A>) = ПЕРВ(&lt;B>&lt;C>c) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(g&lt;D>&lt;B>) =
+<BR>ПЕРВ(&lt;C>c) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(&lt;B>) <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+ПЕРВ(g&lt;D>&lt;B>) =
+<DIR>
+<DIR>{a,d,c} <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>
+{b} <B><FONT FACE="Symbol"><FONT COLOR="#333333"><FONT SIZE=+1>И</FONT></FONT></FONT></B>{g}
+= {a,b,c,d,g}.
+<BR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+&nbsp;
+<BR>
+<HR WIDTH="100%">
+<UL>
+<LI>
+<A HREF="Part341.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part343.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+</DL>
+
+</BODY>
+</HTML>

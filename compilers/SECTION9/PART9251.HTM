@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Асинхронные автоматы</TITLE>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><A HREF="Part925.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9252.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+<P>
+<HR></P>
+
+<BLOCKQUOTE>
+<P><B><I><U><FONT COLOR="#0000FF">9.2.5.1. АСИНХРОННЫЙ ТРИГГЕР</FONT></U></I></B></P>
+</BLOCKQUOTE>
+
+<P>На входе обычного триггера, построенного из элементов потенциального
+типа, подаются потенциальные сигналы, поэтому его назвают асинхронным триггером.
+Такие триггеры строят как обыкновенные асинхронные автоматы, используя
+в качестве элемента памяти асинхронный триггер типа R-S. В отличие от всех
+остальных триггеров построение R-S-триггера производится по характеристическому
+уравнению. Это уравнение имеет вид:<BR>
+<BR>
+q<SUP>t+1</SUP> = (qR <FONT SIZE=+1>V</FONT> S)<SUP>t</SUP>.<BR>
+<BR>
+Построим по приведенному уравнению триггер вначале на элементах ИЛИ-НЕ,
+а затем на элементах И-НЕ. Для этого опустим верхние индексы и преобразуем
+хто уравнение так, чтобы оно не содержало операции конъюнкции:<BR>
+<BR>
+<IMG SRC="DRAW/13.gif" HEIGHT=124 WIDTH=335></P>
+
+<P>Полученное выражение определяет схему с обратной связью, которая приведена
+на рис. 9,а. Пользуясь равенством </P>
+
+<P><IMG SRC="DRAW/14.gif" HEIGHT=57 WIDTH=74></P>
+
+<P>получаем схему триггера типа R-S на элементах И-НЕ, изображенную на
+рис. 9,б. Кружки на входах условного обозначения триггера показывают, что
+изменение состояния триггера должно происходить при действии сигнала, соответствующего
+</P>
+
+<P><IMG SRC="DRAW/15.gif" HEIGHT=345 WIDTH=455></P>
+
+<P>нулю.<BR>
+Для того чтобы лучше представить работу триггера, проанализируем схему
+на рис. 9,а. Обозначим выход первой логической схемы буквой w и вычислим
+выходные сигналы логических элементов для различных значений входных сигналов.<BR>
+<IMG SRC="DRAW/16.gif" HEIGHT=212 WIDTH=566></P>
+
+<P>Действуя описанным способом, нетрудно построить и проверить работу R-S-триггеров
+с дополнительными входами установки в нуль и единицу. Например, работа
+триггера с дополнительным входом R1 описывается характеристическим уравнением:</P>
+
+<P><IMG SRC="DRAW/17.gif" HEIGHT=39 WIDTH=138></P>
+
+<P>Схема триггера, построенная по этому уравнению на элементах И-НЕ, приведена
+рис. 10.</P>
+
+<P><IMG SRC="DRAW/18.gif" HEIGHT=237 WIDTH=416></P>
+
+<P>
+<HR></P>
+
+<P><A HREF="Part925.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9252.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+</BODY>
+</HTML>

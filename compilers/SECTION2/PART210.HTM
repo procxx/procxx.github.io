@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Part210</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part29.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part211.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>
+<HR WIDTH="100%">
+
+<P><A NAME="2.10.    Язык, допускаемый магазинным автоматом."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.10.&nbsp;&nbsp;&nbsp;
+Язык, допускаемый магазинным автоматом.</FONT></FONT></I></B></UL>
+&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD>
+<UL><I><B>Определение</B>.</I> Цепочка&nbsp; <FONT FACE="Symbol">a</FONT>
+называется <B><FONT COLOR="#993300">допустимой </FONT></B>для автомата
+М, если существует последовательность конфигураций, в которой первая конфигурация
+является начальной c цепочкой <FONT FACE="Symbol">a </FONT>, а последняя
+- заключительной. (s<FONT COLOR="#000000"><B><SUB>о</SUB></B>,</FONT> <FONT FACE="Symbol">a</FONT>,
+<FONT COLOR="#000000">h<B><SUB>о</SUB></B></FONT>) |--* (s<SUB>1</SUB>,
+$ , $) , где s<SUB>1</SUB> <B><FONT FACE="symbol"><FONT COLOR="#000000">О</FONT></FONT></B>
+F .</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD>
+<UL><B><I>Определение</I>.</B>Множество цепочек, допускаемых автоматом
+М, называется языком, <B><FONT COLOR="#993300">допускаемым</FONT></B> или
+определяемым автоматом М, и обозначается <B><FONT COLOR="#000099">L(М)</FONT></B>.</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">L(М)= {<FONT FACE="Symbol">a</FONT> ¦ ( s<SUB>о</SUB>,
+<FONT FACE="Symbol">a</FONT>, h<SUB>о </SUB>) ¦--* ( s', $, $)&nbsp;&nbsp;
+&amp;&nbsp; s' <FONT FACE="symbol">О</FONT> F }</FONT></B></UL>
+</UL>
+</UL>
+Чтобы лучше представить себе работу магазинного автомата, рассмотрим два
+примера. Пусть задан магазинный автомат М<SUB>1</SUB> в следующем виде:
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000099">М<SUB>1</SUB>:&nbsp;&nbsp;&nbsp; P = {a , b};&nbsp;
+S = {s<SUB>0 </SUB>, s<SUB>1 </SUB>, s<SUB>2</SUB>};&nbsp; H = {h<SUB>0
+</SUB>, a};&nbsp; F = {s<SUB>0</SUB>};</FONT>
+<UL>
+<UL><FONT COLOR="#000099">f (s<SUB>0 </SUB>, a , h<SUB>0</SUB>) = (s1 ,
+h<SUB>0</SUB>a),</FONT>
+<BR><FONT COLOR="#000099">f (s<SUB>1 </SUB>, a , a) = (s<SUB>1 </SUB>,
+aa),</FONT>
+<BR><FONT COLOR="#000099">f (s<SUB>1 </SUB>, b , a) = (s<SUB>2 </SUB>,
+$),</FONT>
+<BR><FONT COLOR="#000099">f (s<SUB>2 </SUB>, b , a) = (s<SUB>2 </SUB>,
+$),</FONT>
+<BR><FONT COLOR="#000099">f (s<SUB>2 </SUB>, <FONT FACE="Symbol">e</FONT>
+, h<SUB>0</SUB>) = (s<SUB>0 </SUB>, $).</FONT></UL>
+</UL>
+</UL>
+&nbsp;</UL>
+Этот автомат является <B><FONT COLOR="#800040">детерминированным</FONT></B>,
+поскольку каждому набору аргументов соответствует единственное значение
+функции. Работу автомата при распознавании входной цепочки aabb можно представить
+в виде последовательности конфигураций:
+<BR>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (s<SUB>0</SUB>,aabb,h<SUB>0</SUB>)
+|--&nbsp; (s<SUB>1</SUB>,abb,h<SUB>0</SUB>a) |-- (s<SUB>1</SUB>,bb,h<SUB>0</SUB>aa)
+|-- (s<SUB>2</SUB>,b,h<SUB>0</SUB>a) |-- (s<SUB>2</SUB>,$,h<SUB>0</SUB>)
+|-- (s<SUB>0</SUB>,$,$) .
+
+<P>Нетрудно проверить, что при задании входной цепочки aabbb автомат не
+сможет закончить работу. Следовательно эта цепочка не принадлежит языку,
+допускаемому автоматом&nbsp; M<SUB>1</SUB>.
+<BR>Магазинный автомат М<SUB>2</SUB>, заданный следующим описанием:
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000099">М<SUB>2</SUB>:&nbsp;&nbsp;&nbsp;&nbsp; P = {a
+, b}; S = {s<SUB>0</SUB>, s<SUB>1 </SUB>, s<SUB>2</SUB>}; H = {h<SUB>0</SUB>,
+a , b}; F = {s<SUB>2</SUB>};</FONT>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">(1)f (s<SUB>0 </SUB>, a , h<SUB>0</SUB>) = (s<SUB>0</SUB>,
+h<SUB>0</SUB>a),</FONT>
+<BR><FONT COLOR="#000099">(2)f (s<SUB>0 </SUB>, b , h<SUB>0</SUB>) = (s<SUB>0</SUB>,
+h<SUB>0</SUB>b),</FONT>
+<BR><FONT COLOR="#000099">(3) f (s<SUB>0 </SUB>, a , a) = {(s<SUB>0</SUB>,aa)
+, (s<SUB>1 </SUB>, $)},</FONT>
+<BR><FONT COLOR="#000099">(4) f (s<SUB>0 </SUB>, b , a) = (s<SUB>0</SUB>,ab),</FONT>
+<BR><FONT COLOR="#000099">(5) f (s<SUB>0 </SUB>, a , b) = (s0 , ba),</FONT>
+<BR><FONT COLOR="#000099">(6) f (s<SUB>0 </SUB>, b , b) = {(s<SUB>0 </SUB>,
+bb) , (s<SUB>1 </SUB>, $)},</FONT>
+<BR><FONT COLOR="#000099">(7) f (s<SUB>1 </SUB>, a , a) = (s<SUB>1</SUB>,
+$),</FONT>
+<BR><FONT COLOR="#000099">(8) f (s<SUB>1 </SUB>, b , b) = (s<SUB>1</SUB>,
+$),</FONT>
+<BR><FONT COLOR="#000099">(9) f (s<SUB>2 </SUB>, <FONT FACE="Symbol">e</FONT>
+, h<SUB>0</SUB>) = (s<SUB>2 </SUB>, $),</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+является <B><FONT COLOR="#800040">недетерминированным</FONT></B> автоматом,
+поскольку одному и тому же набору аргументов, например (s<SUB>о </SUB>,
+a, a), соответствуют два значения функции. Работу автомата рассмотрим для
+входной цепочки abba. Если использовать последовательность команд (1),(4),(6.1),(5),
+то получим последовательность конфигураций:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>(s<SUB>0</SUB>,abba,h<SUB>0</SUB>)&nbsp; |-- (s<SUB>0</SUB>,bba,h<SUB>0</SUB>a),&nbsp;&nbsp;&nbsp;
+(1)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|-- (s<SUB>0</SUB>,ba,h<SUB>0</SUB>ab),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(4)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|-- (s<SUB>0</SUB>,a,h<SUB>0</SUB>abb),&nbsp;&nbsp;&nbsp;&nbsp; (6.1)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|-- (s<SUB>0</SUB>,$,h<SUB>0</SUB>abba).&nbsp;&nbsp;&nbsp; (5),</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+которая показывает, что дальнейшая работа невозможна, т.к. входная цепочка
+прочитана и переход (s<SUB>0</SUB>,$,h<SUB>0</SUB>abba) не определен. Если
+же использовать последовательность команд (1),(4),(6.2),(3),(9), то получим
+заключительную конфигурацию:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>(s<SUB>0</SUB>,abba,h<SUB>0</SUB>) |-- (s<SUB>0</SUB>,bba,h<SUB>0</SUB>a),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(1)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|-- (s<SUB>0</SUB>,ba,h<SUB>0</SUB>ab),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(4)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|-- (s1,a,h<SUB>0</SUB>a),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(6.2)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|-- (s<SUB>1</SUB>,$,h<SUB>0</SUB>),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(3)
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|--&nbsp; (s2,$,$) .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(9).</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Т.о. можно сделать вывод о том, что цепочка abba допускается автоматом
+М<SUB>2</SUB>.
+<BR>В общем случае справедливо следующее утверждение.
+
+<P>
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part210.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part211.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;
+</BODY>
+</HTML>

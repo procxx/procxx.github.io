@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part132.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part134.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"></H4>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.3.3. <I>Грамматики типа 2</I></FONT></FONT></H4>
+
+<UL><A NAME="gr2"></A><B><FONT COLOR="#000000">Грамматики типа 2</FONT></B>
+называют <B><FONT COLOR="#000000">контектно-свободными</FONT></B> и <FONT COLOR="#000000"><B>бесконтекстными
+грамматиками</B> </FONT>( <B>КС-грамматики или Б-грамматики</B>).
+<BR>Правила вывода таких грамматик имеют вид:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® a</FONT>,</FONT></B>
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+где<B><FONT COLOR="#000099"> <I>&lt;A></I><FONT FACE="symbol"> О</FONT>
+V<SUB>a</SUB></FONT></B> и <B><FONT COLOR="#000099"><FONT FACE="symbol">a
+О </FONT>(V<SUB>т </SUB><FONT FACE="symbol">И</FONT> V<SUB>a</SUB>)<SUP>*</SUP></FONT></B>.
+<BR>Очевидно, что эти правила получаются из правил грамматики типа 1 при
+условии<B><FONT COLOR="#000099"> <FONT FACE="symbol">c</FONT><SUB>1</SUB>
+= <FONT FACE="symbol">c</FONT><SUB>2 </SUB>= $.</FONT></B> Поскольку контекстные
+условия отсутствуют, то правила КС-грамматик получаются проще, чем правила
+грамматик типа 1. Именно такие грамматики используются для описания языков
+программирования. Примером КС-грамматики может служить следующая:
+<BR>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 5</SUB>:</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">V<SUB>т </SUB>= {a, b}, V<SUB>a </SUB>= {&lt;I>},</FONT></B>
+<UL><B><FONT COLOR="#000099">R = { &lt;I><FONT FACE="symbol"> ®</FONT>
+a&lt;I>a,</FONT></B>
+<UL><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol"> ® </FONT>b&lt;I>b,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol"> ® </FONT>aa,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol"> ® </FONT>bb}.</FONT></B></UL>
+</UL>
+</UL>
+&nbsp;</UL>
+</UL>
+</UL>
+Эта грамматика порождает язык, который состоит из цепочек, каждая из которых
+в свою очередь состоит из двух частей, цепочки<B><FONT COLOR="#000099">
+<FONT FACE="symbol">b О </FONT>V<SUB>т</SUB>*</FONT></B> и зеркального
+отображения этой цепочки <B><FONT COLOR="#000099"><FONT FACE="symbol">b</FONT>'.</FONT></B>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">L( Г<SUB>5</SUB> ) = { <FONT FACE="symbol">bb</FONT>'
+| <FONT FACE="symbol">b О</FONT>V<SUB>т</SUB><SUP>+</SUP>},</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+где<B><FONT COLOR="#000099"> V<SUB>т</SUB><SUP>+</SUP></FONT></B> - это
+множество <B><FONT COLOR="#000099">V<SUB>т</SUB><SUP>*</SUP></FONT></B>
+без пустой цепочки. С помощью правил этой грамматики может быть построена,
+например, следующая цепочка:
+<BR>&nbsp;
+<UL><B><FONT COLOR="#000099">&lt;I><FONT FACE="symbol"> Ю </FONT>a&lt;I>a<FONT FACE="symbol">
+Ю </FONT>ab&lt;I>ba<FONT FACE="symbol"> Ю </FONT>aba&lt;I>aba<FONT FACE="symbol">
+Ю </FONT>ababbaba.</FONT></B></UL>
+</UL>
+
+<HR WIDTH="100%">
+<BR><A HREF="Part133.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part134.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

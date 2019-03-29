@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s75</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.1.5"></A><A HREF="part514.html#5.1.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part521.html#5.2.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+5.1.5. Пример использования АТ-грамматики</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Чтобы показать,
+как используются наследуемые атрибуты и как <B><FONT COLOR="#993300">АТ-грамматики</FONT></B>
+можно применять при конструировании компиляторов, рассмотрим процесс обработки
+описаний переменных в некотором гипотетическом языке программирования.
+Допустим, что описание переменных имеет вид:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">int X,Y,Z</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">и условимся, что после обработки пакета
+описания на входном языке лексический анализатор строит таблицу символьного
+представления идентификаторов (<FONT COLOR="#3333FF">ТС</FONT>) и таблицу
+переменных (<FONT COLOR="#3333FF">ТП</FONT>). Каждый элемент таблицы переменных
+состоит из двух полей. В первое поле заносится указатель на строку <FONT COLOR="#3333FF">ТС</FONT>,
+в которой хранится идентификатор переменной, а во втором поле должен храниться
+указатель на строку таблицы значений (<FONT COLOR="#3333FF">ТЗ</FONT>),
+в которой должно находиться значение переменной. Связи между этими таблицами
+показаны на следующем рисунке:</FONT>
+<BR><IMG SRC="sxema1.gif" HEIGHT=403 WIDTH=527>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; На рисунке цифрами
+обозначены указатели на элементы соответствующих таблиц, а пунктирными
+линиями показаны указатели, значения которых должно быть записано в <B><FONT COLOR="#3333FF">ТП</FONT></B>
+после синтаксического анализа. В результате обработки входной строки лексический
+анализатор заменяет идентификаторы лексемами, каждая из которых состоит
+из указателя класса переменных (<B><FONT COLOR="#3333FF">V</FONT></B>)
+и наследуемого атрибута, представляющего собой указатель на соответствующую
+строку <B><FONT COLOR="#3333FF">ТП</FONT></B>, и входная строка приобретает
+вид:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">int V/10,V/12,V/14.</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<HR>
+
+<P><A HREF="part514.html#5.1.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part521.html#5.2.1"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

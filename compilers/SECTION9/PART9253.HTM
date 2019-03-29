@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Асинхронные автоматы</TITLE>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><A HREF="Part9252.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part926.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+<P>
+<HR></P>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<P><B><I><U><FONT COLOR="#0000FF">9.2.5.3. ТРИГГЕРЫ С СИНХРОНИЗАЦИЕЙ</FONT></U></I></B></P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<P>В реальных схемах в результате действия паразитных задержек сигналы,
+подаваемые на различные входы триггера, могут приходить одновременно. Если,
+например, сигнал на вход R триггера типа S, находящегося в состоянии 1,
+придет раньше сигнала на входе S, то триггер может успеть перейти в состояние
+0 на время задержки сигнала, подаваемого на вход S. Чтобы избежать таких
+ложных срабатываний, обусловленных задержками входных сигналов, используют
+синхронизирующие или, как их называют, тактирующие сигналы. При этом длительность
+синхронизирующих сигналов выбирается меньшей, чем длительность сигналов,
+подаваемых на управляющие входы. Временная диаграмма, поясняющая использование
+синхронизирующий сигналов, приведена на рис. 12.<BR>
+Триггеры с синхронизацией должны иметь дополнительный вход С, на который
+подаются тактирующие сигналы. Работу такого триггера можно описать следующим
+образом. При отсутствии сигнала на входе С, триггер не изменяет своего
+состояния. Если же сигнал на входе С равен 1, то он работает как соответствующий
+триггер без синхронизации. Триггеры рассматриваемого типа строятся обычно
+на основе асинхронного R-S-триггера. Пример построения S-триггера с синхронизцией
+приведен на рис.13.<BR>
+<IMG SRC="DRAW/20.gif" HEIGHT=248 WIDTH=424></P>
+
+<P><IMG SRC="DRAW/21.gif" HEIGHT=229 WIDTH=564></P>
+
+<P><IMG SRC="DRAW/22.gif" HEIGHT=299 WIDTH=447></P>
+
+<P>
+<HR></P>
+
+<P><A HREF="Part9252.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part926.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+</BODY>
+</HTML>

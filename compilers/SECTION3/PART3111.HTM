@@ -1,0 +1,135 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>3.9.1 Расширенный магазинный автомат</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="Part311.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part3112.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+<HR NOSHADE WIDTH="100%">
+
+<P><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>3.11.1. Расширенный магазинный
+автомат</FONT></FONT></I></B>
+<BLOCKQUOTE>
+<BLOCKQUOTE>Рассмотренный пример показывает, что автомат, выполняющий операцию
+свертки, в отличие от нисходящего распознавателя, не строит в магазине
+вывод цепочки, начиная с аксиомы грамматики, который соответствует построению
+синтаксического дерева цепочки "сверху - вниз", а выполняет&nbsp; сворачивание
+символов, записанных в магазин. Такой порядок сворачивания символов, записанных
+в магазин, соответствует правому выводу цепочки, выполняемому "снизу -
+вверх". Это обстоятельство объясняет, почему такие распознаватели называются
+восходящими. Подобный распознаватель должен учитывать при переходе не один
+символ, расположенный в вершине магазина, а цепочку символов. Чтобы устранить
+отмеченное противоречие, определим новый тип автомата, который назовем&nbsp;<A NAME="extended-automata"></A><FONT COLOR="#660000"><B>расширенным
+магазиннным автоматом</B>.</FONT>
+<BR>&nbsp;
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="91%" HEIGHT="40%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><B><I><FONT COLOR="#000099">&nbsp;Определение</FONT></I></B>.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Формальное определение такого автомата имеет вид:&nbsp;
+<BLOCKQUOTE>
+<PRE>&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp;&nbsp; M = {P, S, H, F, s<SUB>0</SUB>, h<SUB>0</SUB>, <FONT FACE="Symbol">d</FONT>},</FONT></B></PRE>
+</BLOCKQUOTE>
+&nbsp;где&nbsp;&nbsp;
+<BR>&nbsp;&nbsp;&nbsp; P - входной алфавит,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp; S - алфавит состояний,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;<FONT COLOR="#C0C0C0"> </FONT><FONT COLOR="#000000">s<SUB>0</SUB>-
+начальное состояние<SUB> </SUB>, s<SUB>0 </SUB><FONT FACE="Symbol">О</FONT>S,</FONT>&nbsp;
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp; F - множество конечных состояний,
+F является подмножеством S,&nbsp;</FONT>&nbsp;
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp; H - алфавит магазинных сисмволов,
+записываемых на вспомогательную ленту,&nbsp;</FONT>&nbsp;
+<BR><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp; h<SUB>0</SUB></FONT> - маркер
+дна, он всегда записывается на дно магазина, h<SUB>0</SUB> <FONT FACE="Symbol">О</FONT>&nbsp;
+H,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;<FONT COLOR="#000099"> <FONT FACE="Symbol">d</FONT><TT>:
+S </TT><FONT FACE="Symbol">* </FONT><TT>{P </TT><FONT FACE="Symbol">И</FONT><TT>
+{$}} </TT><FONT FACE="Symbol">*</FONT><TT> H* <FONT FACE="Symbol">®</FONT>
+S</TT><FONT FACE="Symbol">*</FONT><TT>H*</TT></FONT><TT> - </TT>функция
+переходов.&nbsp;
+<BR>&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>В функциональном виде функции переходов расширенного автомата
+можно записать так:
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp; <B><FONT COLOR="#000099"><FONT FACE="Symbol">d</FONT>(s, p, <FONT FACE="Symbol">ga</FONT>) = (s, <FONT FACE="Symbol">gb</FONT>),</FONT></B></PRE>
+где <FONT FACE="Symbol">a, b, g</FONT><TT> <FONT FACE="Symbol">О</FONT>
+H*, p <FONT FACE="Symbol">О</FONT> (P </TT><FONT FACE="Symbol">И</FONT><TT>
+{$}) и s <FONT FACE="Symbol">О</FONT> S</TT>.
+<BR>Приведенное определение показывает, что расширенный автомат допускает
+замену одной цепочки, находящейся в вершине автомата, другой цепочкой.
+<BR>Используя введенное&nbsp; ранее определение конфигурации&nbsp; автомата,
+работу расширенного&nbsp; магазинного автомата можно представить в виде
+последовательности сменяющих друг друга конфигураций. При этом начальная
+и конечная конфигурации имеют вид:
+<BLOCKQUOTE>
+<BLOCKQUOTE>(<FONT COLOR="#000000">s<SUB>0</SUB>, </FONT><FONT FACE="Symbol">a,р</FONT><FONT COLOR="#000000">
+h<SUB>0</SUB></FONT> ) и (<FONT COLOR="#000000">s<SUB>1</SUB>, </FONT><TT>$</TT><FONT COLOR="#000000">,
+h<SUB>0</SUB>I ),</FONT></BLOCKQUOTE>
+</BLOCKQUOTE>
+<FONT COLOR="#000000">где&nbsp; </FONT><FONT FACE="Symbol">a - </FONT>заданная
+цепочка, s<SUB>1 </SUB>- одно из заключительных состояний автомата, I -
+начальная аксиома грамматики.
+<BR>Цепочку и язык, допускаемые расширенным автоматом, можно определить
+так.
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="89%" HEIGHT="20%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><B><I>Определение.&nbsp;</I></B>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Цепочка допускается расширенным автоматом, если
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+существует&nbsp; последовательность конфигураций,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+первая из которых является начальной конфигурацией&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+с заданной цепочкой, а последней&nbsp; конфигурацией в&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+последовательности является одна из&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+заключительных конфигураций.&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT COLOR="#000099">( s<SUB>0</SUB>, <FONT FACE="Symbol">a,р</FONT> h<SUB>0</SUB>
+)&nbsp; , <TT>$</TT>|--<FONT FACE="Symbol">*</FONT>&nbsp; ( s<SUB>1</SUB>,
+h<SUB>0</SUB>I ),</FONT>
+<BLOCKQUOTE>
+<BLOCKQUOTE><FONT COLOR="#000000">&nbsp;&nbsp;&nbsp; где s<SUB>1 </SUB>-
+одно из заключительных состояний,&nbsp;&nbsp;</FONT>
+<BR><FONT FACE="Symbol">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a - </FONT>заданная&nbsp; цепочка.</BLOCKQUOTE>
+</BLOCKQUOTE>
+<B><I>Определение.&nbsp;</I></B>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Язык, допускаемый расширенным автоматом, можно&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+определить&nbsp; так:&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">L(M) = { <FONT FACE="Symbol">a | </FONT>(s<SUB>0</SUB>,
+<FONT FACE="Symbol">a,р</FONT> h<SUB>0</SUB> )&nbsp; |--<FONT FACE="Symbol">*</FONT>&nbsp;
+( s<SUB>1</SUB>, <TT>$</TT>,<TT>$</TT> ) и&nbsp; s<SUB>1</SUB><TT><FONT FACE="Symbol">О</FONT>F}</TT>.&nbsp;</FONT></B>&nbsp;
+<BR>&nbsp;</UL>
+</UL>
+&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<HR NOSHADE WIDTH="100%"><A HREF="Part3111.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part3112.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание&nbsp;</FONT></FONT> ></BLOCKQUOTE>
+</BLOCKQUOTE>
+
+</BODY>
+</HTML>

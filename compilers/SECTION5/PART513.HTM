@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s73</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.1.3"></A><A HREF="part512.html#5.1.2."><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part514.html#5.1.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>
+<FONT COLOR="#006600">След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="index5.html#idx5">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+5.1.3. Пример АТ-грамматики</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr"><B>&nbsp;&nbsp;&nbsp; <FONT COLOR="#993300">Атрибутные
+транслирующие</FONT></B><FONT COLOR="#993300"> <B>грамматики </B></FONT>могут
+быть использованы для построения выводов, в которых построение цепочки
+совмещается с вычислением значений атрибутов. Чтобы различать атрибуты
+в правилах вывода, условимся записывать синтезируемые атрибуты с префиксом
+в виде знака процента (<B><FONT COLOR="#3333FF">%</FONT></B>), а наследуемые
+- с префиксом в виде наклонной черты (<B><FONT COLOR="#3333FF">/</FONT></B>).
+Например, если символ <B><FONT COLOR="#3333FF">&lt;X></FONT></B> имеет
+один синтезируемый атрибут <B><FONT COLOR="#3333FF">a</FONT></B> и два
+наследуемых атрибута <B><FONT COLOR="#3333FF">b</FONT></B>, <B><FONT COLOR="#3333FF">c</FONT></B>,
+<FONT COLOR="#000000">а</FONT> символы <B><FONT COLOR="#3333FF">&lt;Y></FONT></B>
+и <B><FONT COLOR="#3333FF">&lt;Z></FONT></B> имеют по одному наследуемому
+атрибуту <B><FONT COLOR="#3333FF">d</FONT></B> и <B><FONT COLOR="#3333FF">e</FONT></B>,
+то правило <B><FONT COLOR="#3333FF">&lt;X></FONT></B> </FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr">
+<B><FONT COLOR="#3333FF">&lt;Y>&lt;Z></FONT></B> может быть записано в
+виде:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;X>%a/b/c
+</FONT></FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">
+&lt;Y>/d&lt;Z>/e</FONT>.</FONT></UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Это правило вывода
+необходимо дополнить правилами вычисления значений атрибутов, которые в
+соответствии с приведенным определением могут иметь вид:</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">a</FONT> :=
+<FONT COLOR="#3333FF">b</FONT><FONT COLOR="#000000">+</FONT><FONT COLOR="#3333FF">d</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">d</FONT> :=
+<FONT COLOR="#3333FF">2</FONT><FONT COLOR="#000000">*</FONT><FONT COLOR="#3333FF">c</FONT>;</FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">e </FONT><FONT COLOR="#000000">:=</FONT><FONT COLOR="#3333FF">
+b.</FONT></FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В дальнейшем правила
+вычисления атрибутов условимся записывать непосредственно за правилами
+вывода или на отдельной строчке, отделяя их от правил вывода двумя восклицательными
+знаками (<B><FONT COLOR="#3333FF">!!</FONT></B>).</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В качестве первого
+примера рассмотрим <B><FONT COLOR="#993300">АТ-грамматику</FONT></B>, описывающую
+трансляцию выражений, состоящих из констант <B><FONT COLOR="#3333FF">C</FONT></B>,
+в значение заданного выражения.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; Допустим, что у
+каждого нетерминала <B><FONT COLOR="#3333FF">&lt;E></FONT></B>, <B><FONT COLOR="#3333FF">&lt;T></FONT></B>,
+<B><FONT COLOR="#3333FF">&lt;P></FONT></B> имеется по одному атрибуту,
+принимающему целочисленные значения. Терминальный символ <B><FONT COLOR="#3333FF">C</FONT></B>
+также имеет один атрибут, определяющий значение константы и принимающий
+целочисленные значения. Операционный символ грамматики <B><FONT COLOR="#3333FF">{ответ}</FONT></B>
+имеет наследуемый атрибут с целочисленной областью значений. Начальным
+символом грамматики служит символ <B><FONT COLOR="#3333FF">&lt;S></FONT></B>.</FONT>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В тех случаях, когда
+атрибуты символов действия должны передаваться на выход вместе с этими
+символами действия, как это имеет место в рассматриваемом примере, условимся
+записывать атрибуты символов действия внутри фигурных скобок.</FONT>
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#000099">Г <SUB>5.
+0</SUB></FONT> :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </FONT></B><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;S>
+</FONT></FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">&lt;E>%a{ответ/b}</FONT></FONT>
+<UL>
+<UL><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! b </FONT>:=
+<FONT COLOR="#3333FF">a</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E>%d</FONT>
+</FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr"> <FONT COLOR="#3333FF">&lt;E>%e+&lt;T>%f</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! d </FONT>:=
+<FONT COLOR="#3333FF">e</FONT>+<FONT COLOR="#3333FF">f</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;E>%g</FONT>
+</FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr"> <FONT COLOR="#3333FF">&lt;T>%h</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! g</FONT>
+:= <FONT COLOR="#3333FF">h</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;T>%i</FONT>
+</FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr"> <FONT COLOR="#3333FF">&lt;T>%j*&lt;P>%k</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! i</FONT>
+:= <FONT COLOR="#3333FF">j</FONT>*<FONT COLOR="#3333FF">k</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;T>%m</FONT>
+</FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr"> <FONT COLOR="#3333FF">&lt;P>%n</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! m</FONT>
+:= <FONT COLOR="#3333FF">n</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;P>%p</FONT>
+</FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr"> <FONT COLOR="#3333FF">(&lt;E>%q)</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">! p</FONT> :=
+<FONT COLOR="#3333FF">q</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&lt;P>%r </FONT></FONT><FONT FACE="Symbol">Ю</FONT><FONT FACE="Times New Roman Cyr">
+<FONT COLOR="#3333FF">C/s</FONT></FONT>
+<BR><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">!! r</FONT>
+:= <FONT COLOR="#3333FF">s</FONT>.</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+<HR>
+
+<P><A HREF="part512.html#5.1.2."><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part514.html#5.1.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

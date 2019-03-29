@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Part211</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part210.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part212.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%">
+
+<P><A NAME="2.11 Построение магазинного автомата."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.11
+Построение магазинного автомата.</FONT></FONT></I></B>
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I>Утверждение</I></B>. Если<B> <FONT COLOR="#000099">Г = { V<SUB>т</SUB>
+, V<SUB>a</SUB> , I , R }</FONT> </B>является КС-грамматикой, то по ней
+можно построить такой магазинный автомат <B><FONT COLOR="#000099">М</FONT></B>,
+что <B><FONT COLOR="#000099">L(M) = L(Г)</FONT></B>.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<BR>В основе доказательства лежит способ построения магазинного автомата
+по&nbsp; заданной КС-грамматике.Чтобы сделать процесс построения автомата
+более простым и наглядным, условимся использовать магазинные автоматы с
+одним состоянием s<SUB>0</SUB>.&nbsp; Итак, пусть задана грамматика&nbsp;
+Г = { Vт , Va , I , R }. Определим компоненты автомата М следующим образом:
+<UL><B><FONT COLOR="#0000A0">S = { s<SUB>0</SUB> },&nbsp;&nbsp;&nbsp;&nbsp;
+P = V<SUB>т </SUB>,&nbsp;&nbsp;&nbsp;&nbsp; H = V<SUB>т</SUB></FONT><FONT FACE="symbol"><FONT COLOR="#000099">И</FONT></FONT><FONT COLOR="#0000A0">&nbsp;
+V<SUB>a</SUB></FONT><FONT FACE="symbol"><FONT COLOR="#000099">И</FONT></FONT><FONT COLOR="#0000A0">&nbsp;
+{ h<SUB>0</SUB>} ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F = {&nbsp; s<SUB>0 </SUB>},</FONT></B></UL>
+в качестве начального состояния автомата примем s<SUB>0</SUB> и построим
+функцию переходов так:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1.&nbsp; Для всех&nbsp;&nbsp;&nbsp; <B><FONT COLOR="#000099">A <FONT FACE="symbol">О</FONT>
+V<SUB>A</SUB></FONT></B> , таких что встречаются в левой части правил
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT COLOR="#000099">&lt;A>&nbsp; <FONT FACE="symbol">® </FONT><FONT FACE="Symbol">a</FONT></FONT></B>
+, построим команды вида:
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+f<SUP><FONT SIZE=-2>0</FONT></SUP>( s <SUB>0</SUB> , <FONT FACE="Symbol">e</FONT>
+, &lt;A> ) = ( s<SUB>0</SUB> ,<FONT FACE="symbol"> </FONT><FONT FACE="Symbol">a</FONT><SUP>R</SUP>
+),</FONT></B></UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+где <B><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT><SUP>R</SUP></FONT></B>
+-зеркальное отображение <B><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT></B>
+.
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. Для всех <B><FONT COLOR="#000099">a</FONT></B> <B><FONT COLOR="#000099"><FONT FACE="symbol">О</FONT>V<SUB>т</SUB></FONT></B>
+построим команды вида
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+f ( s<SUB>0</SUB> , a , a ) = ( s<SUB>0</SUB> , $ )</FONT></B></UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3. Для перехода в конечное состояние построим команду
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+f ( s<SUB>0</SUB> , <FONT FACE="Symbol">e</FONT> , h<SUB>0</SUB> ) = (
+s<SUB>0</SUB> , $ )</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4. Начальную конфигурацию автомата определим в виде:
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+( s<SUB>0</SUB> , <FONT FACE="Symbol">w</FONT> , h<SUB>0</SUB>&lt;I> ),</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+<FONT COLOR="#000000">где </FONT><B><FONT FACE="Symbol"><FONT COLOR="#000099">w&nbsp;
+- </FONT></FONT></B><FONT COLOR="#000000">заданная цепочка, записанная
+на входной ленте.</FONT>
+<BR>Автомат, построенный по приведенным выше правилам, работает следующим
+образом. Если в вершине магазина находится терминал, и символ, читаемый
+с входной ленты, совпадает с ним, то по команде типа (2) терминал удаляется
+из магазина, а входная головка сдвигается. Если же в вершине магазина находится
+нетерминал, то выполняется команда типа (1), которая вместо терминала записывает
+в магазин цепочку, представляющую собой правую часть правила грамматики.
+Следовательно, автомат, последовательно заменяя нетерминалы, появляющиеся
+в вершине магазина, строит в магазине левый вывод входной цепочки, удаляя
+полученные терминальные символы, совпадающие с символами входной цепочки.
+Это означает, что каждая цепочка, которая может быть получена с помощью
+левого вывода в грамматике Г, допускается построенным автоматом М.
+
+<P>
+<HR WIDTH="100%">
+<UL>
+<LI>
+<A HREF="Part210.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part212.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

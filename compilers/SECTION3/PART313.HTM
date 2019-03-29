@@ -1,0 +1,778 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>3.9.6 Построение SLR(1)-распознавателя</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<A HREF="Part3122.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part314.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+<HR NOSHADE WIDTH="100%">
+
+<P><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>3.13. Построение SLR(1)-распознавателя</FONT></FONT></I></B>
+<BR><FONT COLOR="#3333FF">&nbsp;</FONT>
+<BLOCKQUOTE>
+<BLOCKQUOTE>Рассмотрим еще один пример построения распознавателя для следующей
+грамматики, не содержащей аннулирующих правил.</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE><A NAME="grammar-7.3"></A><B><FONT COLOR="#000099">Г <SUB>3.
+14</SUB></FONT></B><I> </I>:
+<BR><TT>&lt;I> </TT><FONT FACE="Symbol">®</FONT><TT> t&lt;A<SUB>1</SUB>></TT>
+<BR><TT>&lt;A> </TT><FONT FACE="Symbol">®</FONT><TT> &lt;A<SUB>2</SUB>>,
+&lt;B<SUB>2</SUB>></TT>
+<BR><TT>&lt;A> </TT><FONT FACE="Symbol">®</FONT><TT> &lt;B<SUB>3</SUB>></TT>
+<BR><TT>&lt;B> </TT><FONT FACE="Symbol">®</FONT><TT> a</TT>
+<BR><TT>&lt;B> </TT><FONT FACE="Symbol">®</FONT><TT> b</TT></BLOCKQUOTE>
+После построения функций <TT>ВПЕРВ</TT> и <TT>ВПОСЛЕ</TT> для данной грамматики,
+получаем таблицу переходов в виде:</BLOCKQUOTE>
+</BLOCKQUOTE>
+&nbsp;
+<CENTER><TABLE BORDER >
+<CAPTION><A NAME="table-7.6"></A>Таблица 7.6</CAPTION>
+
+<TR>
+<TH WIDTH="16%"></TH>
+
+<TH WIDTH="12%">t&nbsp;</TH>
+
+<TH WIDTH="12%">,&nbsp;</TH>
+
+<TH WIDTH="12%">a&nbsp;</TH>
+
+<TH WIDTH="12%">b&nbsp;</TH>
+
+<TH WIDTH="12%">&lt;I>&nbsp;</TH>
+
+<TH WIDTH="12%">&lt;A>&nbsp;</TH>
+
+<TH WIDTH="12%">&lt;B>&nbsp;</TH>
+</TR>
+
+<TR>
+<TH>h<SUB>0</SUB></TH>
+
+<TD>t</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&lt;I<SUB>0</SUB>></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>&lt;I<SUB>0</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>&lt;A<SUB>1</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>t</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>a</TD>
+
+<TD>b</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&lt;A<SUB>1</SUB>>&lt;A<SUB>2</SUB>></TD>
+
+<TD>&lt;B<SUB>3</SUB>></TD>
+</TR>
+
+<TR>
+<TH>&lt;A<SUB>2</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>,</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>,</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>a</TD>
+
+<TD>b</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&lt;B<SUB>2</SUB>></TD>
+</TR>
+
+<TR>
+<TH>&lt;B<SUB>2</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>&lt;B<SUB>3</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>a</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>b</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BLOCKQUOTE>
+<BLOCKQUOTE>Это недетерминированная таблица, поэтому введем обозначение
+<TT>&lt;A<I><SUB>x</SUB></I>> = (&lt;A<SUB>1</SUB>>, &lt;A<SUB>2</SUB>>)</TT>
+и преобразуем ее к детерминированному виду. В результате имеем:</BLOCKQUOTE>
+</BLOCKQUOTE>
+&nbsp;
+<CENTER><TABLE BORDER >
+<CAPTION>Таблица 7.7</CAPTION>
+
+<TR>
+<TH WIDTH="16%"></TH>
+
+<TH WIDTH="12%">t&nbsp;</TH>
+
+<TH WIDTH="12%">,&nbsp;</TH>
+
+<TH WIDTH="12%">a&nbsp;</TH>
+
+<TH WIDTH="12%">b&nbsp;</TH>
+
+<TH WIDTH="12%">&lt;I>&nbsp;</TH>
+
+<TH WIDTH="12%">&lt;A>&nbsp;</TH>
+
+<TH WIDTH="12%">&lt;B>&nbsp;</TH>
+</TR>
+
+<TR>
+<TH>h<SUB>0</SUB></TH>
+
+<TD>t</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&lt;I<SUB>0</SUB>></TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>&lt;I<SUB>0</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>&lt;A<I><SUB>x</SUB></I>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>,</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>t</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>a</TD>
+
+<TD>b</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&lt;A<I><SUB>x</SUB></I>></TD>
+
+<TD>&lt;B<SUB>3</SUB>></TD>
+</TR>
+
+<TR>
+<TH>,</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>a</TD>
+
+<TD>b</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&lt;B<SUB>2</SUB>></TD>
+</TR>
+
+<TR>
+<TH>&lt;B<SUB>2</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>&lt;B<SUB>3</SUB>></TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>a</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+
+<TR>
+<TH>b</TH>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+
+<TD>&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BLOCKQUOTE>
+<BLOCKQUOTE>Продолжая построение в соответствии с описанной процедурой,
+мы столкнемся с противоречием при заполнении строк таблицы действий для
+строки, помеченной символом <TT>&lt;A<I><SUB>x</SUB></I>></TT>. Поскольку
+<TT>&lt;A<I><SUB>x</SUB></I>></TT> содержит грамматическое вхождение <TT>&lt;A<SUB>1</SUB>></TT>,
+являющееся самым правым символом правила 1, то нужно было бы записать в
+рассматриваемую строку таблицы действий операцию Свертка (1). Однако, в
+множестве <TT>&lt;A<I><SUB>x</SUB></I>></TT> содержится также грамматическое
+вхождение <TT>&lt;A<SUB>2</SUB>></TT>, которое не является самым правым
+символом правила 2. Для такого символа данную строку таблицы действий нужно
+заполнить операцией Перенос. Обнаруженное противоречие показывает, что
+грамматика <B><FONT COLOR="#000099">Г <SUB>3. 14</SUB></FONT></B> не является
+LR(0)-грамматикой, и что построить LR(0)-распознаватель с помощью описанной
+процедуры невозможно.
+<BR>Попробуем теперь проверить, нельзя ли построить для заданной грамматики
+SLR(1)-распознаватель. Построение такого распознавателя отличается от описанного
+выше тем, что заполнение таблицы действий выполняется не целыми строками,
+а каждый элемент строки строится отдельно, и при этом учитываются только
+те символы, которые могут следовать за рассматриваемым в выводных цепочках.
+<BR>В нашем примере при построении строки таблицы действий для символа
+<TT>&lt;A<I><SUB>x</SUB></I>></TT> в столбец, отмеченный символом запятая
+запишем операцию Перенос, поскольку в таблице переходов в строке <TT>&lt;A<SUB>2</SUB>></TT>
+и столбце с запятой находится грамматический символ. В столбец, отмеченный
+символом конца строки <FONT FACE="Symbol">^</FONT>, занесем операцию Свертка
+(1), поскольку за символом <TT>&lt;A<SUB>1</SUB>></TT> может следовать
+только символ <FONT FACE="Symbol">^</FONT>. Последнее утверждение вытекает
+из того, что <TT>СЛЕД(&lt;I>) = {</TT><FONT FACE="Symbol">^</FONT><TT>}</TT>.
+Учитывая, что
+<PRE>&nbsp;&nbsp;&nbsp;&nbsp; СЛЕД(&lt;B>) = { , , <FONT FACE="Symbol">^</FONT>}
+&nbsp;&nbsp;&nbsp;&nbsp; СЛЕД(&lt;A>) =&nbsp; { , , <FONT FACE="Symbol">^</FONT>}</PRE>
+получаем таблицу действий для искомого распознавателя в виде:</BLOCKQUOTE>
+</BLOCKQUOTE>
+&nbsp;
+<CENTER><TABLE BORDER >
+<CAPTION>
+<CENTER>Таблица 7.8</CENTER>
+</CAPTION>
+
+<TR>
+<TH WIDTH="20%">
+<CENTER>&nbsp;</CENTER>
+</TH>
+
+<TH WIDTH="16%">
+<CENTER>t&nbsp;</CENTER>
+</TH>
+
+<TH WIDTH="16%">
+<CENTER>,&nbsp;</CENTER>
+</TH>
+
+<TH WIDTH="16%">
+<CENTER>a&nbsp;</CENTER>
+</TH>
+
+<TH WIDTH="16%">
+<CENTER>b&nbsp;</CENTER>
+</TH>
+
+<TH WIDTH="16%">
+<CENTER><FONT FACE="Symbol">^</FONT>&nbsp;</CENTER>
+</TH>
+</TR>
+
+<TR>
+<TH>
+<CENTER>h<SUB>0</SUB></CENTER>
+</TH>
+
+<TD>
+<CENTER>П</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>&lt;I<SUB>0</SUB>></CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>Д</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>&lt;A<I><SUB>x</SUB></I>></CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>П</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(1)</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>t</CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>П</CENTER>
+</TD>
+
+<TD>
+<CENTER>П</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>,</CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>П</CENTER>
+</TD>
+
+<TD>
+<CENTER>П</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>&lt;B<SUB>2</SUB>></CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(2)</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(2)</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>&lt;B<SUB>3</SUB>></CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(3)</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(3)</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>a</CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(4)</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(4)</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TH>
+<CENTER>b</CENTER>
+</TH>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(5)</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>&nbsp;</CENTER>
+</TD>
+
+<TD>
+<CENTER>С(5)</CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<BLOCKQUOTE>
+<BLOCKQUOTE>Эта таблица вместе с таблицей <A HREF="#table-7.6">7.6</A>
+задает SLR(1)–распознаватель, который работает по тем же правилам, что
+и LR(0)–распознаватель. Незаполненные клетки таблицы соответствуют операции
+Отвергнуть.</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>Процедура построения SLR(1)–распознавателя отличается от процедуры
+построения LR(0)–распознавателя содержанием только одного пункта 5, который
+можно описать так:</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<OL START=5>
+<UL START=5>
+<OL START=5>
+<LI>
+Таблица действий заполняется поэлементно для каждой строки, отмеченной
+маркером дна или множеством грамматических вхождений <TT>Q</TT>, следующим
+образом:</LI>
+
+<OL START=5>а) Если Q содержит начальное вхождение, то в столбец, помеченный
+маркером входной строки, занести операцию Допустить.
+<BR>б) Если Q содержит грамматическое вхождение R <SUB>i j</SUB>, не являющиеся
+самым правым вхождением никакого правила, и если элемент таблицы переходов
+для этого символа R <SUB>i j </SUB>и некоторого символа грамматики S не
+является пустым, то в элемент таблицы действий соответствующей паре ( R
+<SUB>i j</SUB>, S) заносится операция Перенос.
+<BR>в) Если Q содержит самое правое грамматическое вхождение p цепочки
+<FONT FACE="Symbol">a</FONT> правила <TT>&lt;A> <FONT FACE="Symbol">®</FONT>
+</TT><FONT FACE="Symbol">a</FONT> с номером <TT>k</TT>, то для каждого
+входного символа <TT>x <FONT FACE="Symbol">О</FONT> СЛЕД(&lt;A>)</TT> в
+элемент таблицы действий, соответствующий паре <TT>(p,x)</TT>, заносится
+операция Свертка (k).</OL>
+</OL>
+Если в результате выполнения описанного выше пункта 5 удастся построить
+таблицу действий, то это означает, что заданная грамматика является грамматикой
+SLR(1), а построенный автомат SLR(1)-распознавателем.
+<BR>Все описанные выше процедуры построения распознавателей применимы к
+неукорачивающим грамматикам. Они являются также базой для построения восходящих
+распознавателей для укорачивающих грамматик. Однако эти процедуры должны
+быть дополнены правилами построения, учитывающими наличие аннулирующих
+правил.</UL>
+</OL>
+
+<HR NOSHADE WIDTH="100%"><A HREF="Part313.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part314.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>
+</BODY>
+</HTML>

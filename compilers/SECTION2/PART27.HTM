@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+&nbsp;<A HREF="Part26.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part28.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+
+<P>
+<HR WIDTH="100%">
+
+<P><A NAME="2.7 Преобразование неукорачивающих грамматик."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.7
+Преобразование неукорачивающих грамматик.</FONT></FONT></I></B>
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><I><B>Определение</B>.</I> Грамматика называется&nbsp;<A NAME="неукорачивающей"></A><B><FONT COLOR="#993300">неукорачивающей</FONT></B>
+или грамматикой без аннулирующих правил, если либо&nbsp;
+<BR>1)схема грамматики не содержит аннулирующих правил,&nbsp;
+<BR>2)либо схема грамматики содержит только одно правило вида &lt;I> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+$, где &lt;I> - начальный символ грамматики, и символ I не встречается
+в правых частях остальных правил грамматики.</TD>
+</TR>
+</TABLE>
+Для грамматик, содержащих аннулирующие правила, справедливо следующее утверждение.
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I>Утверждение</I></B>. Для каждой КС-грамматики Г', содержащей
+аннулирующие правила, можно&nbsp;
+<BR>построить эквивалентную ей неукорачивающую грамматику Г, такую что
+L(Г')=L(Г).</TD>
+</TR>
+</TABLE>
+Построение неукорачивающей грамматики предполагает увеличение числа правил
+заданной
+<BR>грамматики путем построения дополнительных правил, получаемых в результате
+исключения
+<BR>нетерминалов аннулирующих правил. Чтобы построить дополнительные правила
+необходимо
+<BR>выполнить все возможные подстановки пустой цепочки вместо аннулирующего
+нетерминала во все правила грамматики. Если же в грамматике есть правило
+вида &lt;I> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+$ и символ &lt;I> входит в правые части других правил грамматики, то следует
+ввести новый начальный символ &lt;I'> и заменить правило &lt;I> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+$ двумя новыми правилами: &lt;I'> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+$ и &lt;I'><B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;I> .
+<BR>В качестве иллюстрации способа построения неукорачивающих грамматик,
+исключим аннулирующие&nbsp; правила из следующей грамматики:
+
+<P><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Г<SUB>2. 3</SUB> :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R = { &lt;I> <FONT FACE="symbol">®</FONT>
+a&lt;I>b&lt;I>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">®</FONT> b&lt;I>a&lt;I>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">®</FONT>&nbsp;&nbsp; $ }</FONT></B>
+<BR>Выполняя все возможные замены символа I в первом правиле грамматики,
+получаем четыре
+<BR>правила вида:
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000000">&lt;I> <FONT FACE="symbol">®</FONT> a&lt;I>b&lt;I>,&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">®</FONT> ab&lt;I>,&nbsp;&nbsp;&nbsp; &lt;I><FONT FACE="symbol">®</FONT>
+a&lt;I>b,&nbsp;&nbsp;&nbsp; &lt;I><FONT FACE="symbol">®</FONT> ab .</FONT></UL>
+</UL>
+Поступая аналогично со вторым правилом, имеем:
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000000">&lt;I> <FONT FACE="symbol">® </FONT>b&lt;I>a&lt;I>,&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">® </FONT>ba&lt;I>,&nbsp;&nbsp;&nbsp; &lt;I>
+<FONT FACE="symbol">®</FONT> b&lt;I>a,&nbsp;&nbsp;&nbsp; &lt;I> <FONT FACE="symbol">®</FONT>
+ba.</FONT></UL>
+</UL>
+Учитывая, что начальный символ, образующий аннулирующее правило, входит
+в правые части
+<BR>других правил грамматики, заменим правило &lt;I> <B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+$ правилами вида &lt;I'><B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+$&nbsp; и&nbsp; &lt;I'><B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;I> .
+<BR>Построенная совокупность правил образует схему искомой неукорачивающей
+грамматики. Все
+<BR>приведенные выше преобразования грамматик могут быть использованы и
+оказаться полезными при построении как конечных, так и магазинных автоматов.
+
+<P>
+<HR WIDTH="100%">
+<LI>
+&nbsp;<A HREF="Part27.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part28.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;
+</BODY>
+</HTML>

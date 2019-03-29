@@ -1,0 +1,166 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part33</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="Part32.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part341.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%"><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;<A NAME="3.3   Построение детерминированного нисходящего"></A>
+3.3&nbsp;&nbsp; Построение детерминированного нисходящего</FONT></FONT></I></B>
+<BR><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+распознавателя.</FONT></FONT></I></B>
+<UL><B>Способ построения</B> распознавателя предусматривает сопоставление
+каждому правилу грамматики команды распознавателя .
+<BR>Согласно общему способу построения распознавателей для КС-грамматик,
+описанному в предыдущем разделе, каждому правилу разделенной грамматики,
+которые имеют вид:
+<BR><FONT COLOR="#000099">&lt;A>&nbsp;<B> <FONT FACE="symbol">® </FONT></B>a
+<FONT FACE="Symbol">a</FONT> </FONT>, где<FONT COLOR="#000099"> <FONT FACE="Symbol">a</FONT></FONT>
+- цепочка символов полного словаря и <FONT COLOR="#000099">a</FONT> принадлежит
+<BR>терминальному словарю, нужно поставить в соответствие команду
+<UL>&nbsp;
+<UL>
+<UL>(*)&nbsp;&nbsp;&nbsp; <B><FONT COLOR="#0000A0">f <SUP><FONT SIZE=-2>0</FONT></SUP>(
+s<SUB>0</SUB> , <FONT FACE="Symbol">e</FONT> , &lt;A> ) = ( s<SUB>0</SUB>
+, </FONT><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT><FONT COLOR="#0000A0">
+' a) </FONT>,</B></UL>
+</UL>
+&nbsp;</UL>
+которая задает такт работы без сдвига входной головки и в которой<FONT COLOR="#000099"><B>
+</B><FONT FACE="Symbol">a</FONT> '</FONT> представляет собой зеркальное
+отображение цепочки <FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT><B>
+</B></FONT>. Отметим, что в результате выполнения этой команды, в вершине
+магазина окажется терминал <FONT COLOR="#000099">a</FONT>. Общий способ
+построения&nbsp; редусматривает также построение для каждого <FONT COLOR="#000099">a</FONT>
+символа грамматики команды:
+<BR>&nbsp;
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (**)&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#0000A0">
+f ( s<SUB>0</SUB> , a , a ) = ( s<SUB>0</SUB> , $ )</FONT></B></UL>
+<B>&nbsp;</B></UL>
+которая удаляет этот терминал из магазина и сдвигает входную головку.
+<BR>Учитывая, что в разделенной грамматике каждое правило начинается с
+терминального символа, и что эти терминалы не повторяются, можно сделать
+вывод о том , что команда (*) должна выполняться только в том случае, когда
+под входной головкой находится&nbsp; терминал<FONT COLOR="#000099"><B>
+</B>a</FONT>, и после нее всегда должна выполняться команда (**).
+<BR>Чтобы исключить неопределенность правил вида (*) и уменьшить число
+тактов работы распознавателя, объединим команды вида (*) и (**) в одну
+команду. Построение такой команды должно выполняться следующим образом:
+каждому правилу разделенной грамматики <B><FONT COLOR="#000099">&lt;A>&nbsp;
+<FONT FACE="symbol">®</FONT> a <FONT FACE="Symbol">a</FONT></FONT></B>
+поставим в соответствие команду
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#0000A0">&nbsp;f ( s<SUB>0</SUB> , a , &lt;A>) = (
+s<SUB>0</SUB> ,</FONT><FONT COLOR="#000099"> <FONT FACE="Symbol">a</FONT>
+</FONT><FONT COLOR="#0000A0">')</FONT> ,</B></UL>
+</UL>
+</UL>
+&nbsp;</UL>
+которая определяет такт работы распознавателя со сдвигом входной головки.
+<BR>Кроме того, следует учесть, что терминальные символы могут быть расположены
+в правых частях правил не только на самой левой позиции. Для таких терминалов
+необходимо построить команды вида :
+<BR>&nbsp;
+<DIR>
+<DIR>
+<OL>
+<OL><B><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , b , b ) = ( s<SUB>0</SUB>
+, $ )</FONT></B></OL>
+&nbsp;</OL>
+</DIR>
+</DIR>
+Для перехода в заключительное состояние добавим правило:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , $ ,h<SUB>0</SUB> ) = (
+s<SUB>1</SUB> , $ )</FONT> ,</B></UL>
+</UL>
+</UL>
+</UL>
+а в качестве начальной конфигурации распознавателя примем, как
+<BR>обычно, следующее выражение :
+<BR>&nbsp;
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR><B><FONT COLOR="#0000A0">( s<SUB>0</SUB> , </FONT><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT><FONT COLOR="#0000A0">
+, h<SUB>0</SUB>&lt;I> )</FONT> ,</B></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+где <B><FONT COLOR="#0000A0">&lt;I></FONT></B> - начальный символ грамматики,
+а<B><FONT COLOR="#000099">&nbsp; <FONT FACE="Symbol">a</FONT> </FONT></B>-
+заданная входная цепочка.
+
+<P>Применяя приведенные выше правила, построим распознаватель для разделенной
+грамматики
+<BR><B><FONT COLOR="#0000A0">Г</FONT><SUB><FONT COLOR="#000099">3. 0</FONT></SUB></B><FONT COLOR="#0000A0">
+</FONT>. В результате получаем:
+<DIR><FONT COLOR="#0000A0">&nbsp;М <SUB>4</SUB> :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+P = { a , b },&nbsp; H = { a , b ,&lt;I> , &lt;B> , h<SUB>0</SUB> }, S
+= {s<SUB>0</SUB>}, F= {s<SUB>0</SUB>},</FONT>
+<DIR>
+<DIR><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , a , &lt;I>) = ( s<SUB>0</SUB>
+, &lt;B>b )</FONT>
+<BR><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , a , &lt;B>) = ( s<SUB>0</SUB>
+, $ )</FONT>
+<BR><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , b , &lt;I> ) = ( s<SUB>0</SUB>
+, &lt;I> b &lt;B> )</FONT>
+<BR><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , b , &lt;B> ) = ( s<SUB>0</SUB>
+, &lt;B> )</FONT>
+<BR><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , b , b ) = ( s<SUB>0</SUB>
+, $ )</FONT>
+<BR><FONT COLOR="#0000A0">f ( s<SUB>0</SUB> , <FONT FACE="Symbol">e</FONT>
+, h<SUB>0</SUB> ) = ( s<SUB>0</SUB> , $ )</FONT>
+<DIR><FONT COLOR="#0000A0">&nbsp;</FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+Работу построенного автомата покажем на примере анализа цепочки bbabab.
+<BR>&nbsp;
+<DIR>( s<SUB>0</SUB> , bbababa , h<SUB>0</SUB>&lt;I> ) <FONT FACE=" SYMBOL ">|---</FONT>
+( s<SUB>0</SUB> , bababa , h<SUB>0</SUB>&lt;I>b&lt;B> ) <FONT FACE=" SYMBOL ">|---</FONT>
+
+<P>( s<SUB>0</SUB> , ababa , h<SUB>0</SUB>&lt;I>b&lt;B> ) <FONT FACE=" SYMBOL ">|---</FONT>
+( s<SUB>0</SUB> , baba , h<SUB>0</SUB>&lt;I>b ) <FONT FACE=" SYMBOL ">|---</FONT>
+
+<P>( s<SUB>0</SUB> , aba , h<SUB>0</SUB>&lt;I> ) <FONT FACE=" SYMBOL ">|---</FONT>
+( s<SUB>0</SUB> , ba , h<SUB>0</SUB>&lt;B>b ) <FONT FACE=" SYMBOL ">|---</FONT>
+( s<SUB>0</SUB> , a , h<SUB>0</SUB>&lt;B> )
+
+<P><FONT FACE=" SYMBOL ">|---</FONT> ( s<SUB>0</SUB> , $ , h<SUB>0</SUB>
+) <FONT FACE=" SYMBOL ">|---</FONT> ( s<SUB>0</SUB> , $ , $ ) .</DIR>
+Приведенная последовательность конфигураций показывает, что в каждой конфигурации
+может быть применена единственная&nbsp; команда детерминированного распознавателя.
+<BR>&nbsp;</UL>
+
+<HR WIDTH="100%">
+<UL>
+<LI>
+<A HREF="Part32.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part341.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<H3>
+<FONT COLOR="#009900"><FONT SIZE=-1><A HREF="Course1.htm#cont">&nbsp;<A HREF="part114.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A></A>
+Пред.Страница&nbsp;<A HREF="part122.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></H3>
+
+<HR WIDTH="100%">
+<H3>
+<FONT COLOR="#0000FF"><FONT SIZE=+2>1.2.<I> Определение формальной грамматики
+и языка</I></FONT></FONT></H3>
+
+<UL>Изучение предмета начнем с определения первичных понятий.</UL>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.2.1.<I> Первичные понятия</I></FONT></FONT></H4>
+
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 HEIGHT="1%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><A NAME="alp"></A><B><I>Определение. </I></B>Конечное множество символов,
+неделимых в данном рассмотрении, называется <B><FONT COLOR="#000000">словарем</FONT><FONT COLOR="#400000">
+</FONT></B>или <B><FONT COLOR="#000000">алфавитом</FONT></B>, а символы,
+входящие в множество, - <FONT COLOR="#000000"><B>буквами алфавита</B>.</FONT></TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Например, алфавит <B><FONT COLOR="#000099">A = {a, b, c, +, !}</FONT></B>
+содержит 5 букв, а алфавит <B><FONT COLOR="#000099">B = {00, 01, 10, 11}</FONT></B>
+содержит 4 буквы, каждая из которых состоит из двух символов.</UL>
+&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="95%" HEIGHT="1%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><B><I>Определение.&nbsp;</I></B> Последовательность букв алфавита называется
+<B><FONT COLOR="#000000">словом</FONT></B> или <B><FONT COLOR="#000000">цепочкой</FONT></B>
+в этом алфавите. Число букв, входящих в слово, называется его <B><FONT COLOR="#000000">длиной</FONT></B>.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Например, слово в алфавите A <B><FONT COLOR="#000099">a=ab++c</FONT></B>
+имеет длину <B><FONT COLOR="#000099">l(a) = 5</FONT></B>, а слово в алфавите
+B <B><FONT COLOR="#000099">b=00110010</FONT></B> имеет длину <B><FONT COLOR="#000099">l
+(b) = 4.</FONT></B>
+
+<P>Если задан алфавит <B><FONT COLOR="#000099">A</FONT></B>, то обозначим<B><FONT COLOR="#000099">
+A<SUP>*</SUP></FONT></B> множество всевозможных цепочек, которые могут
+быть построены из букв алфавита <B><FONT COLOR="#000099">A</FONT></B>.
+При этом предполагается, что пустая цепочка, которую обозначим знаком $,
+также входит в множество <B><FONT COLOR="#000099">A</FONT></B><SUP>*</SUP>.</UL>
+&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 WIDTH="96%" HEIGHT="1%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><A NAME="Form_gr"></A><B><I>Определение.&nbsp; </I><FONT COLOR="#000000">Формальной
+порождающей грамматикой </FONT><FONT COLOR="#3333FF">Г</FONT></B> называется
+следующая совокупность четырех объектов: <B><FONT COLOR="#000099">Г = {
+V<SUB>т</SUB>, V<SUB>A</SUB>, &lt;I><I> </I><FONT FACE="symbol">О </FONT>V<SUB>A</SUB>,
+R }</FONT></B>,&nbsp;
+<UL>
+<UL>где<B><FONT COLOR="#000099"> V<SUB>т</SUB> </FONT></B>- <B><FONT COLOR="#000000">терминальный
+алфавит</FONT> </B>(словарь); буквы этого алфавита называются <B><FONT COLOR="#000000">терминальными</FONT><FONT COLOR="#800040">
+</FONT><FONT COLOR="#000000">символами</FONT></B><FONT COLOR="#000000">;</FONT>
+из них строятся <B><FONT COLOR="#000000">цепочки порождаемые грамматикой</FONT></B>;&nbsp;
+
+<P><B><FONT COLOR="#000099">V<SUB>A</SUB></FONT></B> - <FONT COLOR="#000000"><B>нетерминальный</B>,
+<B>вспомогательный алфавит</B> </FONT>(словарь); буквы этого алфавита используются
+при построении цепочек; они могут входить в промежуточные цепочки, но не
+должны входить в результат порождения;&nbsp;
+
+<P><B><FONT COLOR="#000099">&lt;I></FONT></B> -<FONT COLOR="#000000"> <B>начальный
+символ грамматики</B></FONT> <B><FONT COLOR="#000099">&lt;I> <FONT FACE="symbol">О
+</FONT>V<SUB>A</SUB>.</FONT></B>&nbsp;
+
+<P><B><FONT COLOR="#000099">R -</FONT></B> <B><FONT COLOR="#000000">множество
+правил вывода</FONT></B> или <B><FONT COLOR="#000000">порождающих правил</FONT></B>
+вида <B><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT> <FONT FACE="symbol">®
+b </FONT></FONT></B>, где<B><FONT COLOR="#3333FF"> <FONT FACE="Symbol">a</FONT></FONT></B>и
+<B><FONT COLOR="#000099"><FONT FACE="Symbol">b</FONT> </FONT></B>- цепочки
+, построенные из букв алфавита<B><FONT COLOR="#000099"> V<SUB>т</SUB><FONT FACE="symbol">И</FONT>
+V<SUB>A</SUB>,</FONT></B> который называют <B><FONT COLOR="#000000">полным
+алфавитом</FONT> </B>(словарем) грамматики <B><FONT COLOR="#000099">Г.</FONT></B></UL>
+</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>В множество правил грамматики могут также входить правила с пустой
+правой частью вида &lt;<B><FONT COLOR="#000099">Е> <FONT FACE="symbol">®</FONT></FONT></B><FONT FACE="symbol"><FONT COLOR="#FF0000">
+</FONT></FONT>. Чтобы избежать неопределенности из-за отсутствия символа
+в правой части правила, условимся использовать символ пустой цепочки, записывая
+такое правило в виде<B><FONT COLOR="#000099"> &lt;Е> <FONT FACE="symbol">®
+</FONT>$.</FONT></B>
+
+<P>Чтобы установить правила построения цепочек, порождаемых грамматикой
+, введем следующие понятия.</UL>
+&nbsp;
+<TABLE BORDER=0 WIDTH="96%" HEIGHT="1%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><A NAME="deriv"></A><B><I>Определение.&nbsp; </I></B>Пусть<B><FONT COLOR="#000099">
+r = <FONT FACE="Symbol">t</FONT> <FONT FACE="symbol">® g</FONT> </FONT></B>-
+правило грамматики<B><FONT COLOR="#000099"> Г</FONT></B> и<B><FONT COLOR="#000099">
+<FONT FACE="Symbol">a</FONT> =</FONT></B> <B><FONT COLOR="#000099"><FONT FACE="Symbol">c</FONT>'<FONT FACE="Symbol">t</FONT>
+<FONT FACE="Symbol">c</FONT>" </FONT></B>- цепочка символов, причем<FONT FACE="symbol">&nbsp;
+</FONT><B><FONT COLOR="#000099"><FONT FACE="Symbol">c</FONT><FONT FACE="Arial,Helvetica">'</FONT>,
+<FONT FACE="Symbol">c</FONT>" <FONT FACE="symbol">О</FONT>(Vт <FONT FACE="symbol">И</FONT>V<SUB>A</SUB>)
+</FONT></B><SUP>*</SUP>. Тогда цепочка <B><FONT COLOR="#000099"><FONT FACE="Symbol">b</FONT>=
+<FONT FACE="symbol">c</FONT>' <FONT FACE="Symbol">g</FONT> <FONT FACE="symbol">c</FONT>
+"</FONT></B> может быть получена из цепочки путем применения правила r
+(т.е. заменой в m цепочки <B><FONT FACE="Symbol"><FONT COLOR="#000099">t</FONT></FONT></B>
+на <B><FONT FACE="Symbol"><FONT COLOR="#000099">g</FONT></FONT></B>). В
+этом случае говорят, что цепочка<B><FONT COLOR="#000099"> <FONT FACE="Symbol">b</FONT></FONT></B><FONT COLOR="#000000">
+<B>непосредственно выведена</B></FONT><B> </B>из цепочки <B><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT></B>
+и обозначают <B><FONT FACE="Symbol"><FONT COLOR="#000099">a</FONT></FONT></B>
+<FONT FACE="symbol">Ю<B><FONT COLOR="#000099">b</FONT></B> </FONT>.&nbsp;
+
+<P><B><I>Определение.&nbsp; </I></B>Если задана совокупность цепочек<B><FONT COLOR="#000099">
+<FONT FACE="symbol">W </FONT>= ( <FONT FACE="Symbol">v</FONT><SUB>0</SUB>,
+<FONT FACE="Symbol">v</FONT><SUB>1</SUB>,...,<FONT FACE="Symbol">v</FONT><SUB>n</SUB>)</FONT></B>,
+таких что существует последовательность непосредственных выводов:&nbsp;
+
+<P><B><FONT COLOR="#000099"><FONT FACE="Symbol">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+v</FONT><SUB>0</SUB> <FONT FACE="symbol">Ю v</FONT><SUB>1</SUB>, <FONT FACE="Symbol">v</FONT><SUB>1
+</SUB><FONT FACE="symbol">Ю</FONT> <FONT FACE="Symbol">v</FONT><SUB>2</SUB>,
+... ,<FONT FACE="Symbol">v</FONT> <SUB>n-1 </SUB><FONT FACE="symbol">Юv</FONT>
+<SUB>n</SUB>,</FONT></B>&nbsp;
+
+<P>то такую последовательность называют&nbsp;<FONT COLOR="#000000"><A NAME="выводом"></A><B>выводом</B></FONT><FONT COLOR="#000099">
+<B><FONT FACE="Symbol">v</FONT></B><SUB>n</SUB></FONT> из <FONT COLOR="#000099"><B><FONT FACE="Symbol">v</FONT></B><SUB>0</SUB></FONT>
+в грамматике <B><FONT COLOR="#000099">Г</FONT></B> и обозначают&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT FACE="Symbol"><FONT COLOR="#000099">v</FONT></FONT></B> <B><FONT COLOR="#000099"><SUB>0</SUB>
+<FONT FACE="symbol">Ю</FONT>* <FONT FACE="Symbol">v</FONT><SUB>n</SUB>.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+<A NAME="form_lang"></A><I><B>Определение.&nbsp;</B></I> Множество конечных
+цепочек терминального алфавита <B><FONT COLOR="#000099">V<SUB>т</SUB> </FONT></B>грамматики
+<B><FONT COLOR="#000099">Г,</FONT></B> выводимых из начального символа
+<B><FONT COLOR="#000099">&lt;I></FONT></B>, называется <FONT COLOR="#000000"><B>языком</B>,
+<B>порождаемым грамматикой</B></FONT><B><FONT COLOR="#800040"> </FONT><FONT COLOR="#000099">Г</FONT></B>
+и обозначается <B><FONT COLOR="#000099">L( Г).&nbsp;</FONT></B>&nbsp;
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">L( Г ) = {<FONT FACE="Symbol">v </FONT><FONT FACE="symbol">О
+</FONT>V<SUB>т</SUB><SUP>*</SUP> | &lt;I> <FONT FACE="symbol">Ю</FONT>*<FONT FACE="Symbol">v</FONT>
+}</FONT></B>.&nbsp;</UL>
+</UL>
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+<HR WIDTH="100%">
+<BR><FONT COLOR="#009900"><FONT SIZE=-1><A HREF="Course1.htm#cont">&nbsp;<A HREF="part121.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A></A>
+Пред.Страница&nbsp;<A HREF="part122.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>

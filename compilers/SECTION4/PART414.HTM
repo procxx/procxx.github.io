@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part425</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part413.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part415.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+<BR>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.1.4.&nbsp; Построение&nbsp;
+простой СУ - схемы.</FONT></FONT></I></B>
+
+<P>В общем случае построение СУ - схемы для заданного перевода представляется
+более сложной задачей, чем построение двух грамматик, поскольку при этом
+необходимо учитывать связь или соответствие между этими грамматиками. Однако,
+для простых СУ - схем задача построения
+<BR>оказывается проще, благодаря тому, что расположение нетерминалов во
+входной и выходной цепочках правил должно быть одинаковым. Построение простой
+СУ - схемы целесообразно начинать с построения грамматики, определяющей
+входной язык. Такая грамматика должна быть входной грамматикой искомой
+СУ - схемы. Построение выходной грамматики можно совместить с построением
+правил СУ - схемы. Учитывая, что нетерминалы входной цепочки должны повторяться
+в выходной цепочке в том же порядке, перенесем все нетерминалы из входной
+цепочки в выходную и расставим в ней выходные терминальные символы. При
+этом правила,
+<BR>состоящие только из нетерминалов, оказываются одинаковыми во входной
+и выходной грамматиках.
+<BR>В качестве примера рассмотрим построение перевода арифметических выражений,
+задаваемых следующей грамматикой, в постфиксные польские выражения.
+<BR>&nbsp;
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>4. 0</SUB></FONT></B><FONT COLOR="#000099"><SUB>
+</SUB>:&nbsp;&nbsp;&nbsp; V<SUB>т</SUB> = {x,+,(.)} V<SUB>a </SUB>= {A,B.C}</FONT></UL>
+</UL>
+</UL>
+&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R
+= {&lt;A> <FONT FACE="symbol">╝</FONT> x,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝</FONT> (&lt;B>),</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;B> <FONT FACE="symbol">╝</FONT> &lt;A>&lt;C>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C> <FONT FACE="symbol">╝</FONT> +&lt;A>&lt;C>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C> <FONT FACE="symbol">╝</FONT> $</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+<UL>Учитывая, что выходные выражения не должны содержать скобок, находим,
+что&nbsp;<FONT COLOR="#000099">&nbsp; V<SUB>твых</SUB> = {x',+'}.</FONT>
+<BR>Первое правило грамматики содержит один входной терминал, поэтому правило
+СУ - схемы можем записать в виде:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT COLOR="#000099">&lt;A> <FONT FACE="symbol">╝</FONT>
+x , x' .</FONT></UL>
+</UL>
+</UL>
+</UL>
+Третье правило грамматики не содержит терминалов, поэтому получаем:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&lt;B> <FONT FACE="symbol">╝</FONT> &lt;A>&lt;C>,&lt;A>&lt;C>
+.</FONT></UL>
+</UL>
+</UL>
+</UL>
+Пятое правило является аннулирующим, поэтому оно должно сохраниться в выходной
+грамматике
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;&nbsp; <FONT COLOR="#000099">&lt;C> <FONT FACE="symbol">╝</FONT>
+$ , $ .</FONT></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Второе правило грамматики содержит скобки, которые, согласно правилам построения,
+должны отсутствовать в постфиксной польской записи, поэтому имеем:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&nbsp;&nbsp; &lt;A> <FONT FACE="symbol">╝</FONT>
+(&lt;B>),&lt;B> </FONT>.</UL>
+</UL>
+</UL>
+</UL>
+При построении правила СУ - схемы по четвертому правилу грамматики следует
+учесть, что знак сложения в постфиксной записи должен следовать за вторым
+опреандом, который вводится в выражение нетерминалом А, следовательно получаем
+правило СУ - схемы в виде:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>&nbsp; <FONT COLOR="#000099">&lt;A> <FONT FACE="symbol">╝</FONT> +&lt;A>&lt;C>,
+&lt;A>+'&lt;C> </FONT>.</UL>
+</UL>
+</UL>
+</UL>
+Объединяя построенные правила, находим множество правил искомой СУ - схемы:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">Т<SUB>4.4</SUB>: Q&nbsp;&nbsp; =&nbsp; {&lt;A>
+<FONT FACE="symbol">╝</FONT> x,x',</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝</FONT> (&lt;B>),&lt;B>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;B> <FONT FACE="symbol">╝</FONT> &lt;A>&lt;C>, &lt;A>&lt;C>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C> <FONT FACE="symbol">╝</FONT> +&lt;A>&lt;C>, &lt;A>+'&lt;C>,</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;C> <FONT FACE="symbol">╝</FONT> $, $}.</FONT></UL>
+</UL>
+</UL>
+</UL>
+Чтобы в первом приближении убедиться в правильности построения СУ - схемы,
+выполним вывод входной цепочки <FONT COLOR="#000099">((x+x)+x)</FONT> и
+соответствующей ей выходной цепочки, используя
+<BR>построенные правила.</UL>
+
+<UL><FONT COLOR="#000099">(&lt;A>,&lt;A>) ==> ((&lt;B>),&lt;B>) ==> ((&lt;A>&lt;C>),&lt;A>&lt;C>)
+==></FONT> <FONT COLOR="#000099">(((&lt;B>)&lt;C>,&lt;B>&lt;C>) ==></FONT>
+
+<P><FONT COLOR="#000099">(((&lt;A>&lt;C>)&lt;C>),&lt;A>&lt;C>&lt;C>) ==></FONT>
+<FONT COLOR="#000099">(((x&lt;C>)&lt;C>),x&lt;C>&lt;C>) ==> (((x+&lt;A>&lt;C>),x'x'+'&lt;C>&lt;C>)
+==></FONT>
+
+<P><FONT COLOR="#000099">(((x+x+&lt;C>)&lt;C>), x'x'+'&lt;C>&lt;C>) ==>
+(((x+x)&lt;C>),x'x'+'&lt;C>)</FONT>&nbsp;<FONT COLOR="#000099"> ==> (((x+x)+&lt;A>&lt;C>),x'x'+'&lt;A>+'&lt;C>)</FONT>
+
+<P><FONT COLOR="#000099">==></FONT> <FONT COLOR="#000099">(((x+x)+x&lt;C>),x'x'+'x'+'&lt;C>)
+==> (((x+x)+x),x'x'+'x'+').</FONT>
+
+<P>Полученный результат показывает, что постфиксная запись для рассматриваемой
+входной цепочки построена правильно.
+<BR>&nbsp;</UL>
+
+<HR WIDTH="100%">
+<BR><A HREF="Part414.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part415.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

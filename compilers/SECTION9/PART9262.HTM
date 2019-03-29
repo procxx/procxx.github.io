@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <TITLE>Асинхронные автоматы</TITLE>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<P><A HREF="Part9261.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9263.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+<P>
+<HR></P>
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<P><B><I><U><FONT COLOR="#0000FF">9.2.6.2 АСИНХРОННЫЙ ТРИГГЕР J-K С ЗАДЕРЖКОЙ</FONT></U></I></B></P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<P>   На выходе асинхронного триггера с задержкой изменение сигнала может
+произойти только после окончания действия входного сигнала х, звавшего
+такое изменение. Если после сигнала х подать сигнал, вызывающий переход
+в первоначальное состояние, то ожидаемое изменене сигнала на выходе может
+не произойти: выходной сигнал будет потерян. Чтобы избежать подобных ситуаций,
+на практике вводят ограничения на последовательности сигналов, подаваемых
+на вход триггера. Например, для асинхронного триггера J-K последовательности
+11 01, 10 01, 01 10, 11 10 являются запрещенными, поскольку каждая из них
+приводит к потере выходного сигнала. Рассмотрим, как реагирует триггер
+на одну из эти х последовательностей. Пусть триггер находится в состоянии
+0, которому соответствует выходной сигнал 0, и на вход поступает сигнал
+11. Под действием этого сигнала триггер должен перейти в состояние, отмеченное
+выходным сигналом 1. Если же после 11 на вход подать сигнал 01, то триггер
+вернется в состояние 0 и выходной сигнал, соответствующий входному сигналу
+11, окажется потеренным. </P>
+
+<P>    Диаграмма и таблица переходов асинхронного J-K-триггера с задержкой,
+построенные с учетом перечисленных ограничений, приведены на рис. 17. Таблицы
+функций возбуждения R-S-триггеров изображены на рис. 18, а схема триггера
+- на рис. 19.</P>
+
+<P><IMG SRC="draw/26.gif" HEIGHT=424 WIDTH=474><IMG SRC="draw/27.gif" HEIGHT=452 WIDTH=463><IMG SRC="draw/28.gif" HEIGHT=474 WIDTH=487></P>
+
+<P>   
+<HR></P>
+
+<P><A HREF="Part9261.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="Part9263.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT><FONT COLOR="#006600">
+След.Страница<A HREF="index92.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT></P>
+
+</BODY>
+</HTML>

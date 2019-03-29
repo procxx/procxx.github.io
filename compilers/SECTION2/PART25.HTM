@@ -1,0 +1,180 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>Part25</TITLE>
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part24.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part26.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+
+<P>
+<HR WIDTH="100%">
+
+<P><A NAME="2.5 Исключение леворекурсивных правил."></A><B><I><FONT COLOR="#0000FF"><FONT SIZE=+1>2.5
+Исключение леворекурсивных правил.</FONT></FONT></I></B>
+<BR>&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I>Определение</I></B>. Правило вида<B><FONT COLOR="#000099"> &lt;A>&nbsp;
+<FONT FACE="symbol">® </FONT><FONT FACE="Symbol">a</FONT> &lt;A></FONT></B>
+, где<B><FONT COLOR="#000099"> A <FONT FACE="symbol">О</FONT> V<SUB>A</SUB></FONT></B>
+, <B><FONT COLOR="#000099"><FONT FACE="Symbol">a</FONT> <FONT FACE="symbol">О</FONT>(V<SUB>т</SUB>
+<FONT FACE="symbol">И</FONT>V<SUB>A</SUB>) </FONT></B><SUP>*</SUP> , называется
+<B><FONT COLOR="#993300">праворекурсивным</FONT></B>, а правило вида <B><FONT COLOR="#000099">&lt;A>&nbsp;
+<FONT FACE="symbol">®</FONT> &lt;A></FONT><FONT FACE="Symbol">a</FONT></B>
+-<B><FONT COLOR="#993300">&nbsp;<A NAME="леворекурсивным"></A>леворекурсивным</FONT></B>.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<TABLE CELLSPACING=0 CELLPADDING=0 WIDTH="100%" HEIGHT="10%" BGCOLOR="#FFFF80" >
+<TR>
+<TD><B><I>Утверждение</I></B>. Для каждой КС-грамматики Г, содержащей леворекурсивные
+правила, можно&nbsp;
+<BR>построить эквивалентную грамматику Г', не содержащую леворекурсивных
+правил.</TD>
+</TR>
+</TABLE>
+Способ построения эквивалентной грамматики заключается в следующем. Допустим,
+что исходная грамматика Г содержит
+<BR>правила:
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B>
+&lt;A><FONT FACE="Symbol">a</FONT> <SUB>1 </SUB>| &lt;A><FONT FACE="Symbol">a</FONT>
+<SUB>2 </SUB>| ... |&lt;A><FONT FACE="Symbol">a</FONT> <SUB>m</SUB>| ,
+<BR>где ни одна цепочка <FONT FACE="Symbol">b</FONT> не начинается с &lt;A>
+и<FONT COLOR="#000000"> <FONT FACE="Symbol">a<SUB>1,</SUB></FONT> <FONT FACE="Symbol">b<SUB>1</SUB></FONT><FONT FACE="symbol">О</FONT>(Vт
+<FONT FACE="symbol">И</FONT>V<SUB>A</SUB>)<B> </B></FONT><SUP>*</SUP> .
+<BR>Введем новый нетерминал &lt;A'> и преобразуем правила так:
+<UL>
+<UL>
+<UL>&lt;A><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B>
+<FONT FACE="Symbol">b</FONT> <SUB>1 </SUB>| <FONT FACE="Symbol">b</FONT>
+<SUB>2 </SUB>|...| <FONT FACE="Symbol">b</FONT> <SUB>n</SUB> | <FONT FACE="Symbol">b</FONT>
+<SUB>1</SUB>&lt;A'> | <FONT FACE="Symbol">b</FONT> <SUB>2</SUB>&lt;A'>|...|
+<FONT FACE="Symbol">b</FONT> <SUB>n</SUB>&lt;A'>,
+<BR>&lt;A'><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B><FONT FACE="Symbol">a</FONT>
+<SUB>1 </SUB>| <FONT FACE="Symbol">a</FONT> <SUB>2 </SUB>|...| <FONT FACE="Symbol">a</FONT>
+<SUB>m</SUB>| <FONT FACE="Symbol">a</FONT> <SUB>1</SUB>&lt;A'> |<FONT FACE="Symbol">a</FONT>
+<SUB>2</SUB>&lt;A'>|...|<FONT FACE="Symbol">a</FONT> <SUB>m</SUB>&lt;A'>.</UL>
+</UL>
+</UL>
+Заменяя все правила с левой рекурсией в Г описанным способом, получим грамматику
+Г',
+<BR>причем L(Г)=L(Г') , поскольку каждая цепочка, выведенная в грамматике
+Г, может быть
+<BR>построена в грамматике Г'. Рассмотрим построение выводов в Г и Г'.
+В грамматике Г вывод
+<BR>цепочки имеет вид:
+<UL>
+<UL>
+<UL>
+<UL>&lt; A> <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>&nbsp;&nbsp;
+&lt;A><FONT FACE="Symbol">a</FONT><SUB> 1 </SUB><B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>
+&lt;A><FONT FACE="Symbol">a</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT><SUB>
+1 </SUB><B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>&nbsp;&nbsp;
+&lt;A><FONT FACE="Symbol">a</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT><SUB>
+1</SUB><FONT FACE="Symbol">a</FONT><SUB> 1 </SUB><B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>&nbsp;&nbsp;
+<FONT FACE="Symbol">b</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT><SUB>
+1</SUB><FONT FACE="Symbol">a</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT>
+<SUB>1</SUB>,</UL>
+</UL>
+</UL>
+</UL>
+в грамматике Г' эта же цепочка выводится так:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>&lt;A> <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>
+<FONT FACE="Symbol">b</FONT> <SUB>1</SUB>&lt;A'> <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>
+<FONT FACE="Symbol">b</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT> <SUB>1</SUB>&lt;A'>
+<B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B> <FONT FACE="Symbol">b</FONT><SUB>
+1</SUB><FONT FACE="Symbol">a</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT>
+<SUB>1</SUB>&lt;A'>&nbsp; <B><FONT FACE="symbol"><FONT COLOR="#000099">Ю</FONT></FONT></B>
+<FONT FACE="Symbol">b</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT><SUB>
+1</SUB><FONT FACE="Symbol">a</FONT><SUB> 1</SUB><FONT FACE="Symbol">a</FONT>
+<SUB>1</SUB>.</UL>
+</UL>
+</UL>
+</UL>
+Чтобы показать технику преобразования, рассмотрим пример. Требуется преобразовать
+<BR>грамматику <B><FONT COLOR="#000099">Г<SUB>1. 9</SUB></FONT></B> (рассмотренную
+ранее), которая задана схемой:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 9</SUB>:&nbsp;&nbsp; R={&lt;E> <FONT FACE="symbol">®</FONT>&nbsp;
+&lt;E> + &lt;T> | &lt;T>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt; T> <FONT FACE="symbol">®</FONT>&nbsp; &lt;T> * &lt;F> | &lt;F>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;F> <FONT FACE="symbol">®</FONT> ( &lt;E> ) | a}.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Следуя описанному способу, правила&nbsp; &lt;E>&nbsp;<B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B> &lt;E> + &lt;T> | &lt;T> преобразуем
+в правила
+<BR>&lt;E><B><FONT FACE="symbol"><FONT COLOR="#000099">®</FONT></FONT></B>
+&lt;T> | &lt;T>&lt;E'> и&nbsp; &lt;E'>&nbsp;<B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B>
++&lt;T> | +&lt;T>&lt;E'> , а правила &lt;T><B><FONT COLOR="#000099"> <FONT FACE="symbol">®</FONT></FONT></B>
+&lt;T> * &lt;F> | &lt;F> преобразуем в правила &lt;T>&nbsp;<B><FONT COLOR="#000099">
+<FONT FACE="symbol">®</FONT></FONT></B> &lt;F> | &lt;F>&lt;T'> и&nbsp;
+&lt;T'>&nbsp;<B><FONT COLOR="#000099"> <FONT FACE="symbol">® </FONT></FONT></B><FONT FACE="symbol"><FONT COLOR="#000000">*&lt;</FONT></FONT>
+F> | * &lt;F>&lt;T'>.
+<BR>В результате получаем грамматику<B> <FONT COLOR="#000099">Г'<SUB>1.
+9</SUB></FONT><FONT COLOR="#000000">,</FONT></B> имеющую схему:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">Г'<SUB>1. 9 </SUB>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R'</FONT></B><FONT COLOR="#000099">= <B>{ &lt;E> <FONT FACE="symbol">®</FONT>
+&lt; T>,</B></FONT>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;E>&nbsp; <FONT FACE="symbol">®</FONT>
+&lt;T>&lt;E'>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt; E'><FONT FACE="symbol">®</FONT> + &lt;T>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;E'> <FONT FACE="symbol">®</FONT> + &lt;T>&lt;E'>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;T>&nbsp; <FONT FACE="symbol">®</FONT>
+&lt;F>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;T>&nbsp; <FONT FACE="symbol">®</FONT>
+&lt;F>&lt;T'>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;T'> <FONT FACE="symbol">®</FONT> * &lt;F>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;T'> <FONT FACE="symbol">®</FONT> * &lt;F>&lt;T'>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt; F> <FONT FACE="symbol">®</FONT> a,</FONT></B>
+<BR><B><FONT COLOR="#000099">&nbsp;&lt;F> <FONT FACE="symbol">®</FONT>
+(&lt;E>) },</FONT></B>
+<BR>&nbsp;</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+не содержащую леворекурсивных правил.
+
+<P>
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part25.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part211.htm">&nbsp;<A HREF="Part26.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="index2.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+
+<BR>&nbsp;
+</BODY>
+</HTML>

@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part153.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part155.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"></H4>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.5.4.<I> Грамматики, описывающие целые
+числа без знака и идентификаторы</I></FONT></FONT></H4>
+
+<UL>Целые числа представляют собой последовательность цифр, поэтому их
+можно рассматривать как списки, элементами которых являются цифры. Используя
+в качестве аналога грамматику, задающую список без разделителей, получаем
+схему грамматики для целых чисел в виде:</UL>
+
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 20</SUB>:&nbsp;&nbsp; &lt;N><FONT FACE="symbol">
+® </FONT>&lt;D>&lt;R>,</FONT></B>
+<UL><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>&lt;D>&lt;R>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;D><FONT FACE="symbol"> ® </FONT>0 | 1
+| ... | 9.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+Структуру идентификатора можно представить в виде двух компонентов: начала
+и основной части. Началом может быть любая из букв, а основная часть представляет
+собой список без разделителей, элементами которого могут быть либо буквы,
+либо цифры. Используя выделенные компоненты, получаем схему грамматики
+вида:
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 21</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;
+R ={ &lt;I><FONT FACE="symbol"> ® </FONT>&lt;C>&lt;A>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>&lt;C>&lt;A>|&lt;D>&lt;A>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>&lt;C>|&lt;D>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;D><FONT FACE="symbol"> ® </FONT>0 | 1
+| ... | 9,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;C><FONT FACE="symbol"> ® </FONT>a | d
+| c | ... | z }.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+</UL>
+Если наложить ограничения на длину идентификатора, например, допустить
+использование идентификаторов, состоящих только из трех символов, то схема
+грамматики получается проще.
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 22</SUB> :&nbsp;&nbsp;&nbsp; R =
+{ &lt;I><FONT FACE="symbol"> ® </FONT>&lt;C>&lt;A1>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;A1><FONT FACE="symbol"> ® </FONT>&lt;C>&lt;B>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;A1><FONT FACE="symbol"> ® </FONT>&lt;D>&lt;B>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol"> ® </FONT>&lt;C>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B><FONT FACE="symbol"> ® </FONT>&lt;D>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;D><FONT FACE="symbol"> ® </FONT>0 | 1
+| ... | 9,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;C><FONT FACE="symbol"> ® </FONT>a | d
+| c | ... | z }.</FONT></B></UL>
+</UL>
+&nbsp;</UL>
+</UL>
+</UL>
+
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part154.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part155.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

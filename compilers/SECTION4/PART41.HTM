@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part421</TITLE>
+</HEAD>
+<BODY>
+<A HREF="../SECTION3/Part317.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part411.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+<BR>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.1. Описание перевода или
+трансляции .</FONT></FONT></I></B>
+<BR>&nbsp;
+
+<P>В общем случае перевод или трансляцию можно представить как соответствие
+между словами алфавита Р и алфавита W. Если цепочка <FONT FACE="Symbol">a</FONT>
+<FONT FACE="Symbol">О</FONT> P* , цепочка <FONT FACE="Symbol">b</FONT>
+<FONT FACE="Symbol">О</FONT> W* , они называются соответственно входной
+и выходной цепочками.<A NAME="trans"></A></UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><I>Определение</I>. Если заданы входной алфавит P и выходной алфавит&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+W, то переводом с языка L<SUB>вх</SUB>, состоящего из цепочек&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+множества P*, на язык L<SUB>вых</SUB>, состоящий из цепочек&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+множества W*, называется множество C пар цепочек&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(<FONT FACE="Symbol">a</FONT> ,<FONT FACE="Symbol">b</FONT> ) таких, что
+<FONT FACE="Symbol">a</FONT> <FONT FACE="Symbol">О</FONT> L<SUB>вх</SUB>
+и <FONT FACE="Symbol">b</FONT> <FONT FACE="Symbol">О</FONT> L<SUB>вых</SUB>.&nbsp;
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">
+C={(<FONT FACE="Symbol">a</FONT> ,<FONT FACE="Symbol">b</FONT> ) | <FONT FACE="Symbol">a</FONT>
+<FONT FACE="Symbol">О</FONT> L<SUB>вх</SUB> и <FONT FACE="Symbol">b</FONT>
+<FONT FACE="Symbol">О</FONT> L<SUB>вых</SUB>}.&nbsp;</FONT></B>&nbsp;
+<BR>&nbsp;</UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>&nbsp;
+<BR>Если входной и выходной алфавиты заданы в виде: <FONT COLOR="#000099">P
+= {a,b,c,d}</FONT> и <FONT COLOR="#000099">W = {00,01,10,11}</FONT>, и
+если входной и выходной языки содержат цепочки длиной l &lt; 3, то соответствие
+между
+<BR>входными и выходными цепочками может быть описано, например, в виде
+перевода.
+<BR>&nbsp;
+<UL>
+<UL><FONT COLOR="#000099">С = {(a,00),(b,01),(c,10),(d,11),(ab,0001),(ac,0010),</FONT>
+
+<P><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(cd,0011),(bc,0110),(bd,0111),(cd,1011) }.</FONT></UL>
+</UL>
+&nbsp;
+
+<P>Конечные переводы с небольшим числом элементов можно задавать в виде
+перечислений. Однако, для задания больших конечных переводов и бесконечных
+переводов нужны такие
+<BR>же средства задания как и для формальных языков. Рассмотрим случай
+, когда множество входных цепочек&nbsp; (входной язык перевода С) можно
+задать с помощью грамматики Г и множества выходных цепочек (выходной язык
+перевода С) - с помощью грамматики Г'.
+<BR>Примером такого задания может служить перевод, определяющий для каждой
+входной цепочки <FONT FACE="Symbol">a</FONT> ее зеркальное отображение
+<FONT FACE="Symbol">a</FONT> ". Если входной и выходной алфавиты состоят
+из двух символов - {0,1}, то правила построения такого перевода имеют вид:
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; входные цепочки&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+выходные цепочеки
+
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>0&lt;I>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>&lt;I>0</FONT>
+<BR>2)<FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>1&lt;I>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>&lt;I>1</FONT>
+<BR>3)&nbsp;<FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>$,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>$</FONT>
+
+<P>&nbsp;
+<BR>Применяя одновременно соответствующие правила&nbsp; построения к входной
+и выходной цепочкам, получаем:
+
+<P><FONT COLOR="#000099">(&lt;I>,&lt;I>) ==> (0&lt;I>,&lt;I>0) ==> (00&lt;I>,&lt;I>00)
+==></FONT>&nbsp;<FONT COLOR="#000099"> (001&lt;I>,&lt;I>100) ==> (001,100)</FONT>
+
+<P>При таком построении существенное значение имеет заданное соответствие
+между правилами построения входных и выходных цепочек.
+
+<P>
+<HR WIDTH="100%">
+<BR><A HREF="Part41.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part411.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></UL>
+
+</BODY>
+</HTML>

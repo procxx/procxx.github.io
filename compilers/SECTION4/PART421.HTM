@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part412</TITLE>
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part42.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>Пред.Страница&nbsp;</FONT></FONT>&nbsp;<A HREF="Part422.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A><FONT COLOR="#009900"><FONT SIZE=-1>След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT></LI>
+
+<BR>
+<HR WIDTH="100%">
+
+<P><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>&nbsp;&nbsp; 4.2.1. Префиксная&nbsp;
+польская&nbsp; запись.</FONT></FONT></I></B>
+<BR>&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" BGCOLOR="#FFFF99" >
+<TR>
+<TD><B><I>Определение.&nbsp;</I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </B>Префиксную
+польскую запись (ПрПЗ) определим так:&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1) Если инфиксное выражение Е представляет собой&nbsp; один операнд <B>а</B>,
+то
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ПрПЗ выражение Е - это просто <B>а</B>.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2) Если инфиксное выражение Е<SUB>1</SUB>*Е<SUB>2</SUB>, где * - знак операции,а
+Е<SUB>1</SUB> и Е<SUB>2</SUB>&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+инфиксные выражения для операндов,&nbsp; то ПрПЗ этого выражения - это
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+*Е<SUB>1</SUB>'E<SUB>2</SUB>',где E<SUB>1</SUB>', E<SUB>2</SUB>' - ПрПЗ&nbsp;
+выражений Е<SUB>1</SUB> и Е<SUB>2</SUB>.&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3) Если (Е) есть инфиксное выражение, то ПрПЗ этого&nbsp; выражения есть&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ПрПЗ Е.&nbsp;
+<BR>&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>Это определение определяет порядок построения ПрПЗ заданного инфиксного
+выражения.
+<BR>Например для выражений (a + b) * (c - d) построение ПрПЗ можно выполнить
+так. Обозначим операнды первой выполняемой операции:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>&nbsp;&nbsp;&nbsp; E<SUB>1</SUB> = (a + b)&nbsp;&nbsp;&nbsp; и&nbsp;&nbsp;&nbsp;
+E<SUB>2</SUB> = (c - d).</UL>
+</UL>
+</UL>
+
+
+<P>Согласно определению префиксная запись выражения Е<SUB>1</SUB>*Е<SUB>2</SUB>
+- это *E<SUB>1</SUB>'E<SUB>2</SUB>', где Е<SUB>1</SUB>',Е<SUB>2</SUB>'
+-префиксные записи выражений Е<SUB>1</SUB> и Е<SUB>2</SUB>. Выполняя построение
+постфиксных записей для этих выражений,
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E<SUB>1</SUB>' = +ab,&nbsp;&nbsp;&nbsp;
+E<SUB>2</SUB>' = -cd,</UL>
+</UL>
+</UL>
+</UL>
+окончательно получаем результат в виде :
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>
+<UL>*+ab-cd</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+
+<HR WIDTH="100%">
+<BR><A HREF="Part421.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>Пред.Страница&nbsp;</FONT></FONT>&nbsp;<A HREF="Part422.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A><FONT COLOR="#009900"><FONT SIZE=-1>След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание&nbsp;</FONT></FONT>&nbsp;
+<UL>&nbsp;</UL>
+
+</BODY>
+</HTML>

@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part155.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part157.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"><FONT COLOR="#0000FF"><FONT SIZE=+1>1.5.6.<I> Грамматика
+для описаний</I></FONT></FONT></H4>
+
+<UL>Пусть требуется построить грамматику для описания целых и вещественных
+переменных. Описание переменных определенного типа должно начинаться указателем
+типа '<FONT COLOR="#000099"><B>real</B>' </FONT>или <FONT COLOR="#000099">'<B>int</B>'.</FONT>
+В полном тексте описания описания переменных определенного типа могут повторяться.
+Например, полное описание может включать три разных описания переменных
+целого типа. Полное описание должно заканчиваться точкой. В качестве разделителя
+описаний переменных разных типов примем точку с запятой, а в качестве разделителя
+переменных одного типа - запятую. Структуру полного описания можно представить
+в виде двух вложенных списков с разделителями. Внутренний список, рассматриваемый
+как элемент внешнего списка, представляет собой описание переменных одного
+типа. Он имеет заголовок в виде указателя типа, за которым следует последовательность
+идентификаторов, разделенных запятыми. Внешний список использует в качестве
+разделителя точку с запятой. Схема грамматики рассматриваемого вида может
+быть записана так:
+<UL>&nbsp;
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 26 </SUB>:&nbsp;&nbsp;&nbsp; R =
+{ &lt;Z><FONT FACE="symbol"> ® </FONT>&lt;A2>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;A2><FONT FACE="symbol"> ®&nbsp;</FONT>
+&lt;B1>&lt;C1>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;C1><FONT FACE="symbol"> ® </FONT>;&lt;B1>&lt;C1>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;C1><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B1><FONT FACE="symbol"> ® </FONT>'real'&lt;L>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;B1><FONT FACE="symbol"> ® </FONT>'int'&lt;L>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;L><FONT FACE="symbol"> ®</FONT> &lt;I>&lt;K>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;K><FONT FACE="symbol"> ®</FONT> ,&lt;I>&lt;K>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;K><FONT FACE="symbol"> ® </FONT>$ }</FONT></B></UL>
+</UL>
+&nbsp;</UL>
+</UL>
+</UL>
+
+<HR WIDTH="100%"><A HREF="Part156.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part157.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></UL>
+
+</BODY>
+</HTML>

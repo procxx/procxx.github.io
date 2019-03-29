@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part417</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part424.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part426.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+
+<P>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.2.5.&nbsp; Примеры&nbsp;
+постфиксных&nbsp; польских записей.</FONT></FONT></I></B>
+
+<P>Польские постфиксные записи часто используют в качестве промежуточного
+представления операторов языков программаирования на этапе синтаксического
+анализа при компиляции. В качестве примеров такого применения приведем
+постфиксные выражения для некоторых
+<BR>операторов Паскаля.
+<BR>Знак присваивания можно рассматривать как символ операции, поэтому
+оператор присваивания:
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&lt;I> := &lt;E></FONT>,</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+где I-идентификатор, а Е- арифметическое выражение, можно записать в виде
+<BR>постфиксного выражения
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&lt;I>&lt;E>':=</FONT> ,</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+где&nbsp; E'- постфиксная запись выражения Е .
+<BR>Для описания построения записи конструкции с условием требуется введение
+новых элементов: метки и операторов условного и безусловного переходов.
+<BR>Условимся для обозначения меток в постфиксных выражениях использовать
+идентификаторы <FONT COLOR="#000099">М,М<SUB>1</SUB>,М<SUB>2</SUB></FONT>,...,а
+для обозначения переходов воспользуемся операторами <FONT COLOR="#000000">Условный
+Переход</FONT>
+<BR>по значению Ложь (<FONT COLOR="#000099">УПЛ</FONT>) и<FONT COLOR="#993366">
+</FONT><FONT COLOR="#000000">Безусловный Переход</FONT> (<FONT COLOR="#000099">БП</FONT>).
+Операндами этих операторов являются метки.
+<BR>Первый оператор выполняет переход к метке, если значение выражения,
+предшествующего этому оператору, ложно. Если же значение выражения, предшествующего
+оператору УПЛ, истинно, то оператор пропускается и выполняется оператор,
+расположенный непосредственно за УПЛ.
+<BR>Результатом оператора безусловного перехода с меткой М является то,
+что следующим выполняется оператор из рассматриваемой последовательности,
+помеченный М.
+<BR>Для постфиксного представления простого условного оператора
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">IF &lt;R> THEN &lt;S></FONT> ,</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+где &lt;<FONT COLOR="#000099">R></FONT> - отношение, а &lt;<FONT COLOR="#000099">S></FONT>
+- оператор , воспользуемся условным оператором перехода.
+<BR>В результате получаем выражение:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&lt;R'>M УПЛ &lt;S'>M </FONT>,</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+в котором &lt;<FONT COLOR="#000099">R'> </FONT>и &lt;<FONT COLOR="#000099">S'></FONT>
+являются постфиксными выражениями соответствующего выражения и оператора,
+а <FONT COLOR="#000099">М</FONT> - метка. Опреатор &lt;<FONT COLOR="#000099">S'></FONT>
+в этом выражении также как и в заданном
+<BR>условном операторе выполняется только в том случае, когда отношение
+&lt;<FONT COLOR="#000099">R'></FONT> - истино.
+<BR>Для полного условного оператора
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&nbsp;IF &lt;R> THEN &lt;S<SUB>1</SUB>>ELSE &lt;S<SUB>2</SUB></FONT>>,</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+где&lt;<FONT COLOR="#000099">R></FONT> - отношение, а &lt;<FONT COLOR="#000099">S<SUB>1</SUB>>,&lt;S<SUB>2</SUB></FONT>
+>- операторы, постфиксное представление должно обеспечивать выполнение
+одного из операторов &lt;<FONT COLOR="#000099">S<SUB>1</SUB></FONT>>или
+&lt;<FONT COLOR="#000099">S<SUB>2</SUB></FONT>>в зависимости от условия
+&lt;<FONT COLOR="#000099">R></FONT>.
+<BR>Исходя из этого положения, постфиксную форму полного условного оператора
+можно записать так:
+<BR>&nbsp;
+<UL>
+<UL>
+<UL>
+<UL>
+<UL><FONT COLOR="#000099">&lt;R'> M<SUB>1</SUB> УПЛ &lt;S<SUB>1</SUB>'>
+M<SUB>2</SUB> БП М<SUB>1</SUB> &lt;S<SUB>2</SUB>'> M<SUB>2</SUB></FONT>
+,</UL>
+</UL>
+</UL>
+</UL>
+</UL>
+где &lt;<FONT COLOR="#000099">R'></FONT> - постфиксная запись отношения
+&lt;R>, &lt;<FONT COLOR="#000099">S<SUB>1</SUB></FONT>'> и &lt;<FONT COLOR="#000099">S<SUB>2</SUB></FONT>'>-
+постфиксные записи операторов &lt;<FONT COLOR="#000099">S<SUB>1</SUB>>,&lt;S<SUB>2</SUB></FONT>>,
+а <FONT COLOR="#000099">М<SUB>1</SUB></FONT> и <FONT COLOR="#000099">М<SUB>2</SUB>
+</FONT>- метки.</UL>
+&nbsp;
+<HR WIDTH="100%">
+<BR><A HREF="Part425.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part426.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

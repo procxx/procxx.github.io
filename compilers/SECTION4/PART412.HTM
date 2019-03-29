@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part423</TITLE>
+</HEAD>
+<BODY>
+<A HREF="Part411.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part413.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+
+<P>
+<HR WIDTH="100%">
+<UL><B><I><FONT COLOR="#3333FF"><FONT SIZE=+1>4.1.2.&nbsp; Перевод, определяемый
+СУ-схемой.</FONT></FONT></I></B>
+
+<P>С помощью понятия выводимая пара можно определить перевод, задаваемый
+СУ - схемой.
+<BR>&nbsp;<A NAME="SCCtrans"></A></UL>
+&nbsp;
+<TABLE BORDER COLS=1 WIDTH="90%" HEIGHT="10%" BGCOLOR="#FFFF99" >
+<TR>
+<TD>
+<UL><B><I>Определение</I>.</B> Переводом С(T), определяемым СУ-схемой&nbsp;
+Т назовем множество пар,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+состоящих из входной&nbsp;&nbsp; и выходной цепочек, выводимых из пары,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+включающей два начальных символа.&nbsp;
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+С(T) = {(<FONT FACE="Symbol">a</FONT> ,<FONT FACE="Symbol">b</FONT> ) |
+(&lt;I>,&lt;I>) ==>* (<FONT FACE="Symbol">a</FONT> ,<FONT FACE="Symbol">b</FONT>
+) и<FONT FACE="Symbol">&nbsp; a</FONT> <FONT FACE="Symbol">О</FONT> V<SUB>твх</SUB>*,
+<FONT FACE="Symbol">b</FONT> <FONT FACE="Symbol">О</FONT> V<SUB>твых</SUB>*}&nbsp;</FONT></B>&nbsp;
+<BR><B><FONT COLOR="#000099">&nbsp;</FONT></B></UL>
+</TD>
+</TR>
+</TABLE>
+&nbsp;
+<UL>В качестве примера рассмотрим СУ-схему, заданную следующим образом:
+
+<P><FONT COLOR="#000099">&nbsp;T<SUB>4.1</SUB>:&nbsp;&nbsp; V<SUB>a</SUB>
+= {&lt;I>,&lt;A>}, V<SUB>твх</SUB> = {0,1},V<SUB>твых </SUB>= {a,b}</FONT>
+
+<P><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Q = {&nbsp; &lt;I> <FONT FACE="symbol">╝ </FONT>0&lt;A>&lt;I>,&nbsp;&nbsp;
+&lt;I>&lt;A>a;</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝ </FONT>0&lt;I>&lt;A>,&nbsp; &lt;A>&lt;I>a;</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;I> <FONT FACE="symbol">╝ </FONT>1,&nbsp;&nbsp; b;</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;A> <FONT FACE="symbol">╝ </FONT>1,&nbsp; b</FONT>
+<BR><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}.</FONT>
+
+<P>Эта схема определяет перевод, входные слова которого состоят из нулей
+и единиц, а выходные из букв а,b. Нулям входной цепочки должны соответствовать
+буквы a, а единицам - буквы b выходной цепочки, причем расположение символов
+в выходной цепочке должно быть
+<BR>зеркальным по отношению к соответствующим символам входной цепочки.
+Вывод в рассматриваемой СУ - схеме может, например, иметь вид:
+<BR>&nbsp;
+<UL><FONT COLOR="#000099">(&lt;I>,&lt;I>) ==> (0&lt;A>&lt;I>,&lt;I>&lt;A>a)
+==></FONT> <FONT COLOR="#000099">(0&lt;A>0&lt;A>&lt;I>,&lt;I>&lt;A>a&lt;A>a)
+==></FONT>
+
+<P><FONT COLOR="#000099">==>(0&lt;A>00&lt;I>&lt;A>&lt;I>,&lt;I>&lt;A>&lt;I>aa&lt;A>a)==>*</FONT>
+<FONT COLOR="#000099">==>*(0100111,bbbaaba)</FONT></UL>
+
+<HR WIDTH="100%"></UL>
+<A HREF="Part412.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part413.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.страница&nbsp;<A HREF="index4.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT>
+</BODY>
+</HTML>

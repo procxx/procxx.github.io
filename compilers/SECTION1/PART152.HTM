@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+</HEAD>
+<BODY>
+
+<LI>
+<A HREF="Part151.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part153.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+
+<H4>
+
+<HR WIDTH="100%"></H4>
+
+<H4>
+<FONT COLOR="#0000FF"><FONT SIZE=+1>1.5.2. <I>Описание списков</I></FONT></FONT></H4>
+
+<UL>В качестве первых примеров рассмотрим построение грамматик для последовательностей
+символов и последовательностей символов с разделителями. Такие последовательности
+часто называют <B><FONT COLOR="#800040">списками</FONT></B>.
+
+<P>1) Обозначим элемент последовательности <B>a</B>. Простейшая последовательность
+может состоять из одного элемента <B>a</B>. Все другие последовательности
+могут быть получены путем приписывания к уже построенной последовательности
+еще одного элемента. Если обозначить построенную часть последовательности
+нетерминальным символом <B><FONT COLOR="#000099">&lt;R></FONT></B>, а последовательность
+символом <B><FONT COLOR="#3333FF">&lt;L></FONT></B>, то получим правила
+грамматики в виде:
+<UL>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <B><FONT COLOR="#000099">Г<SUB>1.
+15</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;L><FONT FACE="symbol">
+® </FONT>a&lt;R>,</FONT></B>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>a&lt;R>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>$.</FONT></B></UL>
+&nbsp;</UL>
+</UL>
+</UL>
+2) В предыдущей задаче предполагалось, что список <B><FONT COLOR="#000099">&lt;L></FONT></B>
+должен содержать хотя бы один элемент. Если же допустить, что множество
+цепочек, порожденных правилами грамматики, может включать пустой символ,
+то к построенным правилам нужно добавить еще одно правило <B><FONT COLOR="#000099">&lt;L><FONT FACE="symbol">
+® </FONT>$ </FONT></B>. В этом случае набор правил имеет вид :
+<UL>
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 16</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;L><FONT FACE="symbol"> ® </FONT>a&lt;R>,</FONT></B>&nbsp;<B><FONT COLOR="#000099"></FONT></B>
+<UL><B><FONT COLOR="#000099">&nbsp;</FONT></B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>a&lt;R>,</FONT></B>
+<UL><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;L><FONT FACE="symbol"> ® </FONT>$.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+3) Рассмотрим построение списка, между элементами которого должны стоять
+разделители. Выберем в качестве разделителя запятую. Простейший список,
+как и в предыдущем случае, состоит из одного элемента, а построение списка
+из нескольких элементов может быть выполнено приписыванием к уже построенной
+части списка разделителя с элементом списка. Правила, соответствующие этому
+построению, имеют вид:
+<BR><B><FONT COLOR="#000099">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Г<SUB>1.</SUB></FONT><SUB> <FONT COLOR="#000099">17</FONT></SUB><FONT COLOR="#000099">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;L><FONT FACE="symbol"> ® </FONT>a&lt;R>,</FONT></B>
+<UL>
+<UL>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT><TT>,</TT>a&lt;R>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>$.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+4) Если список с разделителями может быть пустым, то приведенный выше набор
+правил нужно дополнить еще одним правилом с пустой правой частью. В результате
+получим:
+<UL>&nbsp;
+<UL><B><FONT COLOR="#000099">Г<SUB>1. 18</SUB>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;L><FONT FACE="symbol"> ® </FONT>a&lt;R>,</FONT></B>
+<UL>
+<UL><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT><TT>,</TT>a&lt;R>,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;R><FONT FACE="symbol"> ® </FONT>$,</FONT></B>
+<BR><B><FONT COLOR="#000099">&lt;L><FONT FACE="symbol"> ® </FONT>$.</FONT></B></UL>
+</UL>
+</UL>
+</UL>
+В общем случае, если описано множество цепочек, представляющих собой некоторый
+язык, и требуется построить грамматику, порождающую это множество цепочек,
+то следует поступать так:
+
+<P>1) Выписать несколько примеров из заданного множества цепочек.
+<BR>2) Проанализировать структуру цепочек, выделяя начало, конец, повторяющиеся
+символы или группы символов.
+<BR>3) Ввести обозначения для сложных структур, состоящих из групп символов.
+Такие обозначения являются нетерминальными символами искомой грамматики.
+<BR>4) Построить правила для каждой из выделенных структур, используя для
+задания повторяющихся структур рекурсивные правила.
+<BR>5) Объединить все правила.
+<BR>6) Проверить с помощью выводов возможность получения цепочек с разной
+структурой.
+
+<P>
+<HR WIDTH="100%">
+<LI>
+<A HREF="Part151.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part153.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A>
+След.Страница&nbsp;<A HREF="index1.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>&nbsp;
+Раздел&nbsp;<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

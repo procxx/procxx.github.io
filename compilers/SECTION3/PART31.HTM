@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>part31</TITLE>
+</HEAD>
+<BODY>
+
+<UL>
+<LI>
+<A HREF="../section2/Part215.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part32.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+<HR WIDTH="100%"><FONT COLOR="#0000FF"><FONT SIZE=+2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><I>
+3.&nbsp;&nbsp;&nbsp; Нисходящие&nbsp; распознаватели.</I></B></FONT></FONT>
+
+<P><FONT COLOR="#0000FF"><FONT SIZE=+1>&nbsp;<A NAME="3.1 Распознаватели и LL(K) - грамматики"></A>&nbsp;&nbsp;&nbsp;<I>
+<B>3.1 Распознаватели и LL(K) - грамматики</B></I></FONT></FONT>
+<BR>&nbsp;
+<UL>Моделирование работы недетерминированных <B><FONT COLOR="#800040">магазинных</FONT></B>
+<B><FONT COLOR="#800040">распознавателей</FONT></B> связано с поиском последовательности
+переходов из начального в одно из конечных состояний. Поиск состоит из
+отдельных шагов, каждый из которых может окончиться неудачно и привести
+к возврату в исходное состояние для выполнения следующего шага. Такой поиск
+с возвратом связан со значительными затратами времени, поэтому на практике
+используют более экономичные детерминированные распознаватели, работающие
+без возвратов. Эти распознаватели допускают только ограниченные классы
+КС-языков, которые однако отражают все синтаксические черты языков программирования.
+<BR><B><FONT COLOR="#800040">Распознаватели</FONT></B> можно разделить
+на две категории: <B><FONT COLOR="#800040">нисходящие</FONT></B> и <B><FONT COLOR="#800040">восходящие</FONT></B>.
+Каждая категория характеризуется порядком, в котором располагаются правила
+в дереве вывода. <B><FONT COLOR="#660000">Нисходящие распознаватели<A NAME="top-dawnrec"></A>
+</FONT></B>обрабатывают правила сверху вниз, верхние правила раньше нижних,
+в то время как восходящие анализаторы используют нижние правила раньше
+тех, что расположены выше. Чтобы показать возможности детерминированных
+автоматов и способы их построения, в настоящем разделе рассматриваются
+нисходящие распознаватели, допускающие языки, порождаемые грамматиками
+вида LL(K).
+<BR>&nbsp;
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="80%" HEIGHT="20%" BGCOLOR="#FFFFCC" >
+<TR>
+<TD><B><I>Определение. </I></B>В общем случае грамматика относится к классу
+LL(K) грамматик,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+если для нее можно построить нисходящий детерминированный&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+распознаватель,&nbsp; учитывающий K входных символов,&nbsp;
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+расположенных справа от текущей входной позиции.&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;</UL>
+&nbsp;Название LL произошло от слова Left, поскольку анализатор просматривает
+входную цепочку слева-направо , и слова Leftmost, поскольку он обнаруживает
+появление правила по одному или группе символов, образующих левый край
+цепочки. На практике наибольшее применение имеет класс LL(1) грамматик,
+для которых детерминированный распознаватель работает по дному входному
+символу, расположенному в текущей позиции. В качестве первого шага изучения
+нисходящих распознавателей рассмотрим их построение для одного из подклассов
+LL(1)&nbsp; грамматик.
+<UL>
+<HR WIDTH="100%">
+<LI>
+<A HREF="../section2/Part215.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSCENTER></A><FONT COLOR="#009900"><FONT SIZE=-1>
+Пред.Страница&nbsp;<A HREF="Part31.htm">&nbsp;<A HREF="Part32.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15 ALIGN=ABSBOTTOM></A></A>
+След.Страница&nbsp;<A HREF="Index3.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Раздел&nbsp;<A HREF="../section1/Index.htm#cont"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>&nbsp;
+Содержание</FONT></FONT></LI>
+</UL>
+
+</BODY>
+</HTML>

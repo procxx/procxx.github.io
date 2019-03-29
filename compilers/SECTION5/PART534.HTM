@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (Win95; I) [Netscape]">
+   <TITLE>s792</TITLE>
+</HEAD>
+<BODY>
+<A NAME="5.3.4"></A><A HREF="part533.html#5.3.3"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part54.html#5.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A></FONT>
+<FONT COLOR="#006600">След.Страница&nbsp;<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+
+<P>
+<HR>
+
+<P><B><I><FONT FACE="Times New Roman Cyr"><FONT COLOR="#3333FF">&nbsp;&nbsp;&nbsp;
+5.3.4. Расширенный вывод для АТ-грамматики</FONT></FONT></I></B>
+
+<P><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В качестве иллюстрации
+описанного способа обработки атрибутов рассмотрим изображение расширенного
+вывода в грамматике<B> <FONT COLOR="#000099">Г <SUB>5. 3</SUB></FONT>.
+</B>Такой вывод включает не только терминальные, нетерминальные и операционные
+символы, но и атрибуты, значения которых еще не определены. Для отображения
+связей между атрибутами, соответствующих операциям присваивания, воспользуемся
+линейным выводом. Такой вывод строится следующим образом:</FONT>
+<BR><FONT FACE="Times New Roman Cyr">а) Переместим атрибуты с позиции индексов
+в строку и поместим их непосредственно за соответствующим символом грамматики</FONT>
+<BR><FONT FACE="Times New Roman Cyr">б) Каждому капирующему правилу, которое
+соответствует шагу отложенных вычислений, поставим в соответствие дугу,
+связывающую в цепочки вывода источник и приемник и направленную от источника
+к приемнику.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">в) Множественным капирующим правилам
+поставим в соответствие в выводимой цепочке последовательность дуг, связывающих
+источник с приемниками.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">г) Если в процессе вывода атрибут
+получает значение, то это значение запишим в выводимую цепочку вместо имени
+атрибута, а соответствующую дугу удалим.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">д) При замене нетерминального символа
+в выводимой цепочке он удаляется, но его атрибуты должны остаться на месте.</FONT>
+<BR><FONT FACE="Times New Roman Cyr">Линейный вывод цепочки <B>с/1+с/2*с/3
+</B>в грамматике <B><FONT COLOR="#000099">Г <SUB>5. 3</SUB></FONT> </B>можно
+представить в следующем виде:</FONT>
+
+<P><IMG SRC="text1.gif" NOSAVE HEIGHT=468 WIDTH=639>
+<BR><FONT FACE="Times New Roman Cyr">&nbsp;&nbsp;&nbsp; В приведенном выводе
+атрибут каждого заменяемого нетерминального символа сохраняется в цепочке
+вывода. Подстановка символа с определенным значением атрибута при выполнении
+шагов 6, 9, 10 приводит к исключению из цепочки вывода всех промежуточных
+атрибутов, определяющих пути передачи значения. Шаги 11 и 12 введены только
+для того, чтобы показать, как операционные символы влияют на определение
+значений атрибутов. В общем случае эти шаги можно совместить с шагом 10.</FONT>
+
+<P>
+<HR>
+
+<P><A HREF="part533.html#5.3.3"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><FONT FACE="Times New Roman"><FONT COLOR="#008000">Пред.Страница<A HREF="part54.html#5.4"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+След.Страница<A HREF="index5.html#idx5"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A><A HREF="index5.html#idx5">
+</A>Раздел<A HREF="../index.htm"><IMG SRC="GrBall.gif" BORDER=0 HEIGHT=15 WIDTH=15></A>
+Содержание</FONT></FONT>
+<BR>&nbsp;
+</BODY>
+</HTML>
